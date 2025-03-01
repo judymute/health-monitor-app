@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css';
 import UserDashboard from './UserDashboard';
 import QuestionnaireContainer from './QuestionnaireContainer'; // Assuming you created this
+import Chatbot from './Chatbot';
 
 function App() {
   // State to store user data and track if questionnaire is completed
@@ -50,6 +51,7 @@ function App() {
             } 
           />
         </Routes>
+        <Chatbot/>
       </div>
     </Router>
   );
