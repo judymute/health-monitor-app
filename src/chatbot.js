@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Chatbot.css';
+
+const GEMINI_API_KEY = 'AIzaSyAW44yUO8fMlx2gFSjHyjYhBoS1qnVBmQ0';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
@@ -7,38 +11,53 @@ const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleSend = async () => {
-        if (!input.trim()) return;
-
-        const newMessages = [...messages, { text: input, sender: 'user' }];
-        setMessages(newMessages);
-        setInput('');
-
-        try {
-            const response = await axios.post('http://localhost:5000/api/chat', { message: input });
-            setMessages([...newMessages, { text: response.data.reply, sender: 'bot' }]);
-        } catch (error) {
-            setMessages([...newMessages, { text: "Error: Failed to get AI response", sender: 'bot' }]);
+        if (input.trim()) {
+            const userMessage = { text: input, sender: 'user' };
+            setMessages(prevMessages => [...prevMessages, userMessage]);
+            setInput('');
+    
+            try {
+                const response = await axios.post(
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+                    {
+                        contents: [{ parts: [{ text: input }] }]
+                    },
+                    { headers: { 'Content-Type': 'application/json' } }
+                );
+    
+                console.log('API Response:', response.data);
+    
+                // ✅ Extract AI response correctly
+                const aiResponse = response.data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response from AI';
+                
+                const aiMessage = { text: aiResponse, sender: 'ai' };
+                setMessages(prevMessages => [...prevMessages, aiMessage]);
+    
+            } catch (error) {
+                console.error('Error fetching AI response:', error.response?.data || error.message);
+                setMessages(prevMessages => [...prevMessages, { text: 'Error fetching response', sender: 'ai' }]);
+            }
         }
     };
+    
+    
 
     return (
-        <div className="chatbot-container">
-            {/* Chat Button */}
-            <button className="chatbot-button" onClick={() => setIsOpen(true)}>
-                Open Chat
+        <div>
+            <button className="chatbot-toggle" onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? 'Close Chat' : 'Open Chat'}
             </button>
-
-            {/* Chat Popup */}
+            
             {isOpen && (
                 <div className="chatbot-popup">
                     <div className="chatbot-header">
-                        <h3>Chatbot</h3>
-                        <button className="close-button" onClick={() => setIsOpen(false)}>X</button>
+                        <span>Chatbot</span>
+                        <button className="close-btn" onClick={() => setIsOpen(false)}>×</button>
                     </div>
                     <div className="messages">
-                        {messages.map((msg, index) => (
-                            <div key={index} className={`message ${msg.sender}`}>
-                                {msg.text}
+                        {messages.map((message, index) => (
+                            <div key={index} className={`message ${message.sender}`}>
+                                {message.text}
                             </div>
                         ))}
                     </div>
@@ -47,98 +66,12 @@ const Chatbot = () => {
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            placeholder="Ask something..."
+                            placeholder="Type a message..."
                         />
                         <button onClick={handleSend}>Send</button>
                     </div>
                 </div>
             )}
-
-            {/* Styles */}
-            <style jsx>{`
-                .chatbot-button {
-                    position: fixed;
-                    bottom: 20px;
-                    right: 20px;
-                    padding: 10px 15px;
-                    background-color: #007bff;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    font-size: 16px;
-                }
-
-                .chatbot-popup {
-                    position: fixed;
-                    bottom: 50px;
-                    right: 20px;
-                    width: 300px;
-                    background: white;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .chatbot-header {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    background: #007bff;
-                    color: white;
-                    padding: 10px;
-                    border-top-left-radius: 10px;
-                    border-top-right-radius: 10px;
-                }
-
-                .messages {
-                    max-height: 300px;
-                    overflow-y: auto;
-                    padding: 10px;
-                    flex-grow: 1;
-                }
-
-                .message {
-                    padding: 8px;
-                    margin: 5px 0;
-                    border-radius: 5px;
-                }
-
-                .user {
-                    background: #007bff;
-                    color: white;
-                    text-align: right;
-                }
-
-                .bot {
-                    background: #f1f1f1;
-                    color: black;
-                    text-align: left;
-                }
-
-                .input-area {
-                    display: flex;
-                    padding: 10px;
-                    border-top: 1px solid #ccc;
-                }
-
-                .input-area input {
-                    flex-grow: 1;
-                    padding: 8px;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    margin-right: 5px;
-                }
-
-                .close-button {
-                    background: none;
-                    border: none;
-                    color: white;
-                    font-size: 18px;
-                    cursor: pointer;
-                }
-            `}</style>
         </div>
     );
 };

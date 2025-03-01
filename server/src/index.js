@@ -1,34 +1,70 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import React, { useState } from 'react';
+import axios from 'axios';
+// import './Chatbot.css'; // Ensure you add some basic styles
 
-dotenv.config();
+const Chatbot = () => {
+    const [messages, setMessages] = useState([]);
+    const [input, setInput] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+    const handleSend = async () => {
+        if (input.trim()) {
+            const userMessage = { text: input, sender: 'user' };
+            setMessages([...messages, userMessage]);
+            setInput('');
+            
+            try {
+                const response = await axios.post('https://api.gemini.com/v1/chat', {
+                    model: 'gemini-pro',
+                    messages: [...messages, userMessage]
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer YOUR_GEMINI_API_KEY`
+                    }
+                });
 
-// 初始化 Gemini API（Google PaLM 2）
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-
-app.post('/api/chat', async (req, res) => {
-    try {
-        if (!req.body.message) {
-            return res.status(400).json({ error: 'Message is required' });
+                const aiMessage = { text: response.data.message, sender: 'ai' };
+                setMessages(prevMessages => [...prevMessages, aiMessage]);
+            } catch (error) {
+                console.error('Error fetching AI response:', error);
+                setMessages(prevMessages => [...prevMessages, { text: 'Error fetching response', sender: 'ai' }]);
+            }
         }
+    };
 
-        // 选择 Gemini Pro 1.5 模型
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    return (
+        <div>
+            <button className="chatbot-toggle" onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? 'Close Chat' : 'Open Chat'}
+            </button>
+            
+            {isOpen && (
+                <div className="chatbot-popup">
+                    <div className="chatbot-header">
+                        <span>Chatbot</span>
+                        <button className="close-btn" onClick={() => setIsOpen(false)}>×</button>
+                    </div>
+                    <div className="messages">
+                        {messages.map((message, index) => (
+                            <div key={index} className={`message ${message.sender}`}>
+                                {message.text}
+                            </div>
+                        ))}
+                    </div>
+                    <div className="input-area">
+                        <input
+                            type="text"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            placeholder="Type a message..."
+                        />
+                        <button onClick={handleSend}>Send</button>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
 
-        const result = await model.generateContent(req.body.message);
-        const response = result.response.text(); // 获取 AI 生成的文本
-
-        res.json({ reply: response || "AI did not respond" });
-    } catch (error) {
-        console.error("Gemini API Error:", error);
-        res.status(500).json({ error: 'AI response failed' });
-    }
-});
-
-app.listen(3000, () => console.log('Server running on port 5000'));
+export default Chatbot;
