@@ -1,29 +1,29 @@
 {
   "basicInformation": {
-    "fullName": "马梓豪",
+    "fullName": "Julie ",
     "age": 18,
     "weight": {
-      "value": 48,
+      "value": 70,
       "unit": "kg"
     },
     "height": {
-      "value": 172,
+      "value": 180,
       "unit": "cm"
     },
-    "bloodType": "B-"
+    "bloodType": "A-"
   },
   "dietaryPreferences": {
-    "dietType": "Flexitarian",
+    "dietType": "Vegan",
     "dietTypeOther": "",
     "allergiesIntolerances": {
       "dairy": false,
-      "eggs": true,
+      "eggs": false,
       "nuts": {
         "selected": false,
         "details": ""
       },
-      "seafoodShellfish": false,
-      "gluten": false,
+      "seafoodShellfish": true,
+      "gluten": true,
       "soy": false,
       "other": {
         "selected": false,
@@ -32,9 +32,9 @@
     },
     "favoriteCuisines": {
       "italian": false,
-      "mexican": true,
+      "mexican": false,
       "indian": false,
-      "chinese": false,
+      "chinese": true,
       "japanese": false,
       "thai": false,
       "mediterranean": false,
@@ -45,13 +45,13 @@
         "details": ""
       }
     },
-    "spiceTolerance": 1,
-    "dislikedFoods": "Duck"
+    "spiceTolerance": 4,
+    "dislikedFoods": "Milk"
   },
   "medicalConditions": {
     "diabetes": {
       "selected": false,
-      "type": "Gestational"
+      "type": ""
     },
     "celiacDisease": false,
     "inflammatoryBowelDisease": {
@@ -59,13 +59,13 @@
       "type": ""
     },
     "hypertension": false,
-    "cardiovascularDisease": false,
+    "cardiovascularDisease": true,
     "chronicKidneyDisease": false,
     "acidReflux": false,
     "irritableBowelSyndrome": false,
     "gout": false,
     "phenylketonuria": false,
-    "liverDisease": true,
+    "liverDisease": false,
     "other": {
       "selected": false,
       "details": ""
