@@ -1,126 +1,115 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Vegan Mexican Tofu Scramble",
+      "name": "Thai-inspired Oatmeal with Mango and Almonds",
       "ingredients": [
-        "1/2 cup crumbled firm tofu",
-        "1/4 cup diced onion",
-        "1/4 cup diced bell pepper (any color)",
-        "1 tablespoon chopped cilantro",
-        "1/2 teaspoon chili powder",
-        "1/4 teaspoon cumin",
-        "Pinch of turmeric (for color)",
-        "1 tablespoon nutritional yeast (for cheesy flavor)",
-        "1 corn tortilla (gluten-free if needed)",
-        "1 tablespoon dairy-free salsa (check ingredients for phenylalanine content)",
-        "1 tablespoon avocado (optional, for healthy fats)"
+        "1/2 cup rolled oats",
+        "1 cup unsweetened almond milk",
+        "1/4 teaspoon ginger powder",
+        "1/4 teaspoon cinnamon",
+        "1/4 cup diced mango",
+        "1 tablespoon slivered almonds",
+        "1 teaspoon chia seeds",
+        "Pinch of sea salt"
       ],
-      "preparation": "Sauté onion and bell pepper until softened. Add tofu, spices, and nutritional yeast. Cook until heated through and tofu is lightly browned. Stir in cilantro. Serve on a warm corn tortilla with salsa and avocado.",
-      "nutritionalBenefits": "Provides plant-based protein, fiber, and vitamins from vegetables. Tofu is a source of essential amino acids, important for growth and development.",
-      "healthNotes": "Carefully measure tofu and monitor phenylalanine intake. Ensure salsa and other ingredients are free of added phenylalanine or derivatives. Avocado provides healthy fats for brain development and satiety."
+      "preparation": "Combine oats, almond milk, ginger, cinnamon, and salt in a saucepan. Bring to a boil, then reduce heat and simmer for 5-7 minutes, or until desired consistency is reached. Top with diced mango, almonds, and chia seeds.",
+      "nutritionalBenefits": "Provides fiber, protein, healthy fats, and vitamins. Mango is a good source of Vitamin C.",
+      "healthNotes": "Oatmeal is a good source of soluble fiber, which can help lower cholesterol. Ginger and cinnamon have anti-inflammatory properties."
     },
     "lunch": {
-      "name": "Vegan Mexican Quinoa Bowl with Black Beans and Vegetables",
+      "name": "Chicken Larb Salad (Thai Ground Chicken Salad)",
       "ingredients": [
-        "1/2 cup cooked quinoa",
-        "1/4 cup black beans (check phenylalanine content)",
-        "1/4 cup diced tomatoes",
-        "1/4 cup diced cucumber",
-        "1/4 cup diced red onion",
-        "1 tablespoon chopped cilantro",
+        "4 oz ground chicken breast",
+        "1 tablespoon fish sauce (low sodium)",
         "1 tablespoon lime juice",
-        "1 tablespoon olive oil",
-        "Salt and pepper to taste",
-        "1 corn tortilla, cut into strips (optional, for added texture - gluten-free if needed)"
+        "1/2 tablespoon rice vinegar",
+        "1/4 teaspoon chili flakes (adjust to taste)",
+        "1 tablespoon chopped cilantro",
+        "1 tablespoon chopped mint",
+        "1/4 cup finely chopped red onion",
+        "1/4 cup chopped green onion",
+        "Lettuce cups for serving",
+        "1/4 cup cooked brown rice"
       ],
-      "preparation": "Combine all ingredients in a bowl. Toss gently. Top with tortilla strips if desired.",
-      "nutritionalBenefits": "Provides complete protein from quinoa, fiber from black beans and vegetables, and healthy fats from olive oil. Lime juice provides vitamin C.",
-      "healthNotes": "Monitor black bean intake due to potential phenylalanine content. Quinoa is a good source of protein and fiber. Ensure all vegetables are fresh and properly washed."
+      "preparation": "Cook the ground chicken until browned and cooked through. Drain any excess fat. In a bowl, combine fish sauce, lime juice, rice vinegar, chili flakes, cilantro, mint, red onion, and green onion. Add the cooked chicken and cooked brown rice to the dressing and mix well. Serve in lettuce cups.",
+      "nutritionalBenefits": "High in protein, low in carbohydrates, and rich in herbs and spices. Provides essential amino acids and antioxidants.",
+      "healthNotes": "Use low-sodium fish sauce and adjust chili flakes according to your tolerance for spice. This is a lean protein source that aids weight loss efforts."
     },
     "dinner": {
-      "name": "Vegan Mexican Vegetable Fajitas with Corn Tortillas",
+      "name": "Thai Green Curry with Tofu and Vegetables",
       "ingredients": [
-        "1/2 cup sliced bell peppers (various colors)",
-        "1/4 cup sliced onion",
-        "1/4 cup sliced zucchini",
-        "1/4 cup sliced mushrooms",
-        "1 tablespoon olive oil",
-        "1/2 teaspoon chili powder",
-        "1/4 teaspoon cumin",
-        "1 tablespoon lime juice",
-        "3 corn tortillas (gluten-free if needed)",
-        "Dairy-free sour cream alternative (check phenylalanine content)",
-        "Dairy-free cheese alternative (check phenylalanine content)"
+        "4 oz firm tofu, pressed and cubed",
+        "1 tablespoon coconut oil",
+        "1/2 cup broccoli florets",
+        "1/2 cup sliced bell peppers (mixed colors)",
+        "1/4 cup snap peas",
+        "1/2 cup bamboo shoots",
+        "1/2 cup coconut milk (lite)",
+        "2 tablespoons green curry paste (low sodium)",
+        "1 tablespoon fish sauce (low sodium)",
+        "1 teaspoon lime juice",
+        "1/4 cup chopped Thai basil",
+        "1/2 cup cooked quinoa"
       ],
-      "preparation": "Sauté bell peppers, onion, zucchini, and mushrooms in olive oil with chili powder and cumin until tender-crisp. Stir in lime juice. Serve in warm corn tortillas with dairy-free sour cream and cheese alternatives.",
-      "nutritionalBenefits": "Provides vitamins and minerals from a variety of vegetables. Corn tortillas provide carbohydrates for energy.",
-      "healthNotes": "Carefully check the phenylalanine content of dairy-free sour cream and cheese alternatives. Load up on vegetables for optimal nutrition. Consider adding small amounts of pre-approved low-phenylalanine sauces or seasonings for flavour."
+      "preparation": "Heat coconut oil in a wok or large skillet over medium heat. Add tofu and cook until golden brown. Add broccoli, bell peppers, snap peas, and bamboo shoots and stir-fry for 3-5 minutes. Add green curry paste and coconut milk, bring to a simmer. Stir in fish sauce and lime juice. Simmer for 5 minutes, or until vegetables are tender-crisp. Stir in Thai basil. Serve over cooked quinoa.",
+      "nutritionalBenefits": "Provides protein from tofu, fiber from vegetables, and healthy fats from coconut milk. Green curry paste provides a variety of beneficial spices.",
+      "healthNotes": "Use low-sodium green curry paste and fish sauce to manage blood pressure. Increase vegetable serving to increase fiber intake."
     },
     "snacks": [
       {
-        "name": "Small Portion of Fruit Salad with Dairy-Free Yogurt",
+        "name": "Edamame",
         "ingredients": [
-          "1/4 cup mixed berries (strawberries, blueberries, raspberries - check phenylalanine content)",
-          "1/4 cup diced melon (cantaloupe, watermelon)",
-          "1/4 cup dairy-free yogurt (check phenylalanine content)"
+          "1 cup edamame (in pods)",
+          "Pinch of sea salt"
         ],
-        "preparation": "Combine all ingredients in a small bowl.",
-        "nutritionalBenefits": "Provides vitamins, minerals, and antioxidants from fruit. Dairy-free yogurt provides probiotics for gut health (choose a brand with added calcium and vitamin D).",
-        "healthNotes": "Monitor berry and yogurt intake for phenylalanine content. Choose fruit naturally low in phenylalanine. Ensure dairy-free yogurt is fortified with calcium and vitamin D."
+        "preparation": "Steam edamame pods for 5-7 minutes, or until tender. Sprinkle with sea salt.",
+        "nutritionalBenefits": "Provides protein, fiber, and essential nutrients. A good source of plant-based protein.",
+        "healthNotes": "Edamame is a low-sodium and healthy snack option."
       }
     ]
   },
   "nutritionalFocus": [
     {
-      "nutrient": "Phenylalanine",
-      "reason": "Managing phenylalanine intake is crucial for individuals with phenylketonuria (PKU) to prevent neurological damage and developmental delays.",
+      "nutrient": "Potassium",
+      "reason": "Helps regulate blood pressure by balancing the effects of sodium.",
       "sources": [
-        "Tofu (moderate)",
-        "Black beans (moderate)",
-        "Dairy products (avoid dairy based sour cream and cheese alternatives unless labeled phenylalanine free)",
-        "Some nuts and seeds (avoid high phenylalanine varieties)",
-        "Many artificial sweeteners (check labels)"
+        "Mango",
+        "Bell Peppers",
+        "Spinach",
+        "Bananas"
       ]
     },
     {
-      "nutrient": "Calcium",
-      "reason": "Important for bone health, especially during growth spurts. Vegan diets require careful planning to ensure adequate calcium intake, especially with limited dairy intake due to PKU limitations.",
+      "nutrient": "Fiber",
+      "reason": "Promotes satiety, aids digestion, and can help regulate blood sugar levels. Also important for heart health.",
       "sources": [
-        "Calcium-fortified plant milks",
-        "Calcium-set tofu",
-        "Leafy green vegetables (in moderation, considering other dietary needs)",
-        "Fortified cereals",
-        "Some fortified dairy-free yogurts"
-      ]
-    },
-    {
-      "nutrient": "Iron",
-      "reason": "Essential for oxygen transport and energy production. Plant-based iron is less readily absorbed than animal-based iron, so strategies to enhance absorption are important.",
-      "sources": [
+        "Oats",
+        "Brown Rice",
         "Quinoa",
-        "Black beans (moderate)",
-        "Dark leafy green vegetables (in moderation, considering other dietary needs)",
-        "Iron-fortified cereals and breads",
-        "Tofu"
+        "Vegetables",
+        "Edamame"
+      ]
+    },
+    {
+      "nutrient": "Lean Protein",
+      "reason": "Supports muscle mass, boosts metabolism, and helps you feel full and satisfied. Crucial for weight loss.",
+      "sources": [
+        "Chicken Breast",
+        "Tofu",
+        "Edamame",
+        "Almonds"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "High-protein foods",
-      "reason": "High-protein foods are generally high in phenylalanine and should be limited in the diet of someone with PKU. Protein intake should be carefully monitored and controlled."
-    },
-    {
-      "food": "Aspartame (NutraSweet, Equal)",
-      "reason": "Aspartame is an artificial sweetener that contains phenylalanine and should be strictly avoided."
+      "food": "High Sodium Foods",
+      "reason": "Can increase blood pressure and lead to fluid retention. Avoid processed foods, fast food, and excessive salt intake."
     }
   ],
   "weeklyHabitTips": [
-    "Track phenylalanine intake meticulously using a food diary or specialized PKU diet tracking app.",
-    "Consult regularly with a registered dietitian specializing in PKU to adjust the diet plan as needed.",
-    "Prepare meals at home as often as possible to ensure control over ingredients and phenylalanine content.",
-    "Focus on naturally low-phenylalanine fruits and vegetables to add variety and nutrients to the diet.",
-    "Read all food labels carefully, paying attention to protein content and the presence of aspartame or other phenylalanine sources.",
-    "Spread protein intake throughout the day rather than consuming large amounts at one meal."
+    "Monitor your blood pressure regularly and keep a record for your doctor.",
+    "Engage in at least 30 minutes of moderate-intensity exercise most days of the week.",
+    "Practice mindful eating by paying attention to your hunger and fullness cues."
   ]
 }

@@ -1,19 +1,19 @@
 {
   "basicInformation": {
-    "fullName": "as",
+    "fullName": "Xinyi",
     "age": 18,
     "weight": {
-      "value": 10,
+      "value": 66,
       "unit": "kg"
     },
     "height": {
-      "value": 213,
+      "value": 156.7,
       "unit": "cm"
     },
-    "bloodType": "AB+"
+    "bloodType": "B+"
   },
   "dietaryPreferences": {
-    "dietType": "Vegan",
+    "dietType": "Omnivore",
     "dietTypeOther": "",
     "allergiesIntolerances": {
       "noAllergies": true,
@@ -33,11 +33,11 @@
     },
     "favoriteCuisines": {
       "italian": false,
-      "mexican": true,
+      "mexican": false,
       "indian": false,
       "chinese": false,
       "japanese": false,
-      "thai": false,
+      "thai": true,
       "mediterranean": false,
       "american": false,
       "middleEastern": false,
@@ -46,7 +46,7 @@
         "details": ""
       }
     },
-    "spiceTolerance": 5,
+    "spiceTolerance": 1,
     "dislikedFoods": ""
   },
   "medicalConditions": {
@@ -60,13 +60,13 @@
       "selected": false,
       "type": ""
     },
-    "hypertension": false,
+    "hypertension": true,
     "cardiovascularDisease": false,
     "chronicKidneyDisease": false,
     "acidReflux": false,
     "irritableBowelSyndrome": false,
     "gout": false,
-    "phenylketonuria": true,
+    "phenylketonuria": false,
     "liverDisease": false,
     "other": {
       "selected": false,
@@ -74,11 +74,11 @@
     }
   },
   "dietaryGoals": {
-    "weightLoss": false,
+    "weightLoss": true,
     "weightGain": false,
     "maintenance": false,
     "increasedEnergy": false,
-    "betterDigestion": true,
+    "betterDigestion": false,
     "improvedSleep": false,
     "muscleBuilding": false,
     "other": {
