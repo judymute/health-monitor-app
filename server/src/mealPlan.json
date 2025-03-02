@@ -1,107 +1,126 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Ricotta and Spinach Frittata with Whole Wheat Toast",
+      "name": "Vegan Mexican Tofu Scramble",
       "ingredients": [
-        "Eggs",
-        "Ricotta cheese",
-        "Spinach",
-        "Onion",
-        "Garlic",
-        "Olive oil",
-        "Whole wheat toast",
-        "Salt",
-        "Pepper"
+        "1/2 cup crumbled firm tofu",
+        "1/4 cup diced onion",
+        "1/4 cup diced bell pepper (any color)",
+        "1 tablespoon chopped cilantro",
+        "1/2 teaspoon chili powder",
+        "1/4 teaspoon cumin",
+        "Pinch of turmeric (for color)",
+        "1 tablespoon nutritional yeast (for cheesy flavor)",
+        "1 corn tortilla (gluten-free if needed)",
+        "1 tablespoon dairy-free salsa (check ingredients for phenylalanine content)",
+        "1 tablespoon avocado (optional, for healthy fats)"
       ],
-      "preparation": "Sauté onion and garlic. Add spinach and cook until wilted. Whisk eggs with ricotta, salt, and pepper. Pour egg mixture over spinach. Cook on stovetop until edges set. Transfer to oven and bake until set. Serve with whole wheat toast.",
-      "nutritionalBenefits": "High in protein from eggs and ricotta, iron from spinach, and fiber from whole wheat toast.",
-      "healthNotes": "Provides sustained energy for the morning and helps with muscle building due to the high protein content."
+      "preparation": "Sauté onion and bell pepper until softened. Add tofu, spices, and nutritional yeast. Cook until heated through and tofu is lightly browned. Stir in cilantro. Serve on a warm corn tortilla with salsa and avocado.",
+      "nutritionalBenefits": "Provides plant-based protein, fiber, and vitamins from vegetables. Tofu is a source of essential amino acids, important for growth and development.",
+      "healthNotes": "Carefully measure tofu and monitor phenylalanine intake. Ensure salsa and other ingredients are free of added phenylalanine or derivatives. Avocado provides healthy fats for brain development and satiety."
     },
     "lunch": {
-      "name": "Lentil Bolognese with Whole Wheat Pasta",
+      "name": "Vegan Mexican Quinoa Bowl with Black Beans and Vegetables",
       "ingredients": [
-        "Brown or Green Lentils",
-        "Whole wheat pasta",
-        "Crushed tomatoes",
-        "Onion",
-        "Carrots",
-        "Celery",
-        "Garlic",
-        "Vegetable broth",
-        "Olive oil",
-        "Italian herbs",
-        "Parmesan cheese (optional, for topping)"
+        "1/2 cup cooked quinoa",
+        "1/4 cup black beans (check phenylalanine content)",
+        "1/4 cup diced tomatoes",
+        "1/4 cup diced cucumber",
+        "1/4 cup diced red onion",
+        "1 tablespoon chopped cilantro",
+        "1 tablespoon lime juice",
+        "1 tablespoon olive oil",
+        "Salt and pepper to taste",
+        "1 corn tortilla, cut into strips (optional, for added texture - gluten-free if needed)"
       ],
-      "preparation": "Sauté onion, carrots, and celery. Add garlic and cook until fragrant. Add lentils, crushed tomatoes, vegetable broth, and Italian herbs. Simmer until lentils are tender. Cook whole wheat pasta according to package directions. Serve lentil bolognese over pasta. Sprinkle with parmesan cheese if desired.",
-      "nutritionalBenefits": "Excellent source of protein and fiber from lentils and pasta. Rich in vitamins and minerals from vegetables.",
-      "healthNotes": "Provides sustained energy for the afternoon, supports muscle building, and promotes healthy digestion."
+      "preparation": "Combine all ingredients in a bowl. Toss gently. Top with tortilla strips if desired.",
+      "nutritionalBenefits": "Provides complete protein from quinoa, fiber from black beans and vegetables, and healthy fats from olive oil. Lime juice provides vitamin C.",
+      "healthNotes": "Monitor black bean intake due to potential phenylalanine content. Quinoa is a good source of protein and fiber. Ensure all vegetables are fresh and properly washed."
     },
     "dinner": {
-      "name": "Vegetarian Pizza with Roasted Vegetables",
+      "name": "Vegan Mexican Vegetable Fajitas with Corn Tortillas",
       "ingredients": [
-        "Whole wheat pizza dough",
-        "Pizza sauce",
-        "Mozzarella cheese",
-        "Roasted vegetables (bell peppers, zucchini, eggplant, onions)",
-        "Olive oil",
-        "Italian seasoning"
+        "1/2 cup sliced bell peppers (various colors)",
+        "1/4 cup sliced onion",
+        "1/4 cup sliced zucchini",
+        "1/4 cup sliced mushrooms",
+        "1 tablespoon olive oil",
+        "1/2 teaspoon chili powder",
+        "1/4 teaspoon cumin",
+        "1 tablespoon lime juice",
+        "3 corn tortillas (gluten-free if needed)",
+        "Dairy-free sour cream alternative (check phenylalanine content)",
+        "Dairy-free cheese alternative (check phenylalanine content)"
       ],
-      "preparation": "Preheat oven and pizza stone (if using). Roll out pizza dough. Spread pizza sauce over dough. Sprinkle with mozzarella cheese. Top with roasted vegetables. Drizzle with olive oil and sprinkle with Italian seasoning. Bake until crust is golden brown and cheese is melted and bubbly.",
-      "nutritionalBenefits": "Provides a good source of complex carbohydrates and fiber from the whole wheat dough and variety of vitamins and minerals from the vegetables.",
-      "healthNotes": "Choose a low-sodium pizza sauce. This dinner offers flexibility in the choice of toppings, tailor it to your preferences."
+      "preparation": "Sauté bell peppers, onion, zucchini, and mushrooms in olive oil with chili powder and cumin until tender-crisp. Stir in lime juice. Serve in warm corn tortillas with dairy-free sour cream and cheese alternatives.",
+      "nutritionalBenefits": "Provides vitamins and minerals from a variety of vegetables. Corn tortillas provide carbohydrates for energy.",
+      "healthNotes": "Carefully check the phenylalanine content of dairy-free sour cream and cheese alternatives. Load up on vegetables for optimal nutrition. Consider adding small amounts of pre-approved low-phenylalanine sauces or seasonings for flavour."
     },
     "snacks": [
       {
-        "name": "Greek Yogurt with Berries and Almonds",
+        "name": "Small Portion of Fruit Salad with Dairy-Free Yogurt",
         "ingredients": [
-          "Greek yogurt (plain, non-fat)",
-          "Mixed berries (strawberries, blueberries, raspberries)",
-          "Almonds"
+          "1/4 cup mixed berries (strawberries, blueberries, raspberries - check phenylalanine content)",
+          "1/4 cup diced melon (cantaloupe, watermelon)",
+          "1/4 cup dairy-free yogurt (check phenylalanine content)"
         ],
-        "preparation": "Combine greek yogurt, berries, and almonds in a bowl.",
-        "nutritionalBenefits": "High in protein from greek yogurt, antioxidants from berries, and healthy fats from almonds.",
-        "healthNotes": "Helps to curb hunger between meals and provides additional protein for muscle building."
+        "preparation": "Combine all ingredients in a small bowl.",
+        "nutritionalBenefits": "Provides vitamins, minerals, and antioxidants from fruit. Dairy-free yogurt provides probiotics for gut health (choose a brand with added calcium and vitamin D).",
+        "healthNotes": "Monitor berry and yogurt intake for phenylalanine content. Choose fruit naturally low in phenylalanine. Ensure dairy-free yogurt is fortified with calcium and vitamin D."
       }
     ]
   },
   "nutritionalFocus": [
     {
-      "nutrient": "Protein",
-      "reason": "Essential for muscle repair and growth, especially important for Julie's goal of muscle building.",
+      "nutrient": "Phenylalanine",
+      "reason": "Managing phenylalanine intake is crucial for individuals with phenylketonuria (PKU) to prevent neurological damage and developmental delays.",
       "sources": [
-        "Eggs",
-        "Ricotta cheese",
-        "Lentils",
-        "Greek Yogurt",
-        "Almonds"
+        "Tofu (moderate)",
+        "Black beans (moderate)",
+        "Dairy products (avoid dairy based sour cream and cheese alternatives unless labeled phenylalanine free)",
+        "Some nuts and seeds (avoid high phenylalanine varieties)",
+        "Many artificial sweeteners (check labels)"
+      ]
+    },
+    {
+      "nutrient": "Calcium",
+      "reason": "Important for bone health, especially during growth spurts. Vegan diets require careful planning to ensure adequate calcium intake, especially with limited dairy intake due to PKU limitations.",
+      "sources": [
+        "Calcium-fortified plant milks",
+        "Calcium-set tofu",
+        "Leafy green vegetables (in moderation, considering other dietary needs)",
+        "Fortified cereals",
+        "Some fortified dairy-free yogurts"
       ]
     },
     {
       "nutrient": "Iron",
-      "reason": "Important for oxygen transport to muscles and preventing anemia, especially important for females.",
+      "reason": "Essential for oxygen transport and energy production. Plant-based iron is less readily absorbed than animal-based iron, so strategies to enhance absorption are important.",
       "sources": [
-        "Spinach",
-        "Lentils",
-        "Whole Wheat Pasta",
-        "Almonds"
-      ]
-    },
-    {
-      "nutrient": "Complex Carbohydrates",
-      "reason": "Provide sustained energy for workouts and daily activities.",
-      "sources": [
-        "Whole Wheat Toast",
-        "Whole Wheat Pasta",
-        "Whole Wheat Pizza Dough",
-        "Vegetables"
+        "Quinoa",
+        "Black beans (moderate)",
+        "Dark leafy green vegetables (in moderation, considering other dietary needs)",
+        "Iron-fortified cereals and breads",
+        "Tofu"
       ]
     }
   ],
-  "avoidList": [],
+  "avoidList": [
+    {
+      "food": "High-protein foods",
+      "reason": "High-protein foods are generally high in phenylalanine and should be limited in the diet of someone with PKU. Protein intake should be carefully monitored and controlled."
+    },
+    {
+      "food": "Aspartame (NutraSweet, Equal)",
+      "reason": "Aspartame is an artificial sweetener that contains phenylalanine and should be strictly avoided."
+    }
+  ],
   "weeklyHabitTips": [
-    "Incorporate strength training exercises 3-4 times per week to maximize muscle growth.",
-    "Ensure adequate hydration by drinking at least 8 glasses of water per day.",
-    "Prioritize getting 7-8 hours of sleep per night for optimal muscle recovery.",
-    "Meal prep in advance to stay on track with your dietary goals."
+    "Track phenylalanine intake meticulously using a food diary or specialized PKU diet tracking app.",
+    "Consult regularly with a registered dietitian specializing in PKU to adjust the diet plan as needed.",
+    "Prepare meals at home as often as possible to ensure control over ingredients and phenylalanine content.",
+    "Focus on naturally low-phenylalanine fruits and vegetables to add variety and nutrients to the diet.",
+    "Read all food labels carefully, paying attention to protein content and the presence of aspartame or other phenylalanine sources.",
+    "Spread protein intake throughout the day rather than consuming large amounts at one meal."
   ]
 }
