@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './UserDashboard.css';
+// No need for custom CSS file when using Bootstrap
 
 const UserDashboard = ({ userData }) => {
   const navigate = useNavigate();
@@ -8,6 +8,20 @@ const UserDashboard = ({ userData }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [errorDetails, setErrorDetails] = useState(null);
+  const [activeDay, setActiveDay] = useState(new Date().getDate());
+
+  // Color palette based on the pastel purple theme
+  const colors = {
+    primary: '#8B80F9',    // Main purple color
+    secondary: '#A594F9',  // Lighter purple
+    light: '#EAE6FF',      // Very light purple/lavender
+    accent1: '#FFD6E0',    // Soft pink
+    accent2: '#A1EAFB',    // Soft blue
+    text: '#2A2D43',       // Dark blue/purple for text
+    success: '#77DD77',    // Soft green for success indicators
+    warning: '#FFB347',    // Soft orange for warnings
+    danger: '#FF6B6B'      // Soft red for danger/avoid
+  };
 
   useEffect(() => {
     // Check if we have user data
@@ -31,7 +45,7 @@ const UserDashboard = ({ userData }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({}),
+          body: JSON.stringify(userData),
         });
         
         // Log the status code to help diagnose issues
@@ -75,7 +89,7 @@ const UserDashboard = ({ userData }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({}),
+        body: JSON.stringify(userData),
       });
       
       const data = await response.json();
@@ -93,13 +107,68 @@ const UserDashboard = ({ userData }) => {
     }
   };
 
+  // Generate day selector for the week
+  const renderDaySelector = () => {
+    const days = [];
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+    
+    // Show a week of days (current day and 6 days ahead)
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(currentDate);
+      date.setDate(currentDay + i);
+      const dayNum = date.getDate();
+      
+      days.push(
+        <div 
+          key={i} 
+          className={`day-selector ${activeDay === dayNum ? 'active' : ''}`}
+          onClick={() => setActiveDay(dayNum)}
+          style={{
+            width: '40px',
+            height: '40px',
+            borderRadius: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: activeDay === dayNum ? colors.primary : colors.light,
+            color: activeDay === dayNum ? 'white' : colors.text,
+            cursor: 'pointer',
+            fontWeight: '600',
+            boxShadow: activeDay === dayNum ? '0 4px 8px rgba(139, 128, 249, 0.3)' : 'none',
+            transition: 'all 0.2s ease'
+          }}
+        >
+          {dayNum}
+        </div>
+      );
+    }
+    
+    return (
+      <div className="d-flex gap-2 mb-4 justify-content-center">
+        {days}
+      </div>
+    );
+  };
+
   // If we're loading
   if (loading) {
     return (
-      <div className="user-dashboard loading">
-        <h2>Generating your personalized meal recommendations...</h2>
-        <div className="loading-spinner"></div>
-        <p className="loading-message">This may take a few moments as we analyze your health profile.</p>
+      <div className="container my-5 text-center">
+        <div 
+          className="card border-0 rounded-4 shadow-sm"
+          style={{ background: colors.light }}
+        >
+          <div className="card-body p-5">
+            <h2 className="mb-4" style={{ color: colors.text }}>Preparing your nutrition plan...</h2>
+            <div className="spinner-border" role="status" style={{ color: colors.primary, width: '3rem', height: '3rem' }}>
+              <span className="visually-hidden">Loading...</span>
+            </div>
+            <p className="mt-4" style={{ color: colors.text }}>
+              This may take a few moments as we analyze your health profile.
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
@@ -107,22 +176,61 @@ const UserDashboard = ({ userData }) => {
   // If there was an error
   if (error) {
     return (
-      <div className="user-dashboard error">
-        <h2>Something went wrong</h2>
-        <p>{error}</p>
-        {errorDetails && (
-          <details className="error-details">
-            <summary>Technical Details</summary>
-            <pre>{errorDetails}</pre>
-          </details>
-        )}
-        <div className="error-actions">
-          <button className="btn-primary" onClick={handleRetakeQuestionnaire}>
-            Retake Questionnaire
-          </button>
-          <button className="btn-secondary" onClick={handleRefreshRecommendations}>
-            Try Again
-          </button>
+      <div className="container my-5">
+        <div 
+          className="card border-0 rounded-4 shadow-sm"
+          style={{ background: colors.light }}
+        >
+          <div className="card-header rounded-top-4 border-0 p-4" style={{ background: colors.danger, color: 'white' }}>
+            <h2 className="mb-0">Something went wrong</h2>
+          </div>
+          <div className="card-body p-4">
+            <div className="alert" role="alert" style={{ background: 'rgba(255, 107, 107, 0.1)', color: colors.danger, border: 'none' }}>
+              <i className="bi bi-exclamation-triangle-fill me-2"></i>
+              {error}
+            </div>
+            {errorDetails && (
+              <div className="accordion mt-3" id="errorAccordion">
+                <div className="accordion-item border-0 rounded-3" style={{ background: colors.light }}>
+                  <h2 className="accordion-header" id="headingOne">
+                    <button 
+                      className="accordion-button collapsed rounded-3" 
+                      type="button" 
+                      data-bs-toggle="collapse" 
+                      data-bs-target="#collapseOne" 
+                      aria-expanded="false" 
+                      aria-controls="collapseOne"
+                      style={{ background: 'rgba(255, 107, 107, 0.05)', color: colors.text }}
+                    >
+                      Technical Details
+                    </button>
+                  </h2>
+                  <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#errorAccordion">
+                    <div className="accordion-body">
+                      <pre className="p-3 rounded-3" style={{ background: 'rgba(255, 107, 107, 0.05)' }}>{errorDetails}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div className="d-flex justify-content-center gap-3 mt-4">
+              <button 
+                className="btn px-4 py-2 rounded-pill" 
+                onClick={handleRetakeQuestionnaire}
+                style={{ background: colors.primary, color: 'white', border: 'none', boxShadow: '0 4px 8px rgba(139, 128, 249, 0.3)' }}
+              >
+                <i className="bi bi-arrow-repeat me-2"></i>
+                Retake Questionnaire
+              </button>
+              <button 
+                className="btn px-4 py-2 rounded-pill" 
+                onClick={handleRefreshRecommendations}
+                style={{ background: 'white', color: colors.primary, border: `1px solid ${colors.primary}` }}
+              >
+                Try Again
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -131,168 +239,505 @@ const UserDashboard = ({ userData }) => {
   // If there are no recommendations
   if (!recommendations) {
     return (
-      <div className="user-dashboard no-data">
-        <h2>No recommendations available</h2>
-        <p>Please complete the health questionnaire to receive personalized recommendations.</p>
-        <button className="btn-primary" onClick={handleRetakeQuestionnaire}>
-          Take Questionnaire
-        </button>
+      <div className="container my-5 text-center">
+        <div 
+          className="card border-0 rounded-4 shadow-sm"
+          style={{ background: colors.light }}
+        >
+          <div className="card-body p-5">
+            <h2 className="mb-4" style={{ color: colors.text }}>No recommendations available</h2>
+            <p className="text-muted mb-4">Please complete the health questionnaire to receive personalized recommendations.</p>
+            <button 
+              className="btn px-4 py-2 rounded-pill" 
+              onClick={handleRetakeQuestionnaire}
+              style={{ background: colors.primary, color: 'white', border: 'none', boxShadow: '0 4px 8px rgba(139, 128, 249, 0.3)' }}
+            >
+              Take Questionnaire
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
 
   // Render dashboard with recommendations
   return (
-    <div className="user-dashboard">
-      <header className="dashboard-header">
-        <h1>Your Health Dashboard</h1>
-        <div className="dashboard-actions">
-          <button className="btn-secondary" onClick={handleRetakeQuestionnaire}>
-            Update Health Profile
-          </button>
-          <button className="btn-refresh" onClick={handleRefreshRecommendations}>
-            Refresh Meal Plan
-          </button>
+    <div className="container-fluid py-4" style={{ background: 'rgba(234, 230, 255, 0.3)' }}>
+      <div className="container">
+        <div className="row mb-4">
+          <div className="col-12">
+            <div 
+              className="card border-0 rounded-4 shadow-sm"
+              style={{ background: 'white' }}
+            >
+              <div className="card-body p-4">
+                <div className="d-flex justify-content-between align-items-center flex-wrap">
+                  <h1 style={{ color: colors.text, fontSize: '1.8rem' }}>Your Nutrition Plan</h1>
+                  <div className="d-flex gap-2">
+                    <button 
+                      className="btn px-3 py-2 rounded-pill" 
+                      onClick={handleRetakeQuestionnaire}
+                      style={{ 
+                        background: 'white', 
+                        color: colors.text, 
+                        border: `1px solid ${colors.light}`,
+                        fontSize: '0.9rem'
+                      }}
+                    >
+                      <i className="bi bi-pencil me-2"></i>
+                      Update Profile
+                    </button>
+                    <button 
+                      className="btn px-3 py-2 rounded-pill" 
+                      onClick={handleRefreshRecommendations}
+                      style={{ 
+                        background: colors.primary, 
+                        color: 'white', 
+                        border: 'none',
+                        boxShadow: '0 4px 8px rgba(139, 128, 249, 0.3)',
+                        fontSize: '0.9rem'
+                      }}
+                    >
+                      <i className="bi bi-arrow-repeat me-2"></i>
+                      Refresh Plan
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </header>
 
-      <div className="dashboard-content">
-        <section className="daily-plan">
-          <h2>Today's Meal Plan</h2>
-          
-          <div className="meal-card">
-            <h3>Breakfast</h3>
-            <h4>{recommendations.dailyPlan.breakfast.name}</h4>
-            <div className="meal-details">
-              <div className="ingredients">
-                <h5>Ingredients:</h5>
-                <ul>
-                  {recommendations.dailyPlan.breakfast.ingredients.map((ingredient, idx) => (
-                    <li key={idx}>{ingredient}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="preparation">
-                <h5>Preparation:</h5>
-                <p>{recommendations.dailyPlan.breakfast.preparation}</p>
+        <div className="row mb-4">
+          <div className="col-12">
+            <div 
+              className="card border-0 rounded-4 shadow-sm"
+              style={{ background: 'white' }}
+            >
+              <div className="card-body p-4">
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h2 style={{ color: colors.text, fontSize: '1.5rem' }}>Today</h2>
+                  <button 
+                    className="btn rounded-pill px-3 py-1"
+                    style={{ 
+                      background: colors.light, 
+                      color: colors.primary,
+                      fontSize: '0.9rem',
+                      border: 'none'
+                    }}
+                  >
+                    <i className="bi bi-calendar-week me-2"></i>
+                    Yesterday's Review
+                  </button>
+                </div>
+                
+                {/* Day selector */}
+                {renderDaySelector()}
+                
+                {/* Progress indicator */}
+                <div className="text-center mb-4">
+                  <div style={{ 
+                    fontSize: '1.5rem', 
+                    color: colors.primary, 
+                    fontWeight: 'bold',
+                    marginBottom: '0.5rem'
+                  }}>
+                    Thriving (65%)
+                  </div>
+                  <div className="progress" style={{ height: '10px', borderRadius: '5px' }}>
+                    <div 
+                      className="progress-bar" 
+                      role="progressbar" 
+                      style={{ 
+                        width: '65%', 
+                        background: `linear-gradient(to right, ${colors.secondary}, ${colors.primary})`,
+                        borderRadius: '5px'
+                      }} 
+                      aria-valuenow="65" 
+                      aria-valuemin="0" 
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="health-notes">
-              <p><strong>Benefits:</strong> {recommendations.dailyPlan.breakfast.nutritionalBenefits}</p>
-              <p><strong>Health Notes:</strong> {recommendations.dailyPlan.breakfast.healthNotes}</p>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-lg-8">
+            <div 
+              className="card border-0 rounded-4 shadow-sm mb-4"
+              style={{ background: 'white' }}
+            >
+              <div className="card-body p-4">
+                <h2 style={{ color: colors.text, fontSize: '1.5rem', marginBottom: '1.5rem' }}>Today's Meal Plan</h2>
+                
+                {/* Breakfast */}
+                <div 
+                  className="card mb-4 border-0 rounded-4"
+                  style={{ background: colors.light }}
+                >
+                  <div className="card-body p-4">
+                    <div className="d-flex align-items-center mb-3">
+                      <div 
+                        className="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                        style={{ 
+                          width: '40px', 
+                          height: '40px',
+                          background: colors.secondary,
+                          color: 'white'
+                        }}
+                      >
+                        <i className="bi bi-sunrise fs-5"></i>
+                      </div>
+                      <h3 style={{ fontSize: '1.3rem', color: colors.text, margin: 0 }}>Breakfast</h3>
+                    </div>
+                    
+                    <h4 style={{ color: colors.primary, fontSize: '1.2rem', marginBottom: '1rem' }}>
+                      {recommendations.dailyPlan.breakfast.name}
+                    </h4>
+                    
+                    <div className="row">
+                      <div className="col-md-6 mb-3 mb-md-0">
+                        <h5 style={{ fontSize: '1rem', color: colors.text }}>Ingredients</h5>
+                        <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
+                          {recommendations.dailyPlan.breakfast.ingredients.map((ingredient, idx) => (
+                            <li 
+                              key={idx} 
+                              className="list-group-item px-0 py-1"
+                              style={{ background: 'transparent', border: 'none' }}
+                            >
+                              <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+                              {ingredient}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="col-md-6">
+                        <h5 style={{ fontSize: '1rem', color: colors.text }}>Preparation</h5>
+                        <p style={{ fontSize: '0.95rem' }}>{recommendations.dailyPlan.breakfast.preparation}</p>
+                      </div>
+                    </div>
+                    
+                    <div 
+                      className="mt-3 p-3 rounded-3"
+                      style={{ background: 'white' }}
+                    >
+                      <p className="mb-1" style={{ fontSize: '0.9rem' }}>
+                        <strong style={{ color: colors.primary }}>Benefits:</strong> {recommendations.dailyPlan.breakfast.nutritionalBenefits}
+                      </p>
+                      <p className="mb-0" style={{ fontSize: '0.9rem' }}>
+                        <strong style={{ color: colors.primary }}>Notes:</strong> {recommendations.dailyPlan.breakfast.healthNotes}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Lunch */}
+                <div 
+                  className="card mb-4 border-0 rounded-4"
+                  style={{ background: colors.light }}
+                >
+                  <div className="card-body p-4">
+                    <div className="d-flex align-items-center mb-3">
+                      <div 
+                        className="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                        style={{ 
+                          width: '40px', 
+                          height: '40px',
+                          background: colors.secondary,
+                          color: 'white'
+                        }}
+                      >
+                        <i className="bi bi-sun fs-5"></i>
+                      </div>
+                      <h3 style={{ fontSize: '1.3rem', color: colors.text, margin: 0 }}>Lunch</h3>
+                    </div>
+                    
+                    <h4 style={{ color: colors.primary, fontSize: '1.2rem', marginBottom: '1rem' }}>
+                      {recommendations.dailyPlan.lunch.name}
+                    </h4>
+                    
+                    <div className="row">
+                      <div className="col-md-6 mb-3 mb-md-0">
+                        <h5 style={{ fontSize: '1rem', color: colors.text }}>Ingredients</h5>
+                        <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
+                          {recommendations.dailyPlan.lunch.ingredients.map((ingredient, idx) => (
+                            <li 
+                              key={idx} 
+                              className="list-group-item px-0 py-1"
+                              style={{ background: 'transparent', border: 'none' }}
+                            >
+                              <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+                              {ingredient}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="col-md-6">
+                        <h5 style={{ fontSize: '1rem', color: colors.text }}>Preparation</h5>
+                        <p style={{ fontSize: '0.95rem' }}>{recommendations.dailyPlan.lunch.preparation}</p>
+                      </div>
+                    </div>
+                    
+                    <div 
+                      className="mt-3 p-3 rounded-3"
+                      style={{ background: 'white' }}
+                    >
+                      <p className="mb-1" style={{ fontSize: '0.9rem' }}>
+                        <strong style={{ color: colors.primary }}>Benefits:</strong> {recommendations.dailyPlan.lunch.nutritionalBenefits}
+                      </p>
+                      <p className="mb-0" style={{ fontSize: '0.9rem' }}>
+                        <strong style={{ color: colors.primary }}>Notes:</strong> {recommendations.dailyPlan.lunch.healthNotes}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Dinner */}
+                <div 
+                  className="card mb-4 border-0 rounded-4"
+                  style={{ background: colors.light }}
+                >
+                  <div className="card-body p-4">
+                    <div className="d-flex align-items-center mb-3">
+                      <div 
+                        className="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                        style={{ 
+                          width: '40px', 
+                          height: '40px',
+                          background: colors.secondary,
+                          color: 'white'
+                        }}
+                      >
+                        <i className="bi bi-moon fs-5"></i>
+                      </div>
+                      <h3 style={{ fontSize: '1.3rem', color: colors.text, margin: 0 }}>Dinner</h3>
+                    </div>
+                    
+                    <h4 style={{ color: colors.primary, fontSize: '1.2rem', marginBottom: '1rem' }}>
+                      {recommendations.dailyPlan.dinner.name}
+                    </h4>
+                    
+                    <div className="row">
+                      <div className="col-md-6 mb-3 mb-md-0">
+                        <h5 style={{ fontSize: '1rem', color: colors.text }}>Ingredients</h5>
+                        <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
+                          {recommendations.dailyPlan.dinner.ingredients.map((ingredient, idx) => (
+                            <li 
+                              key={idx} 
+                              className="list-group-item px-0 py-1"
+                              style={{ background: 'transparent', border: 'none' }}
+                            >
+                              <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+                              {ingredient}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="col-md-6">
+                        <h5 style={{ fontSize: '1rem', color: colors.text }}>Preparation</h5>
+                        <p style={{ fontSize: '0.95rem' }}>{recommendations.dailyPlan.dinner.preparation}</p>
+                      </div>
+                    </div>
+                    
+                    <div 
+                      className="mt-3 p-3 rounded-3"
+                      style={{ background: 'white' }}
+                    >
+                      <p className="mb-1" style={{ fontSize: '0.9rem' }}>
+                        <strong style={{ color: colors.primary }}>Benefits:</strong> {recommendations.dailyPlan.dinner.nutritionalBenefits}
+                      </p>
+                      <p className="mb-0" style={{ fontSize: '0.9rem' }}>
+                        <strong style={{ color: colors.primary }}>Notes:</strong> {recommendations.dailyPlan.dinner.healthNotes}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Snacks */}
+                <div 
+                  className="card border-0 rounded-4"
+                  style={{ background: colors.light }}
+                >
+                  <div className="card-body p-4">
+                    <div className="d-flex align-items-center mb-3">
+                      <div 
+                        className="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                        style={{ 
+                          width: '40px', 
+                          height: '40px',
+                          background: colors.secondary,
+                          color: 'white'
+                        }}
+                      >
+                        <i className="bi bi-apple fs-5"></i>
+                      </div>
+                      <h3 style={{ fontSize: '1.3rem', color: colors.text, margin: 0 }}>Snacks</h3>
+                    </div>
+                    
+                    {recommendations.dailyPlan.snacks.map((snack, idx) => (
+                      <div 
+                        key={idx}
+                        className="card mb-3 border-0 rounded-3"
+                        style={{ background: 'white' }}
+                      >
+                        <div className="card-body p-3">
+                          <h4 style={{ color: colors.primary, fontSize: '1.1rem', marginBottom: '0.8rem' }}>
+                            {snack.name}
+                          </h4>
+                          
+                          <div className="row">
+                            <div className="col-md-6 mb-2 mb-md-0">
+                              <h5 style={{ fontSize: '0.9rem', color: colors.text }}>Ingredients</h5>
+                              <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
+                                {snack.ingredients.map((ingredient, ingredientIdx) => (
+                                  <li 
+                                    key={ingredientIdx} 
+                                    className="list-group-item px-0 py-1"
+                                    style={{ background: 'transparent', border: 'none', fontSize: '0.9rem' }}
+                                  >
+                                    <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+                                    {ingredient}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div className="col-md-6">
+                              <h5 style={{ fontSize: '0.9rem', color: colors.text }}>Preparation</h5>
+                              <p style={{ fontSize: '0.9rem' }}>{snack.preparation}</p>
+                            </div>
+                          </div>
+                          
+                          <div 
+                            className="mt-2 p-2 rounded-3"
+                            style={{ background: colors.light, fontSize: '0.85rem' }}
+                          >
+                            <p className="mb-1">
+                              <strong style={{ color: colors.primary }}>Benefits:</strong> {snack.nutritionalBenefits}
+                            </p>
+                            <p className="mb-0">
+                              <strong style={{ color: colors.primary }}>Notes:</strong> {snack.healthNotes}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="meal-card">
-            <h3>Lunch</h3>
-            <h4>{recommendations.dailyPlan.lunch.name}</h4>
-            <div className="meal-details">
-              <div className="ingredients">
-                <h5>Ingredients:</h5>
-                <ul>
-                  {recommendations.dailyPlan.lunch.ingredients.map((ingredient, idx) => (
-                    <li key={idx}>{ingredient}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="preparation">
-                <h5>Preparation:</h5>
-                <p>{recommendations.dailyPlan.lunch.preparation}</p>
+          <div className="col-lg-4">
+            {/* Nutritional Focus */}
+            <div 
+              className="card border-0 rounded-4 shadow-sm mb-4"
+              style={{ background: 'white' }}
+            >
+              <div className="card-body p-4">
+                <h3 style={{ color: colors.text, fontSize: '1.3rem', marginBottom: '1rem' }}>Nutritional Focus</h3>
+                
+                {recommendations.nutritionalFocus.map((item, idx) => (
+                  <div 
+                    key={idx}
+                    className="card mb-3 border-0 rounded-3"
+                    style={{ background: colors.light }}
+                  >
+                    <div className="card-body p-3">
+                      <h4 style={{ color: colors.primary, fontSize: '1.1rem', marginBottom: '0.5rem' }}>
+                        {item.nutrient}
+                      </h4>
+                      <p style={{ fontSize: '0.9rem', marginBottom: '0.8rem' }}>{item.reason}</p>
+                      
+                      <h5 style={{ fontSize: '0.9rem', color: colors.text }}>Top Sources:</h5>
+                      <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
+                        {item.sources.map((source, sourceIdx) => (
+                          <li 
+                            key={sourceIdx} 
+                            className="list-group-item px-0 py-1"
+                            style={{ background: 'transparent', border: 'none', fontSize: '0.9rem' }}
+                          >
+                            <i className="bi bi-circle-fill me-2" style={{ color: colors.primary, fontSize: '0.5rem' }}></i>
+                            {source}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="health-notes">
-              <p><strong>Benefits:</strong> {recommendations.dailyPlan.lunch.nutritionalBenefits}</p>
-              <p><strong>Health Notes:</strong> {recommendations.dailyPlan.lunch.healthNotes}</p>
-            </div>
-          </div>
 
-          <div className="meal-card">
-            <h3>Dinner</h3>
-            <h4>{recommendations.dailyPlan.dinner.name}</h4>
-            <div className="meal-details">
-              <div className="ingredients">
-                <h5>Ingredients:</h5>
-                <ul>
-                  {recommendations.dailyPlan.dinner.ingredients.map((ingredient, idx) => (
-                    <li key={idx}>{ingredient}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="preparation">
-                <h5>Preparation:</h5>
-                <p>{recommendations.dailyPlan.dinner.preparation}</p>
+            {/* Foods to Limit */}
+            <div 
+              className="card border-0 rounded-4 shadow-sm mb-4"
+              style={{ background: 'white' }}
+            >
+              <div className="card-body p-4">
+                <h3 style={{ color: colors.text, fontSize: '1.3rem', marginBottom: '1rem' }}>Foods to Limit</h3>
+                
+                {recommendations.avoidList.map((item, idx) => (
+                  <div 
+                    key={idx}
+                    className="card mb-3 border-0 rounded-3"
+                    style={{ background: colors.light }}
+                  >
+                    <div className="card-body p-3">
+                      <div className="d-flex align-items-center mb-2">
+                        <i className="bi bi-exclamation-circle me-2" style={{ color: colors.danger }}></i>
+                        <h5 style={{ color: colors.danger, fontSize: '1rem', margin: 0 }}>{item.food}</h5>
+                      </div>
+                      <p style={{ fontSize: '0.9rem', margin: 0 }}>{item.reason}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="health-notes">
-              <p><strong>Benefits:</strong> {recommendations.dailyPlan.dinner.nutritionalBenefits}</p>
-              <p><strong>Health Notes:</strong> {recommendations.dailyPlan.dinner.healthNotes}</p>
-            </div>
-          </div>
 
-          <div className="meal-card">
-            <h3>Snacks</h3>
-            {recommendations.dailyPlan.snacks.map((snack, idx) => (
-              <div key={idx} className="snack-item">
-                <h4>{snack.name}</h4>
-                <div className="meal-details">
-                  <div className="ingredients">
-                    <h5>Ingredients:</h5>
-                    <ul>
-                      {snack.ingredients.map((ingredient, ingredientIdx) => (
-                        <li key={ingredientIdx}>{ingredient}</li>
+            {/* Weekly Habit Tips */}
+            <div 
+              className="card border-0 rounded-4 shadow-sm"
+              style={{ background: 'white' }}
+            >
+              <div className="card-body p-4">
+                <h3 style={{ color: colors.text, fontSize: '1.3rem', marginBottom: '1rem' }}>Weekly Habit Tips</h3>
+                
+                <div 
+                  className="card border-0 rounded-3"
+                  style={{ background: colors.light }}
+                >
+                  <div className="card-body p-3">
+                    <ul className="list-group list-group-flush mb-0" style={{ background: 'transparent' }}>
+                      {recommendations.weeklyHabitTips.map((tip, idx) => (
+                        <li 
+                          key={idx}
+                          className="list-group-item d-flex align-items-start px-0 py-2"
+                          style={{ background: 'transparent', border: 'none' }}
+                        >
+                          <div 
+                            className="rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0" 
+                            style={{ 
+                              width: '22px', 
+                              height: '22px',
+                              background: colors.success,
+                              color: 'white',
+                              marginTop: '2px'
+                            }}
+                          >
+                            <i className="bi bi-check" style={{ fontSize: '0.8rem' }}></i>
+                          </div>
+                          <p style={{ fontSize: '0.9rem', margin: 0 }}>{tip}</p>
+                        </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="preparation">
-                    <h5>Preparation:</h5>
-                    <p>{snack.preparation}</p>
-                  </div>
-                </div>
-                <div className="health-notes">
-                  <p><strong>Benefits:</strong> {snack.nutritionalBenefits}</p>
-                  <p><strong>Health Notes:</strong> {snack.healthNotes}</p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </section>
-
-        <aside className="health-sidebar">
-          <section className="nutrition-focus">
-            <h3>Nutritional Focus</h3>
-            {recommendations.nutritionalFocus.map((item, idx) => (
-              <div key={idx} className="focus-item">
-                <h4>{item.nutrient}</h4>
-                <p>{item.reason}</p>
-                <h5>Sources:</h5>
-                <ul>
-                  {item.sources.map((source, sourceIdx) => (
-                    <li key={sourceIdx}>{source}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </section>
-
-          <section className="avoid-list">
-            <h3>Foods to Limit</h3>
-            {recommendations.avoidList.map((item, idx) => (
-              <div key={idx} className="avoid-item">
-                <h4>{item.food}</h4>
-                <p>{item.reason}</p>
-              </div>
-            ))}
-          </section>
-
-          <section className="habit-tips">
-            <h3>Weekly Habit Tips</h3>
-            <ul>
-              {recommendations.weeklyHabitTips.map((tip, idx) => (
-                <li key={idx}>{tip}</li>
-              ))}
-            </ul>
-          </section>
-        </aside>
+        </div>
       </div>
     </div>
   );

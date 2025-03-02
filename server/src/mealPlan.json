@@ -1,119 +1,126 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Mexican Tofu Scramble with Whole Wheat Tortilla",
+      "name": "Breakfast Burrito (Egg-Free)",
       "ingredients": [
-        "Tofu (firm), crumbled",
+        "Whole wheat tortilla",
         "Black beans",
-        "Corn",
-        "Diced tomatoes",
-        "Onion, chopped",
-        "Bell pepper, chopped",
-        "Chili powder",
-        "Cumin",
-        "Turmeric (for color and anti-inflammatory properties)",
-        "Avocado (optional)",
-        "Whole wheat tortillas"
+        "Shredded cheese (Monterey Jack or similar)",
+        "Salsa",
+        "Avocado",
+        "Cooked diced potatoes",
+        "Plant-based sausage"
       ],
-      "preparation": "Sauté onion and bell pepper until softened. Add crumbled tofu, black beans, corn, and tomatoes. Season with chili powder, cumin, and turmeric. Cook until heated through. Serve in a warm whole wheat tortilla with optional avocado.",
-      "nutritionalBenefits": "High in protein, fiber, and antioxidants. Tofu provides plant-based protein and essential amino acids. Black beans and corn contribute fiber for digestive health. Tomatoes and bell peppers are rich in vitamins and antioxidants.",
-      "healthNotes": "Tofu is a good source of protein for a pescatarian diet. The spices add flavor without excess sodium. Whole wheat tortillas provide complex carbohydrates. This is low in cholesterol, beneficial for cardiovascular health. Avoid adding too much salt."
+      "preparation": "Warm tortilla. Fill with black beans, cheese, salsa, avocado, potatoes, and plant-based sausage. Roll up and enjoy.",
+      "nutritionalBenefits": "Provides protein, fiber, healthy fats, and carbohydrates for sustained energy. Rich in vitamins and minerals.",
+      "healthNotes": "Choose low-sodium black beans and salsa to manage blood pressure. Opt for whole wheat tortillas for added fiber."
     },
     "lunch": {
-      "name": "Shrimp Ceviche with Baked Tortilla Chips",
+      "name": "Chicken Fajita Salad",
       "ingredients": [
-        "Cooked shrimp (small pieces)",
-        "Lime juice",
-        "Diced tomatoes",
-        "Red onion, finely chopped",
-        "Cilantro, chopped",
-        "Jalapeño, minced (optional)",
-        "Avocado, diced",
-        "Baked tortilla chips"
-      ],
-      "preparation": "Combine cooked shrimp, lime juice, tomatoes, red onion, cilantro, and jalapeño (if using) in a bowl. Marinate in the refrigerator for at least 30 minutes to allow the flavors to meld. Serve with diced avocado and baked tortilla chips.",
-      "nutritionalBenefits": "High in protein and vitamin C. Shrimp is a lean source of protein and omega-3 fatty acids. Lime juice provides vitamin C. Tomatoes are rich in lycopene, an antioxidant.",
-      "healthNotes": "Lime juice 'cooks' the shrimp, but using cooked shrimp ensures safety. This dish is low in fat and sodium. The baked tortilla chips provide a healthier alternative to fried chips. Shrimp provides essential omega-3 fatty acids which support heart health."
-    },
-    "dinner": {
-      "name": "Grilled Salmon with Black Bean Salsa and Quinoa",
-      "ingredients": [
-        "Salmon fillet",
-        "Black beans",
-        "Corn",
-        "Red bell pepper, diced",
-        "Red onion, diced",
-        "Cilantro, chopped",
+        "Grilled chicken breast (skinless)",
+        "Bell peppers (various colors)",
+        "Onion",
+        "Romaine lettuce",
+        "Avocado",
+        "Cherry tomatoes",
         "Lime juice",
         "Olive oil",
-        "Quinoa",
-        "Spices: cumin, paprika"
+        "Cilantro"
       ],
-      "preparation": "Grill or bake the salmon fillet with a drizzle of olive oil and spices (cumin, paprika). Prepare the black bean salsa by combining black beans, corn, red bell pepper, red onion, cilantro, and lime juice. Cook quinoa according to package directions. Serve the salmon with black bean salsa and quinoa.",
-      "nutritionalBenefits": "Excellent source of omega-3 fatty acids and protein. Salmon is rich in omega-3 fatty acids, which are essential for heart health and brain function. Quinoa is a complete protein and provides fiber. Black bean salsa contributes vitamins and minerals.",
-      "healthNotes": "Salmon is beneficial for cardiovascular health due to its omega-3 fatty acids. Quinoa is a good source of protein and fiber. The black bean salsa adds flavor and nutrients without excess sodium or unhealthy fats. Limit the amount of sodium used in spices."
+      "preparation": "Grill chicken breast with fajita seasoning. Sauté bell peppers and onion. Combine romaine lettuce, avocado, cherry tomatoes, and grilled chicken and vegetables in a bowl. Dress with lime juice, olive oil, and chopped cilantro.",
+      "nutritionalBenefits": "Lean protein, vitamins, minerals, and healthy fats. Provides antioxidants from colorful vegetables.",
+      "healthNotes": "Use lean chicken breast and limit olive oil to control fat intake. High in protein to help with weight gain."
+    },
+    "dinner": {
+      "name": "Vegetarian Chili with Cornbread",
+      "ingredients": [
+        "Kidney beans",
+        "Pinto beans",
+        "Diced tomatoes",
+        "Corn",
+        "Onion",
+        "Garlic",
+        "Chili powder",
+        "Cumin",
+        "Vegetable broth",
+        "Cornmeal",
+        "Flour",
+        "Baking powder",
+        "Milk (dairy or non-dairy)",
+        "Vegetable oil"
+      ],
+      "preparation": "Sauté onion and garlic. Add beans, diced tomatoes, corn, chili powder, cumin, and vegetable broth. Simmer for 20-30 minutes. Prepare cornbread according to recipe (using milk and vegetable oil). Serve chili with a slice of cornbread.",
+      "nutritionalBenefits": "Excellent source of fiber, protein, and complex carbohydrates. Cornbread provides additional calories and carbohydrates for weight gain.",
+      "healthNotes": "Choose low-sodium beans and tomatoes. Limit salt added to chili. Cornbread provides needed energy for weight gain but should be consumed in moderation, with a focus on homemade options to control ingredients."
     },
     "snacks": [
       {
-        "name": "Plain Greek Yogurt with Blueberries and Walnuts",
+        "name": "Greek Yogurt with Berries and Nuts",
         "ingredients": [
-          "Plain Greek Yogurt (low-fat)",
-          "Blueberries",
-          "Walnuts"
+          "Greek yogurt (full-fat or low-fat)",
+          "Mixed berries (strawberries, blueberries, raspberries)",
+          "Almonds or walnuts"
         ],
-        "preparation": "Combine Greek yogurt, blueberries, and walnuts in a bowl.",
-        "nutritionalBenefits": "High in protein, calcium, and antioxidants. Greek yogurt provides protein and calcium for bone health. Blueberries are rich in antioxidants. Walnuts provide healthy fats.",
-        "healthNotes": "Greek yogurt is a good source of protein and probiotics, which are beneficial for gut health. Choose plain, low-fat yogurt to avoid added sugars. Small portion of healthy fats from Walnuts helps to keep you full longer."
+        "preparation": "Combine Greek yogurt, mixed berries, and nuts in a bowl.",
+        "nutritionalBenefits": "High in protein, calcium, and antioxidants. Nuts provide healthy fats and calories for weight gain.",
+        "healthNotes": "Choose full-fat Greek yogurt for additional calories if needed. Watch portion sizes of nuts to manage overall fat intake. Full fat options should be balanced with reduced fat or low fat in other meals to help keep cholesterol in check."
       }
     ]
   },
   "nutritionalFocus": [
     {
-      "nutrient": "Omega-3 Fatty Acids",
-      "reason": "Essential for heart health, brain function, and reducing inflammation, particularly important given Xinyi's cardiovascular condition.",
-      "sources": [
-        "Salmon",
-        "Shrimp",
-        "Walnuts"
-      ]
-    },
-    {
-      "nutrient": "Fiber",
-      "reason": "Helps with weight management, regulates blood sugar levels, and promotes digestive health.",
-      "sources": [
-        "Black beans",
-        "Corn",
-        "Quinoa",
-        "Whole wheat tortillas",
-        "Blueberries"
-      ]
-    },
-    {
       "nutrient": "Protein",
-      "reason": "Essential for maintaining muscle mass, supporting metabolism, and promoting satiety which is helpful for weight loss.",
+      "reason": "Essential for muscle building and repair, crucial for healthy weight gain.",
       "sources": [
-        "Tofu",
-        "Shrimp",
-        "Salmon",
+        "Chicken",
         "Black beans",
         "Greek yogurt",
-        "Quinoa"
+        "Nuts",
+        "Plant-based sausage"
+      ]
+    },
+    {
+      "nutrient": "Complex Carbohydrates",
+      "reason": "Provide sustained energy for daily activities and support weight gain.",
+      "sources": [
+        "Whole wheat tortillas",
+        "Cornbread",
+        "Beans",
+        "Potatoes",
+        "Corn"
+      ]
+    },
+    {
+      "nutrient": "Healthy Fats",
+      "reason": "Contribute to overall health, hormone production, and calorie intake for weight gain.",
+      "sources": [
+        "Avocado",
+        "Olive oil",
+        "Nuts",
+        "Full fat Greek Yogurt (in moderation)"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Strawberry",
-      "reason": "Allergy"
+      "food": "Duck",
+      "reason": "Personal preference."
     },
     {
       "food": "Eggs",
-      "reason": "Allergy"
+      "reason": "Allergy."
+    },
+    {
+      "food": "High Fructose Corn Syrup",
+      "reason": "Avoid added sugars that can negatively affect the liver."
     }
   ],
   "weeklyHabitTips": [
-    "Aim for at least 30 minutes of moderate-intensity exercise most days of the week. Consider walking, swimming, or cycling.",
-    "Practice mindful eating by paying attention to your hunger and fullness cues.",
-    "Stay hydrated by drinking plenty of water throughout the day. Avoid sugary drinks."
+    "Eat 5-6 small meals per day instead of 3 large ones to help with calorie intake.",
+    "Incorporate resistance training 2-3 times per week to build muscle mass.",
+    "Track your calorie intake to ensure you are consuming enough calories for weight gain.",
+    "Drink plenty of water throughout the day to support overall health and digestion.",
+    "Consult with a doctor or registered dietitian for personalized advice on managing your liver condition and achieving your weight gain goals."
   ]
 }
