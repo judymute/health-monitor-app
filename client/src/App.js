@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import UserDashboard from './UserDashboard';
@@ -15,6 +15,24 @@ function App() {
     setUserData(data);
     setIsQuestionnaireCompleted(true);
   };
+
+  useEffect(() => {
+    // Fetch user data when the app loads
+    fetch('http://localhost:3001/api/getUserProfile')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Retrieved user data:', data);
+        setUserData(data);
+        // Check if user has completed the questionnaire (for example, if they have a name)
+        if (data.basicInformation?.fullName) {
+          setIsQuestionnaireCompleted(true);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching user data:', error);
+      });
+  }, []);
+
 
   return (
     <Router>

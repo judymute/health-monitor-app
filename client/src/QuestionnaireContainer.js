@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import BasicInformation from './BasicInformation';
 import DietaryPreferences from './DietaryPreferences';
 import MedicalConditions from './MedicalConditions';
-// No need for custom CSS file when using Bootstrap
+import './QuestionnaireContainer.css';
 
 const QuestionnaireContainer = ({ onComplete, userData = null }) => {
   const navigate = useNavigate();
@@ -19,32 +19,56 @@ const QuestionnaireContainer = ({ onComplete, userData = null }) => {
     mealPreferences: {}
   });
 
-  const handleStepComplete = (sectionName, data) => {
-    let updatedData = { ...collectedData };
+ // In QuestionnaireContainer.jsx, modify the handleStepComplete function:
+
+const handleStepComplete = (sectionName, data) => {
+  let updatedData = { ...collectedData };
+  
+  if (sectionName === 'combined') {
+    // For the medical conditions step, we need to split the data
+    updatedData = {
+      ...updatedData,
+      medicalConditions: data.medicalConditions,
+      dietaryGoals: data.dietaryGoals
+    };
+  } else {
+    updatedData = {
+      ...updatedData,
+      [sectionName]: data
+    };
+  }
+  
+  setCollectedData(updatedData);
+  
+  if (currentStep === totalSteps) {
+    // Add code to send data to server
+    console.log('Sending data to server:', updatedData);
     
-    if (sectionName === 'combined') {
-      // For the medical conditions step, we need to split the data
-      updatedData = {
-        ...updatedData,
-        medicalConditions: data.medicalConditions,
-        dietaryGoals: data.dietaryGoals
-      };
-    } else {
-      updatedData = {
-        ...updatedData,
-        [sectionName]: data
-      };
-    }
-    
-    setCollectedData(updatedData);
-    
-    if (currentStep === totalSteps) {
-      onComplete(updatedData);
-      navigate('/dashboard');
-    } else {
-      setCurrentStep(currentStep + 1);
-    }
-  };
+    fetch('http://localhost:3001/api/updateUserProfile', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedData)
+    })
+    .then(response => response.json())
+    .then(result => {
+      console.log('Server response:', result);
+      if (result.success) {
+        onComplete(updatedData);
+        navigate('/dashboard');
+      } else {
+        alert('Failed to save your data. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error('Error saving data:', error);
+      alert('Error connecting to the server. Please try again later.');
+    });
+  } else {
+    setCurrentStep(currentStep + 1);
+  }
+};
 
   const handlePrevStep = () => {
     setCurrentStep(Math.max(1, currentStep - 1));
@@ -98,42 +122,68 @@ const QuestionnaireContainer = ({ onComplete, userData = null }) => {
 
   const progressPercentage = ((currentStep - 1) / (totalSteps - 1)) * 100;
 
+  // Steps data for the step indicator
+  const steps = [
+    { name: "Basic Information", number: 1 },
+    { name: "Dietary Preferences", number: 2 },
+    { name: "Medical Conditions", number: 3 }
+  ];
+
   return (
-    <div className="container my-5">
-      <div className="row justify-content-center">
-        <div className="col-md-10">
-          <div className="card shadow-lg border-0">
-            <div className="card-header bg-primary text-white text-center py-4">
-              <h1 className="display-6 mb-2">Health Profile Questionnaire</h1>
-              <p className="lead mb-0">Please complete this questionnaire to receive personalized meal recommendations</p>
-            </div>
+    <div className="questionnaire-container">
+      <div className="questionnaire-card">
+        <div className="questionnaire-header">
+          <h1 className="questionnaire-title">Health Profile Questionnaire</h1>
+          <p className="questionnaire-subtitle">
+            Please complete this questionnaire to receive personalized health recommendations
+          </p>
+        </div>
+        
+        {/* Step indicator and progress */}
+        <div className="steps-section">
+          {/* Progress indicator */}
+          <div className="progress-container">
+            {/* Progress line */}
+            <div className="progress-line-bg"></div>
             
-            <div className="card-body p-0">
-              {/* Progress bar */}
-              <div className="px-4 pt-4">
-                <div className="mb-3">
-                  <div className="progress" style={{ height: '8px' }}>
-                    <div 
-                      className="progress-bar bg-success" 
-                      role="progressbar" 
-                      style={{ width: `${progressPercentage}%` }}
-                      aria-valuenow={progressPercentage}
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                  <div className="d-flex justify-content-end mt-1">
-                    <span className="badge bg-secondary">Step {currentStep} of {totalSteps}</span>
-                  </div>
+            {/* Completed progress line */}
+            <div 
+              className="progress-line-fill" 
+              style={{ width: `${progressPercentage}%` }}
+            ></div>
+            
+            {/* Step circles */}
+            {steps.map((step, index) => (
+              <div key={index} className="step-container">
+                <div 
+                  className={`step-circle ${
+                    currentStep >= step.number ? 'step-circle-active' : 'step-circle-inactive'
+                  }`}
+                >
+                  {step.number}
+                </div>
+                <div 
+                  className={`step-label ${
+                    currentStep === step.number ? 'step-label-active' : 'step-label-inactive'
+                  }`}
+                >
+                  {step.name}
                 </div>
               </div>
-              
-              {/* Current step */}
-              <div className="px-4 pb-4">
-                {renderCurrentStep()}
-              </div>
+            ))}
+          </div>
+          
+          {/* Step counter */}
+          <div className="step-counter-container">
+            <div className="step-counter">
+              Step {currentStep} of {totalSteps}
             </div>
           </div>
+        </div>
+        
+        {/* Current step content */}
+        <div className="content-section">
+          {renderCurrentStep()}
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DietaryPreferences.css'; // You'll need to create this for styling
+import './DietaryPreferences.css';
 
 const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
   // Initialize form state with previous data or defaults
@@ -135,13 +135,16 @@ const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
   };
 
   return (
-    <div className="dietary-preferences-container">
-      <h2>Dietary Preferences</h2>
+    <div className="dietary-container">
       <form onSubmit={handleSubmit}>
         {/* Diet Type */}
-        <div className="form-group">
-          <label htmlFor="dietType">Diet Type:</label>
+        <div className="section">
+          <h3 className="section-title">Diet Type</h3>
+          <label className="input-label" htmlFor="dietType">
+            What type of diet do you follow?
+          </label>
           <select 
+            className="select"
             id="dietType" 
             name="dietType" 
             value={formData.dietType} 
@@ -163,9 +166,12 @@ const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
 
         {/* Other Diet Type - Conditional Field */}
         {formData.dietType === 'Other' && (
-          <div className="form-group">
-            <label htmlFor="dietTypeOther">Please specify your diet:</label>
+          <div className="section section-no-margin">
+            <label className="input-label" htmlFor="dietTypeOther">
+              Please specify your diet:
+            </label>
             <input
+              className="input"
               type="text"
               id="dietTypeOther"
               name="dietTypeOther"
@@ -178,238 +184,267 @@ const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
         )}
 
         {/* Food Allergies/Intolerances */}
-        <div className="form-group">
-          <label>Food Allergies/Intolerances:</label>
-          <div className="checkbox-group">
+        <div className="section">
+          <h3 className="section-title">Food Allergies/Intolerances</h3>
+          <label className="input-label">
+            Do you have any allergies or intolerances to the following foods?
+          </label>
+          <div className="checkbox-container">
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="dairy"
                 name="dairy"
                 checked={formData.allergiesIntolerances.dairy}
                 onChange={handleAllergyChange}
               />
-              <label htmlFor="dairy">Dairy</label>
+              <label className="checkbox-label" htmlFor="dairy">Dairy</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="eggs"
                 name="eggs"
                 checked={formData.allergiesIntolerances.eggs}
                 onChange={handleAllergyChange}
               />
-              <label htmlFor="eggs">Eggs</label>
+              <label className="checkbox-label" htmlFor="eggs">Eggs</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="nuts"
                 name="nuts"
                 checked={formData.allergiesIntolerances.nuts.selected}
                 onChange={handleAllergyChange}
               />
-              <label htmlFor="nuts">Nuts</label>
-              {formData.allergiesIntolerances.nuts.selected && (
-                <input
-                  type="text"
-                  name="nuts"
-                  value={formData.allergiesIntolerances.nuts.details}
-                  onChange={handleAllergyDetailsChange}
-                  placeholder="Specify which nuts"
-                  className="indented-input"
-                />
-              )}
+              <label className="checkbox-label" htmlFor="nuts">Nuts</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="seafoodShellfish"
                 name="seafoodShellfish"
                 checked={formData.allergiesIntolerances.seafoodShellfish}
                 onChange={handleAllergyChange}
               />
-              <label htmlFor="seafoodShellfish">Seafood/Shellfish</label>
+              <label className="checkbox-label" htmlFor="seafoodShellfish">Seafood/Shellfish</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="gluten"
                 name="gluten"
                 checked={formData.allergiesIntolerances.gluten}
                 onChange={handleAllergyChange}
               />
-              <label htmlFor="gluten">Gluten</label>
+              <label className="checkbox-label" htmlFor="gluten">Gluten</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="soy"
                 name="soy"
                 checked={formData.allergiesIntolerances.soy}
                 onChange={handleAllergyChange}
               />
-              <label htmlFor="soy">Soy</label>
+              <label className="checkbox-label" htmlFor="soy">Soy</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="other-allergy"
                 name="other"
                 checked={formData.allergiesIntolerances.other.selected}
                 onChange={handleAllergyChange}
               />
-              <label htmlFor="other-allergy">Other</label>
-              {formData.allergiesIntolerances.other.selected && (
-                <input
-                  type="text"
-                  name="other"
-                  value={formData.allergiesIntolerances.other.details}
-                  onChange={handleAllergyDetailsChange}
-                  placeholder="Specify other allergies/intolerances"
-                  className="indented-input"
-                />
-              )}
+              <label className="checkbox-label" htmlFor="other-allergy">Other</label>
             </div>
           </div>
+          
+          {formData.allergiesIntolerances.nuts.selected && (
+            <input
+              className="nested-input"
+              type="text"
+              name="nuts"
+              value={formData.allergiesIntolerances.nuts.details}
+              onChange={handleAllergyDetailsChange}
+              placeholder="Specify which nuts"
+            />
+          )}
+          
+          {formData.allergiesIntolerances.other.selected && (
+            <input
+              className="nested-input"
+              type="text"
+              name="other"
+              value={formData.allergiesIntolerances.other.details}
+              onChange={handleAllergyDetailsChange}
+              placeholder="Specify other allergies/intolerances"
+            />
+          )}
         </div>
 
         {/* Favorite Cuisines */}
-        <div className="form-group">
-          <label>Favorite Cuisines:</label>
-          <div className="checkbox-group">
+        <div className="section">
+          <h3 className="section-title">Favorite Cuisines</h3>
+          <label className="input-label">
+            Select cuisines that you enjoy (select all that apply):
+          </label>
+          <div className="checkbox-container">
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="italian"
                 name="italian"
                 checked={formData.favoriteCuisines.italian}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="italian">Italian</label>
+              <label className="checkbox-label" htmlFor="italian">Italian</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="mexican"
                 name="mexican"
                 checked={formData.favoriteCuisines.mexican}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="mexican">Mexican</label>
+              <label className="checkbox-label" htmlFor="mexican">Mexican</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="indian"
                 name="indian"
                 checked={formData.favoriteCuisines.indian}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="indian">Indian</label>
+              <label className="checkbox-label" htmlFor="indian">Indian</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="chinese"
                 name="chinese"
                 checked={formData.favoriteCuisines.chinese}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="chinese">Chinese</label>
+              <label className="checkbox-label" htmlFor="chinese">Chinese</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="japanese"
                 name="japanese"
                 checked={formData.favoriteCuisines.japanese}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="japanese">Japanese</label>
+              <label className="checkbox-label" htmlFor="japanese">Japanese</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="thai"
                 name="thai"
                 checked={formData.favoriteCuisines.thai}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="thai">Thai</label>
+              <label className="checkbox-label" htmlFor="thai">Thai</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="mediterranean"
                 name="mediterranean"
                 checked={formData.favoriteCuisines.mediterranean}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="mediterranean">Mediterranean</label>
+              <label className="checkbox-label" htmlFor="mediterranean">Mediterranean</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="american"
                 name="american"
                 checked={formData.favoriteCuisines.american}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="american">American</label>
+              <label className="checkbox-label" htmlFor="american">American</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="middleEastern"
                 name="middleEastern"
                 checked={formData.favoriteCuisines.middleEastern}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="middleEastern">Middle Eastern</label>
+              <label className="checkbox-label" htmlFor="middleEastern">Middle Eastern</label>
             </div>
             
             <div className="checkbox-item">
               <input
+                className="checkbox"
                 type="checkbox"
                 id="other-cuisine"
                 name="other"
                 checked={formData.favoriteCuisines.other.selected}
                 onChange={handleCuisineChange}
               />
-              <label htmlFor="other-cuisine">Other</label>
-              {formData.favoriteCuisines.other.selected && (
-                <input
-                  type="text"
-                  name="other"
-                  value={formData.favoriteCuisines.other.details}
-                  onChange={handleCuisineDetailsChange}
-                  placeholder="Specify other cuisines"
-                  className="indented-input"
-                />
-              )}
+              <label className="checkbox-label" htmlFor="other-cuisine">Other</label>
             </div>
           </div>
+          
+          {formData.favoriteCuisines.other.selected && (
+            <input
+              className="nested-input"
+              type="text"
+              name="other"
+              value={formData.favoriteCuisines.other.details}
+              onChange={handleCuisineDetailsChange}
+              placeholder="Specify other cuisines"
+            />
+          )}
         </div>
 
         {/* Spice Tolerance */}
-        <div className="form-group">
-          <label>Spice Tolerance:</label>
-          <div className="radio-group">
+        <div className="section">
+          <h3 className="section-title">Spice Tolerance</h3>
+          <label className="input-label">
+            How spicy do you prefer your food?
+          </label>
+          <div className="radio-container">
             {[
               { value: 1, label: '1 - Mild (No spice)' },
               { value: 2, label: '2 - Light spice' },
@@ -419,24 +454,29 @@ const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
             ].map(option => (
               <div key={option.value} className="radio-item">
                 <input
+                  className="radio"
                   type="radio"
                   id={`spice-${option.value}`}
                   name="spiceTolerance"
                   value={option.value}
-                  checked={formData.spiceTolerance === option.value}
+                  checked={parseInt(formData.spiceTolerance) === option.value}
                   onChange={() => setFormData({...formData, spiceTolerance: option.value})}
                   required
                 />
-                <label htmlFor={`spice-${option.value}`}>{option.label}</label>
+                <label className="checkbox-label" htmlFor={`spice-${option.value}`}>{option.label}</label>
               </div>
             ))}
           </div>
         </div>
 
         {/* Foods You Dislike */}
-        <div className="form-group">
-          <label htmlFor="dislikedFoods">Foods You Dislike:</label>
+        <div className="section">
+          <h3 className="section-title">Foods You Dislike</h3>
+          <label className="input-label" htmlFor="dislikedFoods">
+            Please list any foods you dislike or would prefer to avoid:
+          </label>
           <textarea
+            className="textarea"
             id="dislikedFoods"
             name="dislikedFoods"
             value={formData.dislikedFoods}
@@ -446,11 +486,18 @@ const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
           />
         </div>
 
-        <div className="form-buttons">
-          <button type="button" className="btn-secondary" onClick={onPrevious}>
+        <div className="button-container">
+          <button 
+            type="button" 
+            className="button-previous" 
+            onClick={onPrevious}
+          >
             Previous
           </button>
-          <button type="submit" className="btn-primary">
+          <button 
+            type="submit" 
+            className="button-next"
+          >
             Next
           </button>
         </div>
