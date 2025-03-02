@@ -1,101 +1,113 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Breakfast Burrito with Scrambled Eggs, Black Beans, and Avocado",
+      "name": "Huevos Rancheros with Shrimp",
       "ingredients": [
-        "2 large eggs",
-        "1/4 cup black beans",
-        "1/4 avocado",
-        "1 whole wheat tortilla",
-        "1 tbsp salsa",
-        "1 tbsp shredded cheese (optional)"
+        "2 corn tortillas",
+        "1/2 cup black beans, mashed",
+        "2 eggs",
+        "1/4 cup cooked shrimp",
+        "1/4 cup salsa (fresh or canned)",
+        "1 tbsp crumbled queso fresco",
+        "1 tbsp chopped cilantro",
+        "1 tsp olive oil"
       ],
-      "preparation": "Scramble eggs in a pan. Heat black beans. Mash avocado. Warm tortilla. Assemble burrito with all ingredients. Add salsa and cheese (optional).",
-      "nutritionalBenefits": "Provides protein, healthy fats, fiber, and complex carbohydrates for sustained energy.",
-      "healthNotes": "Good source of protein and healthy fats to start the day, promoting satiety and muscle growth."
+      "preparation": "Heat olive oil in a pan. Fry tortillas lightly. Top with black beans, fried eggs, shrimp, and salsa. Garnish with queso fresco and cilantro.",
+      "nutritionalBenefits": "Provides protein, fiber, and healthy fats. The shrimp adds lean protein and omega-3 fatty acids.",
+      "healthNotes": "Excellent start to the day for sustained energy and digestive support."
     },
     "lunch": {
-      "name": "Chicken Quesadilla with Mexican Rice",
+      "name": "Mexican Shrimp Ceviche Salad",
       "ingredients": [
-        "4 oz cooked chicken breast (shredded)",
-        "1 whole wheat tortilla",
-        "1/4 cup shredded cheese",
-        "1/4 cup Mexican rice (brown rice cooked with tomato, onion, and spices)",
-        "2 tbsp salsa",
-        "1 tbsp sour cream (optional)"
+        "1 cup cooked shrimp, chopped",
+        "1/2 cup chopped tomato",
+        "1/4 cup chopped red onion",
+        "1/4 cup chopped cucumber",
+        "1/4 cup chopped cilantro",
+        "1/4 cup lime juice",
+        "1 tbsp olive oil",
+        "1 avocado, diced",
+        "Salt and pepper to taste",
+        "Lettuce leaves"
       ],
-      "preparation": "Place chicken and cheese on one half of the tortilla. Fold in half. Cook in a pan over medium heat until golden brown and cheese is melted. Serve with Mexican rice and salsa. Add sour cream (optional).",
-      "nutritionalBenefits": "Provides lean protein, carbohydrates, and fiber. Mexican rice adds vitamins and minerals.",
-      "healthNotes": "Balanced meal providing protein and carbohydrates for energy and muscle support."
+      "preparation": "Combine shrimp, tomato, red onion, cucumber, cilantro, lime juice, olive oil, salt, and pepper. Mix well. Serve on a bed of lettuce leaves and top with avocado.",
+      "nutritionalBenefits": "High in protein, vitamins, and minerals. Lime juice aids digestion.",
+      "healthNotes": "The lime juice and fresh vegetables support healthy digestion and gut health."
     },
     "dinner": {
-      "name": "Tacos al Pastor (using lean pork) with Corn Tortillas and Pineapple Salsa",
+      "name": "Grilled Fish Tacos with Mango Salsa",
       "ingredients": [
-        "4 oz lean pork (marinated in al pastor seasoning)",
-        "3 corn tortillas",
-        "1/4 cup pineapple salsa (diced pineapple, red onion, cilantro, lime juice)",
-        "1/4 cup chopped cilantro",
-        "1 lime wedge"
+        "2 white fish fillets (e.g., cod, tilapia)",
+        "2 corn tortillas",
+        "1/2 cup shredded cabbage",
+        "1/4 cup mango salsa (mango, red onion, cilantro, lime juice)",
+        "1 tbsp lime juice",
+        "1 tsp olive oil",
+        "Salt and pepper to taste"
       ],
-      "preparation": "Cook pork. Warm tortillas. Assemble tacos with pork, pineapple salsa, and cilantro. Serve with a lime wedge.",
-      "nutritionalBenefits": "Lean protein source. Corn tortillas are a source of complex carbohydrates. Pineapple salsa provides vitamins and antioxidants.",
-      "healthNotes": "Lean protein supports muscle growth. Pineapple salsa adds a sweet and savory flavor and provides vitamin C."
+      "preparation": "Marinate fish in lime juice, olive oil, salt, and pepper. Grill fish until cooked through. Flake fish and serve in corn tortillas with shredded cabbage and mango salsa.",
+      "nutritionalBenefits": "Provides lean protein, omega-3 fatty acids, and fiber. Mango salsa adds vitamins and antioxidants.",
+      "healthNotes": "Easy to digest and provides essential nutrients for overall health. Choose whole grain tortillas for more fiber."
     },
     "snacks": [
       {
-        "name": "Greek Yogurt with Granola and Berries",
+        "name": "Spiced Pepitas",
         "ingredients": [
-          "1 cup plain Greek yogurt (full-fat)",
-          "1/4 cup granola",
-          "1/2 cup mixed berries (strawberries, blueberries, raspberries)"
+          "1/4 cup pepitas (pumpkin seeds)",
+          "1/4 tsp chili powder",
+          "1/4 tsp cumin",
+          "Pinch of salt"
         ],
-        "preparation": "Combine Greek yogurt, granola, and berries in a bowl.",
-        "nutritionalBenefits": "Provides protein, calcium, probiotics, and antioxidants.",
-        "healthNotes": "Good source of protein and healthy fats to support muscle growth and satiety."
+        "preparation": "Toss pepitas with chili powder, cumin, and salt. Toast in a dry pan over medium heat until lightly browned and fragrant, stirring frequently.",
+        "nutritionalBenefits": "Provides healthy fats, fiber, and magnesium.",
+        "healthNotes": "Good for digestive health due to fiber content and healthy fats will keep Juli full."
       }
     ]
   },
   "nutritionalFocus": [
     {
-      "nutrient": "Protein",
-      "reason": "Essential for muscle growth and repair, crucial for weight gain.",
+      "nutrient": "Fiber",
+      "reason": "Important for promoting healthy digestion, regulating blood sugar, and promoting satiety.",
       "sources": [
-        "Eggs",
-        "Chicken",
-        "Pork",
-        "Greek Yogurt",
-        "Black Beans"
+        "Black beans",
+        "Vegetables",
+        "Fruits",
+        "Nuts and seeds"
       ]
     },
     {
-      "nutrient": "Healthy Fats",
-      "reason": "Provides energy, supports hormone production, and aids in nutrient absorption.",
+      "nutrient": "Omega-3 Fatty Acids",
+      "reason": "Important for reducing inflammation, supporting brain health, and promoting heart health.",
       "sources": [
-        "Avocado",
-        "Greek Yogurt",
-        "Nuts (in granola)"
+        "Shrimp",
+        "Fish",
+        "Flax seeds",
+        "Chia seeds"
       ]
     },
     {
-      "nutrient": "Complex Carbohydrates",
-      "reason": "Provides sustained energy and supports muscle glycogen replenishment.",
+      "nutrient": "Probiotics",
+      "reason": "Supports gut health, enhances digestion and improves nutrient absorption.",
       "sources": [
-        "Whole Wheat Tortillas",
-        "Corn Tortillas",
-        "Brown Rice",
-        "Beans"
+        "Yogurt (ensure it's pescatarian friendly if any type of animal derived gelatin is used)",
+        "Kefir",
+        "Fermented vegetables like sauerkraut and kimchi"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Excessive Sugary Drinks",
-      "reason": "Provide empty calories and can hinder healthy weight gain."
+      "food": "Red meat",
+      "reason": "Not aligned with a pescatarian diet"
+    },
+    {
+      "food": "Poultry",
+      "reason": "Not aligned with a pescatarian diet"
     }
   ],
   "weeklyHabitTips": [
-    "Eat consistently throughout the day to ensure adequate calorie intake.",
-    "Focus on nutrient-dense foods to support muscle growth and overall health.",
-    "Incorporate strength training exercises to build muscle mass effectively."
+    "Drink at least 8 glasses of water per day to aid digestion.",
+    "Eat slowly and mindfully, chewing food thoroughly.",
+    "Incorporate regular physical activity, such as walking or swimming, to promote gut motility."
   ]
 }

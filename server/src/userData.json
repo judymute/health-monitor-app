@@ -1,22 +1,21 @@
 {
   "basicInformation": {
-    "fullName": "as",
+    "fullName": "Juli",
     "age": 18,
     "weight": {
-      "value": 12,
+      "value": 120,
       "unit": "kg"
     },
     "height": {
-      "value": 121,
+      "value": 12,
       "unit": "cm"
     },
-    "bloodType": "A-"
+    "bloodType": "AB+"
   },
   "dietaryPreferences": {
-    "dietType": "Flexitarian",
+    "dietType": "Pescatarian",
     "dietTypeOther": "",
     "allergiesIntolerances": {
-      "noAllergies": true,
       "noAllergies": true,
       "dairy": false,
       "eggs": false,
@@ -47,7 +46,7 @@
         "details": ""
       }
     },
-    "spiceTolerance": 2,
+    "spiceTolerance": 3,
     "dislikedFoods": ""
   },
   "medicalConditions": {
@@ -68,7 +67,7 @@
     "irritableBowelSyndrome": false,
     "gout": false,
     "phenylketonuria": false,
-    "liverDisease": true,
+    "liverDisease": false,
     "other": {
       "selected": false,
       "details": "",
@@ -77,10 +76,10 @@
   },
   "dietaryGoals": {
     "weightLoss": false,
-    "weightGain": true,
+    "weightGain": false,
     "maintenance": false,
     "increasedEnergy": false,
-    "betterDigestion": false,
+    "betterDigestion": true,
     "improvedSleep": false,
     "muscleBuilding": false,
     "other": {
