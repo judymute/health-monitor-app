@@ -1,113 +1,107 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Huevos Rancheros with Shrimp",
+      "name": "Ricotta and Spinach Frittata with Whole Wheat Toast",
       "ingredients": [
-        "2 corn tortillas",
-        "1/2 cup black beans, mashed",
-        "2 eggs",
-        "1/4 cup cooked shrimp",
-        "1/4 cup salsa (fresh or canned)",
-        "1 tbsp crumbled queso fresco",
-        "1 tbsp chopped cilantro",
-        "1 tsp olive oil"
+        "Eggs",
+        "Ricotta cheese",
+        "Spinach",
+        "Onion",
+        "Garlic",
+        "Olive oil",
+        "Whole wheat toast",
+        "Salt",
+        "Pepper"
       ],
-      "preparation": "Heat olive oil in a pan. Fry tortillas lightly. Top with black beans, fried eggs, shrimp, and salsa. Garnish with queso fresco and cilantro.",
-      "nutritionalBenefits": "Provides protein, fiber, and healthy fats. The shrimp adds lean protein and omega-3 fatty acids.",
-      "healthNotes": "Excellent start to the day for sustained energy and digestive support."
+      "preparation": "Sauté onion and garlic. Add spinach and cook until wilted. Whisk eggs with ricotta, salt, and pepper. Pour egg mixture over spinach. Cook on stovetop until edges set. Transfer to oven and bake until set. Serve with whole wheat toast.",
+      "nutritionalBenefits": "High in protein from eggs and ricotta, iron from spinach, and fiber from whole wheat toast.",
+      "healthNotes": "Provides sustained energy for the morning and helps with muscle building due to the high protein content."
     },
     "lunch": {
-      "name": "Mexican Shrimp Ceviche Salad",
+      "name": "Lentil Bolognese with Whole Wheat Pasta",
       "ingredients": [
-        "1 cup cooked shrimp, chopped",
-        "1/2 cup chopped tomato",
-        "1/4 cup chopped red onion",
-        "1/4 cup chopped cucumber",
-        "1/4 cup chopped cilantro",
-        "1/4 cup lime juice",
-        "1 tbsp olive oil",
-        "1 avocado, diced",
-        "Salt and pepper to taste",
-        "Lettuce leaves"
+        "Brown or Green Lentils",
+        "Whole wheat pasta",
+        "Crushed tomatoes",
+        "Onion",
+        "Carrots",
+        "Celery",
+        "Garlic",
+        "Vegetable broth",
+        "Olive oil",
+        "Italian herbs",
+        "Parmesan cheese (optional, for topping)"
       ],
-      "preparation": "Combine shrimp, tomato, red onion, cucumber, cilantro, lime juice, olive oil, salt, and pepper. Mix well. Serve on a bed of lettuce leaves and top with avocado.",
-      "nutritionalBenefits": "High in protein, vitamins, and minerals. Lime juice aids digestion.",
-      "healthNotes": "The lime juice and fresh vegetables support healthy digestion and gut health."
+      "preparation": "Sauté onion, carrots, and celery. Add garlic and cook until fragrant. Add lentils, crushed tomatoes, vegetable broth, and Italian herbs. Simmer until lentils are tender. Cook whole wheat pasta according to package directions. Serve lentil bolognese over pasta. Sprinkle with parmesan cheese if desired.",
+      "nutritionalBenefits": "Excellent source of protein and fiber from lentils and pasta. Rich in vitamins and minerals from vegetables.",
+      "healthNotes": "Provides sustained energy for the afternoon, supports muscle building, and promotes healthy digestion."
     },
     "dinner": {
-      "name": "Grilled Fish Tacos with Mango Salsa",
+      "name": "Vegetarian Pizza with Roasted Vegetables",
       "ingredients": [
-        "2 white fish fillets (e.g., cod, tilapia)",
-        "2 corn tortillas",
-        "1/2 cup shredded cabbage",
-        "1/4 cup mango salsa (mango, red onion, cilantro, lime juice)",
-        "1 tbsp lime juice",
-        "1 tsp olive oil",
-        "Salt and pepper to taste"
+        "Whole wheat pizza dough",
+        "Pizza sauce",
+        "Mozzarella cheese",
+        "Roasted vegetables (bell peppers, zucchini, eggplant, onions)",
+        "Olive oil",
+        "Italian seasoning"
       ],
-      "preparation": "Marinate fish in lime juice, olive oil, salt, and pepper. Grill fish until cooked through. Flake fish and serve in corn tortillas with shredded cabbage and mango salsa.",
-      "nutritionalBenefits": "Provides lean protein, omega-3 fatty acids, and fiber. Mango salsa adds vitamins and antioxidants.",
-      "healthNotes": "Easy to digest and provides essential nutrients for overall health. Choose whole grain tortillas for more fiber."
+      "preparation": "Preheat oven and pizza stone (if using). Roll out pizza dough. Spread pizza sauce over dough. Sprinkle with mozzarella cheese. Top with roasted vegetables. Drizzle with olive oil and sprinkle with Italian seasoning. Bake until crust is golden brown and cheese is melted and bubbly.",
+      "nutritionalBenefits": "Provides a good source of complex carbohydrates and fiber from the whole wheat dough and variety of vitamins and minerals from the vegetables.",
+      "healthNotes": "Choose a low-sodium pizza sauce. This dinner offers flexibility in the choice of toppings, tailor it to your preferences."
     },
     "snacks": [
       {
-        "name": "Spiced Pepitas",
+        "name": "Greek Yogurt with Berries and Almonds",
         "ingredients": [
-          "1/4 cup pepitas (pumpkin seeds)",
-          "1/4 tsp chili powder",
-          "1/4 tsp cumin",
-          "Pinch of salt"
+          "Greek yogurt (plain, non-fat)",
+          "Mixed berries (strawberries, blueberries, raspberries)",
+          "Almonds"
         ],
-        "preparation": "Toss pepitas with chili powder, cumin, and salt. Toast in a dry pan over medium heat until lightly browned and fragrant, stirring frequently.",
-        "nutritionalBenefits": "Provides healthy fats, fiber, and magnesium.",
-        "healthNotes": "Good for digestive health due to fiber content and healthy fats will keep Juli full."
+        "preparation": "Combine greek yogurt, berries, and almonds in a bowl.",
+        "nutritionalBenefits": "High in protein from greek yogurt, antioxidants from berries, and healthy fats from almonds.",
+        "healthNotes": "Helps to curb hunger between meals and provides additional protein for muscle building."
       }
     ]
   },
   "nutritionalFocus": [
     {
-      "nutrient": "Fiber",
-      "reason": "Important for promoting healthy digestion, regulating blood sugar, and promoting satiety.",
+      "nutrient": "Protein",
+      "reason": "Essential for muscle repair and growth, especially important for Julie's goal of muscle building.",
       "sources": [
-        "Black beans",
-        "Vegetables",
-        "Fruits",
-        "Nuts and seeds"
+        "Eggs",
+        "Ricotta cheese",
+        "Lentils",
+        "Greek Yogurt",
+        "Almonds"
       ]
     },
     {
-      "nutrient": "Omega-3 Fatty Acids",
-      "reason": "Important for reducing inflammation, supporting brain health, and promoting heart health.",
+      "nutrient": "Iron",
+      "reason": "Important for oxygen transport to muscles and preventing anemia, especially important for females.",
       "sources": [
-        "Shrimp",
-        "Fish",
-        "Flax seeds",
-        "Chia seeds"
+        "Spinach",
+        "Lentils",
+        "Whole Wheat Pasta",
+        "Almonds"
       ]
     },
     {
-      "nutrient": "Probiotics",
-      "reason": "Supports gut health, enhances digestion and improves nutrient absorption.",
+      "nutrient": "Complex Carbohydrates",
+      "reason": "Provide sustained energy for workouts and daily activities.",
       "sources": [
-        "Yogurt (ensure it's pescatarian friendly if any type of animal derived gelatin is used)",
-        "Kefir",
-        "Fermented vegetables like sauerkraut and kimchi"
+        "Whole Wheat Toast",
+        "Whole Wheat Pasta",
+        "Whole Wheat Pizza Dough",
+        "Vegetables"
       ]
     }
   ],
-  "avoidList": [
-    {
-      "food": "Red meat",
-      "reason": "Not aligned with a pescatarian diet"
-    },
-    {
-      "food": "Poultry",
-      "reason": "Not aligned with a pescatarian diet"
-    }
-  ],
+  "avoidList": [],
   "weeklyHabitTips": [
-    "Drink at least 8 glasses of water per day to aid digestion.",
-    "Eat slowly and mindfully, chewing food thoroughly.",
-    "Incorporate regular physical activity, such as walking or swimming, to promote gut motility."
+    "Incorporate strength training exercises 3-4 times per week to maximize muscle growth.",
+    "Ensure adequate hydration by drinking at least 8 glasses of water per day.",
+    "Prioritize getting 7-8 hours of sleep per night for optimal muscle recovery.",
+    "Meal prep in advance to stay on track with your dietary goals."
   ]
 }

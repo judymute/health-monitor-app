@@ -1,19 +1,19 @@
 {
   "basicInformation": {
-    "fullName": "Juli",
+    "fullName": "Julie Lam",
     "age": 18,
     "weight": {
-      "value": 120,
+      "value": 60,
       "unit": "kg"
     },
     "height": {
-      "value": 12,
+      "value": 150,
       "unit": "cm"
     },
-    "bloodType": "AB+"
+    "bloodType": "A-"
   },
   "dietaryPreferences": {
-    "dietType": "Pescatarian",
+    "dietType": "Vegetarian",
     "dietTypeOther": "",
     "allergiesIntolerances": {
       "noAllergies": true,
@@ -32,8 +32,8 @@
       }
     },
     "favoriteCuisines": {
-      "italian": false,
-      "mexican": true,
+      "italian": true,
+      "mexican": false,
       "indian": false,
       "chinese": false,
       "japanese": false,
@@ -46,7 +46,7 @@
         "details": ""
       }
     },
-    "spiceTolerance": 3,
+    "spiceTolerance": 2,
     "dislikedFoods": ""
   },
   "medicalConditions": {
@@ -70,8 +70,7 @@
     "liverDisease": false,
     "other": {
       "selected": false,
-      "details": "",
-      "type": ""
+      "details": ""
     }
   },
   "dietaryGoals": {
@@ -79,9 +78,9 @@
     "weightGain": false,
     "maintenance": false,
     "increasedEnergy": false,
-    "betterDigestion": true,
+    "betterDigestion": false,
     "improvedSleep": false,
-    "muscleBuilding": false,
+    "muscleBuilding": true,
     "other": {
       "selected": false,
       "details": ""
