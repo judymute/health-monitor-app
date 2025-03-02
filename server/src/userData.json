@@ -1,6 +1,6 @@
 {
   "basicInformation": {
-    "fullName": "julie",
+    "fullName": "1",
     "age": 18,
     "weight": {
       "value": 1,
@@ -10,7 +10,7 @@
       "value": 1,
       "unit": "cm"
     },
-    "bloodType": "O+"
+    "bloodType": "A+"
   },
   "dietaryPreferences": {
     "dietType": "Vegan",
@@ -32,7 +32,7 @@
       }
     },
     "favoriteCuisines": {
-      "italian": false,
+      "italian": true,
       "mexican": false,
       "indian": false,
       "chinese": false,
@@ -40,17 +40,17 @@
       "thai": false,
       "mediterranean": false,
       "american": false,
-      "middleEastern": true,
+      "middleEastern": false,
       "other": {
         "selected": false,
         "details": ""
       }
     },
-    "spiceTolerance": 5,
+    "spiceTolerance": 1,
     "dislikedFoods": ""
   },
   "medicalConditions": {
-    "noMedicalConditions": true,
+    "noMedicalConditions": false,
     "diabetes": {
       "selected": false,
       "type": ""
@@ -67,19 +67,18 @@
     "irritableBowelSyndrome": false,
     "gout": false,
     "phenylketonuria": false,
-    "liverDisease": false,
+    "liverDisease": true,
     "other": {
       "selected": false,
-      "details": "",
-      "type": ""
+      "details": ""
     }
   },
   "dietaryGoals": {
     "weightLoss": false,
-    "weightGain": false,
+    "weightGain": true,
     "maintenance": false,
     "increasedEnergy": false,
-    "betterDigestion": true,
+    "betterDigestion": false,
     "improvedSleep": false,
     "muscleBuilding": false,
     "other": {
