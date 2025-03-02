@@ -1,19 +1,19 @@
 {
   "basicInformation": {
-    "fullName": "Julie",
+    "fullName": "Julie Lam",
     "age": 18,
     "weight": {
-      "value": 122,
+      "value": 56,
       "unit": "kg"
     },
     "height": {
-      "value": 22,
+      "value": 122,
       "unit": "cm"
     },
-    "bloodType": "A-"
+    "bloodType": "AB-"
   },
   "dietaryPreferences": {
-    "dietType": "Flexitarian",
+    "dietType": "Vegetarian",
     "dietTypeOther": "",
     "allergiesIntolerances": {
       "noAllergies": true,
@@ -46,8 +46,8 @@
         "details": ""
       }
     },
-    "spiceTolerance": 2,
-    "dislikedFoods": ""
+    "spiceTolerance": 1,
+    "dislikedFoods": "Starberry"
   },
   "medicalConditions": {
     "noMedicalConditions": true,
