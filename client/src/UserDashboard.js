@@ -308,62 +308,6 @@ const UserDashboard = ({ userData }) => {
           </div>
         </div>
 
-        <div className="row mb-4">
-          <div className="col-12">
-            <div 
-              className="card border-0 rounded-4 shadow-sm"
-              style={{ background: 'white' }}
-            >
-              <div className="card-body p-4">
-                <div className="d-flex justify-content-between align-items-center mb-3">
-                  <h2 style={{ color: colors.text, fontSize: '1.5rem' }}>Today</h2>
-                  <button 
-                    className="btn rounded-pill px-3 py-1"
-                    style={{ 
-                      background: colors.light, 
-                      color: colors.primary,
-                      fontSize: '0.9rem',
-                      border: 'none'
-                    }}
-                  >
-                    <i className="bi bi-calendar-week me-2"></i>
-                    Yesterday's Review
-                  </button>
-                </div>
-                
-                {/* Day selector */}
-                {renderDaySelector()}
-                
-                {/* Progress indicator */}
-                <div className="text-center mb-4">
-                  <div style={{ 
-                    fontSize: '1.5rem', 
-                    color: colors.primary, 
-                    fontWeight: 'bold',
-                    marginBottom: '0.5rem'
-                  }}>
-                    Thriving (65%)
-                  </div>
-                  <div className="progress" style={{ height: '10px', borderRadius: '5px' }}>
-                    <div 
-                      className="progress-bar" 
-                      role="progressbar" 
-                      style={{ 
-                        width: '65%', 
-                        background: `linear-gradient(to right, ${colors.secondary}, ${colors.primary})`,
-                        borderRadius: '5px'
-                      }} 
-                      aria-valuenow="65" 
-                      aria-valuemin="0" 
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="row">
           <div className="col-lg-8">
             <div 
@@ -416,7 +360,21 @@ const UserDashboard = ({ userData }) => {
                       </div>
                       <div className="col-md-6">
                         <h5 style={{ fontSize: '1rem', color: colors.text }}>Preparation</h5>
-                        <p style={{ fontSize: '0.95rem' }}>{recommendations.dailyPlan.breakfast.preparation}</p>
+                        <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
+  {recommendations.dailyPlan.breakfast.preparation.split('. ').map((step, idx) => (
+    step.trim() && (
+      <li 
+        key={idx} 
+        className="list-group-item px-0 py-1"
+        style={{ background: 'transparent', border: 'none' }}
+      >
+        <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+        {step}.
+      </li>
+    )
+  ))}
+</ul>
+
                       </div>
                     </div>
                     
@@ -477,7 +435,21 @@ const UserDashboard = ({ userData }) => {
                       </div>
                       <div className="col-md-6">
                         <h5 style={{ fontSize: '1rem', color: colors.text }}>Preparation</h5>
-                        <p style={{ fontSize: '0.95rem' }}>{recommendations.dailyPlan.lunch.preparation}</p>
+                        <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
+  {recommendations.dailyPlan.lunch.preparation.split('. ').map((step, idx) => (
+    step.trim() && (
+      <li 
+        key={idx} 
+        className="list-group-item px-0 py-1"
+        style={{ background: 'transparent', border: 'none' }}
+      >
+        <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+        {step}.
+      </li>
+    )
+  ))}
+</ul>
+
                       </div>
                     </div>
                     
@@ -538,7 +510,21 @@ const UserDashboard = ({ userData }) => {
                       </div>
                       <div className="col-md-6">
                         <h5 style={{ fontSize: '1rem', color: colors.text }}>Preparation</h5>
-                        <p style={{ fontSize: '0.95rem' }}>{recommendations.dailyPlan.dinner.preparation}</p>
+                        <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
+  {recommendations.dailyPlan.dinner.preparation.split('. ').map((step, idx) => (
+    step.trim() && (
+      <li 
+        key={idx} 
+        className="list-group-item px-0 py-1"
+        style={{ background: 'transparent', border: 'none' }}
+      >
+        <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+        {step}.
+      </li>
+    )
+  ))}
+</ul>
+
                       </div>
                     </div>
                     
