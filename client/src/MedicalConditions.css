@@ -166,3 +166,21 @@
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
+
+.no-conditions-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+}
+
+.strong-label {
+  font-weight: 600;
+}
+
+/* Optional: Add a subtle hover effect to the no-conditions container */
+.no-conditions-container:hover {
+  background-color: #f0f0f0;
+}

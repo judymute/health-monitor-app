@@ -170,3 +170,21 @@
 .section-no-margin {
   margin-top: -10px;
 }
+
+/* New styles for the "No allergies" option */
+.no-allergies-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+}
+
+.strong-label {
+  font-weight: 600;
+}
+
+/* Optional: Add a subtle hover effect to the no-allergies container */
+.no-allergies-container:hover {
+  background-color: #f0f0f0;
+}

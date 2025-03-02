@@ -7,6 +7,7 @@ const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
     dietType: prevData.dietType || '',
     dietTypeOther: prevData.dietTypeOther || '',
     allergiesIntolerances: prevData.allergiesIntolerances || {
+      noAllergies: prevData.allergiesIntolerances?.noAllergies || false,
       dairy: false,
       eggs: false,
       nuts: {
@@ -50,24 +51,67 @@ const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
   const handleAllergyChange = (e) => {
     const { name, checked } = e.target;
     
-    if (name === 'nuts' || name === 'other') {
-      setFormData({
-        ...formData,
-        allergiesIntolerances: {
-          ...formData.allergiesIntolerances,
+    // Handle "No allergies" option
+    if (name === 'noAllergies') {
+      if (checked) {
+        // If "No allergies" is checked, reset all other allergies
+        const resetAllergies = {
+          noAllergies: true,
+          dairy: false,
+          eggs: false,
+          nuts: {
+            selected: false,
+            details: ''
+          },
+          seafoodShellfish: false,
+          gluten: false,
+          soy: false,
+          other: {
+            selected: false,
+            details: ''
+          }
+        };
+        
+        setFormData({
+          ...formData,
+          allergiesIntolerances: resetAllergies
+        });
+      } else {
+        // Just update the noAllergies value
+        setFormData({
+          ...formData,
+          allergiesIntolerances: {
+            ...formData.allergiesIntolerances,
+            [name]: checked
+          }
+        });
+      }
+    } else {
+      // Handle other allergies
+      // If any other allergy is checked, uncheck "No allergies"
+      let updatedAllergies = {
+        ...formData.allergiesIntolerances,
+        noAllergies: false
+      };
+      
+      if (name === 'nuts' || name === 'other') {
+        updatedAllergies = {
+          ...updatedAllergies,
           [name]: {
             ...formData.allergiesIntolerances[name],
             selected: checked
           }
-        }
-      });
-    } else {
+        };
+      } else {
+        updatedAllergies = {
+          ...updatedAllergies,
+          [name]: checked
+        };
+      }
+      
       setFormData({
         ...formData,
-        allergiesIntolerances: {
-          ...formData.allergiesIntolerances,
-          [name]: checked
-        }
+        allergiesIntolerances: updatedAllergies
       });
     }
   };
@@ -151,16 +195,16 @@ const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
             onChange={handleChange}
             required
           >
-            <option value="">Select Diet Type</option>
-            <option value="Omnivore">Omnivore</option>
-            <option value="Vegetarian">Vegetarian</option>
-            <option value="Vegan">Vegan</option>
-            <option value="Pescatarian">Pescatarian</option>
-            <option value="Flexitarian">Flexitarian</option>
-            <option value="Keto">Keto</option>
-            <option value="Paleo">Paleo</option>
-            <option value="Mediterranean">Mediterranean</option>
-            <option value="Other">Other</option>
+  <option value="">Select Diet Type</option>
+  <option value="Omnivore">Omnivore - Includes all types of foods, including meat, dairy, and plants</option>
+  <option value="Vegetarian">Vegetarian - Excludes meat but includes dairy and eggs</option>
+  <option value="Vegan">Vegan - Excludes all animal products, including dairy and eggs</option>
+  <option value="Pescatarian">Pescatarian - Excludes meat but includes fish and seafood</option>
+  <option value="Flexitarian">Flexitarian - Primarily plant-based but occasionally includes meat</option>
+  <option value="Keto">Keto - Low-carb, high-fat diet focusing on ketosis</option>
+  <option value="Paleo">Paleo - Emphasizes whole foods, excluding processed foods and dairy</option>
+  <option value="Mediterranean">Mediterranean - Focuses on fruits, vegetables, whole grains, and healthy fats</option>
+  <option value="Other">Other</option>
           </select>
         </div>
 
@@ -189,112 +233,138 @@ const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
           <label className="input-label">
             Do you have any allergies or intolerances to the following foods?
           </label>
-          <div className="checkbox-container">
+          
+          {/* No Allergies Option */}
+          <div className="no-allergies-container">
             <div className="checkbox-item">
               <input
                 className="checkbox"
                 type="checkbox"
-                id="dairy"
-                name="dairy"
-                checked={formData.allergiesIntolerances.dairy}
+                id="noAllergies"
+                name="noAllergies"
+                checked={formData.allergiesIntolerances.noAllergies}
                 onChange={handleAllergyChange}
               />
-              <label className="checkbox-label" htmlFor="dairy">Dairy</label>
-            </div>
-            
-            <div className="checkbox-item">
-              <input
-                className="checkbox"
-                type="checkbox"
-                id="eggs"
-                name="eggs"
-                checked={formData.allergiesIntolerances.eggs}
-                onChange={handleAllergyChange}
-              />
-              <label className="checkbox-label" htmlFor="eggs">Eggs</label>
-            </div>
-            
-            <div className="checkbox-item">
-              <input
-                className="checkbox"
-                type="checkbox"
-                id="nuts"
-                name="nuts"
-                checked={formData.allergiesIntolerances.nuts.selected}
-                onChange={handleAllergyChange}
-              />
-              <label className="checkbox-label" htmlFor="nuts">Nuts</label>
-            </div>
-            
-            <div className="checkbox-item">
-              <input
-                className="checkbox"
-                type="checkbox"
-                id="seafoodShellfish"
-                name="seafoodShellfish"
-                checked={formData.allergiesIntolerances.seafoodShellfish}
-                onChange={handleAllergyChange}
-              />
-              <label className="checkbox-label" htmlFor="seafoodShellfish">Seafood/Shellfish</label>
-            </div>
-            
-            <div className="checkbox-item">
-              <input
-                className="checkbox"
-                type="checkbox"
-                id="gluten"
-                name="gluten"
-                checked={formData.allergiesIntolerances.gluten}
-                onChange={handleAllergyChange}
-              />
-              <label className="checkbox-label" htmlFor="gluten">Gluten</label>
-            </div>
-            
-            <div className="checkbox-item">
-              <input
-                className="checkbox"
-                type="checkbox"
-                id="soy"
-                name="soy"
-                checked={formData.allergiesIntolerances.soy}
-                onChange={handleAllergyChange}
-              />
-              <label className="checkbox-label" htmlFor="soy">Soy</label>
-            </div>
-            
-            <div className="checkbox-item">
-              <input
-                className="checkbox"
-                type="checkbox"
-                id="other-allergy"
-                name="other"
-                checked={formData.allergiesIntolerances.other.selected}
-                onChange={handleAllergyChange}
-              />
-              <label className="checkbox-label" htmlFor="other-allergy">Other</label>
+              <label className="checkbox-label strong-label" htmlFor="noAllergies">
+                I do not have any food allergies or intolerances
+              </label>
             </div>
           </div>
           
-          {formData.allergiesIntolerances.nuts.selected && (
-            <input
-              className="nested-input"
-              type="text"
-              name="nuts"
-              value={formData.allergiesIntolerances.nuts.details}
-              onChange={handleAllergyDetailsChange}
-              placeholder="Specify which nuts"
-            />
+          {/* Only show allergy checkboxes if "No allergies" is not checked */}
+          {!formData.allergiesIntolerances.noAllergies && (
+            <div className="checkbox-container">
+              <div className="checkbox-item">
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  id="dairy"
+                  name="dairy"
+                  checked={formData.allergiesIntolerances.dairy}
+                  onChange={handleAllergyChange}
+                />
+                <label className="checkbox-label" htmlFor="dairy">Dairy</label>
+              </div>
+              
+              <div className="checkbox-item">
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  id="eggs"
+                  name="eggs"
+                  checked={formData.allergiesIntolerances.eggs}
+                  onChange={handleAllergyChange}
+                />
+                <label className="checkbox-label" htmlFor="eggs">Eggs</label>
+              </div>
+              
+              <div className="checkbox-item">
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  id="nuts"
+                  name="nuts"
+                  checked={formData.allergiesIntolerances.nuts.selected}
+                  onChange={handleAllergyChange}
+                />
+                <label className="checkbox-label" htmlFor="nuts">Nuts</label>
+              </div>
+              
+              <div className="checkbox-item">
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  id="seafoodShellfish"
+                  name="seafoodShellfish"
+                  checked={formData.allergiesIntolerances.seafoodShellfish}
+                  onChange={handleAllergyChange}
+                />
+                <label className="checkbox-label" htmlFor="seafoodShellfish">Seafood/Shellfish</label>
+              </div>
+              
+              <div className="checkbox-item">
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  id="gluten"
+                  name="gluten"
+                  checked={formData.allergiesIntolerances.gluten}
+                  onChange={handleAllergyChange}
+                />
+                <label className="checkbox-label" htmlFor="gluten">Gluten</label>
+              </div>
+              
+              <div className="checkbox-item">
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  id="soy"
+                  name="soy"
+                  checked={formData.allergiesIntolerances.soy}
+                  onChange={handleAllergyChange}
+                />
+                <label className="checkbox-label" htmlFor="soy">Soy</label>
+              </div>
+              
+              <div className="checkbox-item">
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  id="other-allergy"
+                  name="other"
+                  checked={formData.allergiesIntolerances.other.selected}
+                  onChange={handleAllergyChange}
+                />
+                <label className="checkbox-label" htmlFor="other-allergy">Other</label>
+              </div>
+            </div>
           )}
           
-          {formData.allergiesIntolerances.other.selected && (
-            <input
-              className="nested-input"
-              type="text"
-              name="other"
-              value={formData.allergiesIntolerances.other.details}
-              onChange={handleAllergyDetailsChange}
-              placeholder="Specify other allergies/intolerances"
-            />
+          {/* Only show conditional inputs if "No allergies" is not checked */}
+          {!formData.allergiesIntolerances.noAllergies && (
+            <>
+              {formData.allergiesIntolerances.nuts.selected && (
+                <input
+                  className="nested-input"
+                  type="text"
+                  name="nuts"
+                  value={formData.allergiesIntolerances.nuts.details}
+                  onChange={handleAllergyDetailsChange}
+                  placeholder="Specify which nuts"
+                />
+              )}
+              
+              {formData.allergiesIntolerances.other.selected && (
+                <input
+                  className="nested-input"
+                  type="text"
+                  name="other"
+                  value={formData.allergiesIntolerances.other.details}
+                  onChange={handleAllergyDetailsChange}
+                  placeholder="Specify other allergies/intolerances"
+                />
+              )}
+            </>
           )}
         </div>
 

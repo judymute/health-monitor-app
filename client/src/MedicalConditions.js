@@ -6,6 +6,7 @@ const MedicalConditions = ({ onSave, prevData = {}, onPrevious }) => {
   // Make sure we have a proper structure even if prevData is incomplete
   const [formData, setFormData] = useState({
     medicalConditions: {
+      noMedicalConditions: prevData?.medicalConditions?.noMedicalConditions || false,
       diabetes: {
         selected: prevData?.medicalConditions?.diabetes?.selected || false,
         type: prevData?.medicalConditions?.diabetes?.type || ''
@@ -47,24 +48,67 @@ const MedicalConditions = ({ onSave, prevData = {}, onPrevious }) => {
   const handleConditionChange = (e) => {
     const { name, checked } = e.target;
     
-    if (name === 'diabetes' || name === 'inflammatoryBowelDisease' || name === 'other') {
-      setFormData({
-        ...formData,
-        medicalConditions: {
-          ...formData.medicalConditions,
+    // Special handling for "noMedicalConditions" option
+    if (name === 'noMedicalConditions') {
+      // If checking "No medical conditions", uncheck all other conditions
+      if (checked) {
+        const resetConditions = {};
+        
+        // Reset all other conditions while keeping their structure
+        Object.keys(formData.medicalConditions).forEach(key => {
+          if (key === 'noMedicalConditions') {
+            resetConditions[key] = true;
+          } else if (typeof formData.medicalConditions[key] === 'object') {
+            resetConditions[key] = {
+              ...formData.medicalConditions[key],
+              selected: false,
+              type: ''
+            };
+          } else {
+            resetConditions[key] = false;
+          }
+        });
+        
+        setFormData({
+          ...formData,
+          medicalConditions: resetConditions
+        });
+      } else {
+        // Just update the noMedicalConditions value
+        setFormData({
+          ...formData,
+          medicalConditions: {
+            ...formData.medicalConditions,
+            [name]: checked
+          }
+        });
+      }
+    } else {
+      // If checking any medical condition, uncheck "noMedicalConditions"
+      let updatedMedicalConditions = {
+        ...formData.medicalConditions,
+        noMedicalConditions: false
+      };
+      
+      // Update the specific condition
+      if (name === 'diabetes' || name === 'inflammatoryBowelDisease' || name === 'other') {
+        updatedMedicalConditions = {
+          ...updatedMedicalConditions,
           [name]: {
             ...formData.medicalConditions[name],
             selected: checked
           }
-        }
-      });
-    } else {
+        };
+      } else {
+        updatedMedicalConditions = {
+          ...updatedMedicalConditions,
+          [name]: checked
+        };
+      }
+      
       setFormData({
         ...formData,
-        medicalConditions: {
-          ...formData.medicalConditions,
-          [name]: checked
-        }
+        medicalConditions: updatedMedicalConditions
       });
     }
   };
@@ -156,213 +200,236 @@ const MedicalConditions = ({ onSave, prevData = {}, onPrevious }) => {
             Do you have any of the following medical conditions? This information helps us tailor dietary recommendations to your specific health needs.
           </p>
           
-          <div className="checkbox-grid">
-            <div>
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="diabetes"
-                  name="diabetes"
-                  checked={formData.medicalConditions.diabetes.selected}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="diabetes">Diabetes</label>
-              </div>
-              {formData.medicalConditions.diabetes.selected && (
-                <select
-                  className="select"
-                  name="diabetes"
-                  value={formData.medicalConditions.diabetes.type}
-                  onChange={handleConditionTypeChange}
-                  required
-                >
-                  <option value="">Select Type</option>
-                  <option value="Type 1">Type 1</option>
-                  <option value="Type 2">Type 2</option>
-                  <option value="Gestational">Gestational</option>
-                  <option value="Prediabetes">Prediabetes</option>
-                </select>
-              )}
-              
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="celiacDisease"
-                  name="celiacDisease"
-                  checked={formData.medicalConditions.celiacDisease}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="celiacDisease">Celiac Disease</label>
-              </div>
-              
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="inflammatoryBowelDisease"
-                  name="inflammatoryBowelDisease"
-                  checked={formData.medicalConditions.inflammatoryBowelDisease.selected}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="inflammatoryBowelDisease">
-                  Inflammatory Bowel Disease
-                </label>
-              </div>
-              {formData.medicalConditions.inflammatoryBowelDisease.selected && (
-                <select
-                  className="select"
-                  name="inflammatoryBowelDisease"
-                  value={formData.medicalConditions.inflammatoryBowelDisease.type}
-                  onChange={handleConditionTypeChange}
-                  required
-                >
-                  <option value="">Select Type</option>
-                  <option value="Crohn's">Crohn's</option>
-                  <option value="Ulcerative Colitis">Ulcerative Colitis</option>
-                </select>
-              )}
-              
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="hypertension"
-                  name="hypertension"
-                  checked={formData.medicalConditions.hypertension}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="hypertension">
-                  Hypertension (High Blood Pressure)
-                </label>
-              </div>
-              
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="cardiovascularDisease"
-                  name="cardiovascularDisease"
-                  checked={formData.medicalConditions.cardiovascularDisease}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="cardiovascularDisease">
-                  Cardiovascular Disease
-                </label>
-              </div>
-            </div>
-            
-            <div>
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="chronicKidneyDisease"
-                  name="chronicKidneyDisease"
-                  checked={formData.medicalConditions.chronicKidneyDisease}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="chronicKidneyDisease">
-                  Chronic Kidney Disease
-                </label>
-              </div>
-              
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="acidReflux"
-                  name="acidReflux"
-                  checked={formData.medicalConditions.acidReflux}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="acidReflux">
-                  GERD/Acid Reflux
-                </label>
-              </div>
-              
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="irritableBowelSyndrome"
-                  name="irritableBowelSyndrome"
-                  checked={formData.medicalConditions.irritableBowelSyndrome}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="irritableBowelSyndrome">
-                  Irritable Bowel Syndrome
-                </label>
-              </div>
-              
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="gout"
-                  name="gout"
-                  checked={formData.medicalConditions.gout}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="gout">Gout</label>
-              </div>
-              
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="phenylketonuria"
-                  name="phenylketonuria"
-                  checked={formData.medicalConditions.phenylketonuria}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="phenylketonuria">
-                  Phenylketonuria (PKU)
-                </label>
-              </div>
-              
-              <div className="checkbox-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="liverDisease"
-                  name="liverDisease"
-                  checked={formData.medicalConditions.liverDisease}
-                  onChange={handleConditionChange}
-                />
-                <label className="checkbox-label" htmlFor="liverDisease">
-                  Liver Disease
-                </label>
-              </div>
-            </div>
-          </div>
-          
-          <div className="other-item">
+          {/* No Medical Conditions Option */}
+          <div className="no-conditions-container">
             <div className="checkbox-item">
               <input
                 className="checkbox"
                 type="checkbox"
-                id="other-condition"
-                name="other"
-                checked={formData.medicalConditions.other.selected}
+                id="noMedicalConditions"
+                name="noMedicalConditions"
+                checked={formData.medicalConditions.noMedicalConditions}
                 onChange={handleConditionChange}
               />
-              <label className="checkbox-label" htmlFor="other-condition">
-                Other medical condition
+              <label className="checkbox-label strong-label" htmlFor="noMedicalConditions">
+                I do not have any medical conditions
               </label>
             </div>
-            {formData.medicalConditions.other.selected && (
-              <input
-                className="input-text"
-                type="text"
-                name="other"
-                value={formData.medicalConditions.other.details}
-                onChange={handleConditionDetailsChange}
-                placeholder="Specify other conditions"
-              />
-            )}
           </div>
+          
+          {/* Only show condition checkboxes if "No medical conditions" is not checked */}
+          {!formData.medicalConditions.noMedicalConditions && (
+            <div className="checkbox-grid">
+              <div>
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="diabetes"
+                    name="diabetes"
+                    checked={formData.medicalConditions.diabetes.selected}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="diabetes">Diabetes</label>
+                </div>
+                {formData.medicalConditions.diabetes.selected && (
+                  <select
+                    className="select"
+                    name="diabetes"
+                    value={formData.medicalConditions.diabetes.type}
+                    onChange={handleConditionTypeChange}
+                    required
+                  >
+                    <option value="">Select Type</option>
+                    <option value="Type 1">Type 1</option>
+                    <option value="Type 2">Type 2</option>
+                    <option value="Gestational">Gestational</option>
+                    <option value="Prediabetes">Prediabetes</option>
+                  </select>
+                )}
+                
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="celiacDisease"
+                    name="celiacDisease"
+                    checked={formData.medicalConditions.celiacDisease}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="celiacDisease">Celiac Disease</label>
+                </div>
+                
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="inflammatoryBowelDisease"
+                    name="inflammatoryBowelDisease"
+                    checked={formData.medicalConditions.inflammatoryBowelDisease.selected}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="inflammatoryBowelDisease">
+                    Inflammatory Bowel Disease
+                  </label>
+                </div>
+                {formData.medicalConditions.inflammatoryBowelDisease.selected && (
+                  <select
+                    className="select"
+                    name="inflammatoryBowelDisease"
+                    value={formData.medicalConditions.inflammatoryBowelDisease.type}
+                    onChange={handleConditionTypeChange}
+                    required
+                  >
+                    <option value="">Select Type</option>
+                    <option value="Crohn's">Crohn's</option>
+                    <option value="Ulcerative Colitis">Ulcerative Colitis</option>
+                  </select>
+                )}
+                
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="hypertension"
+                    name="hypertension"
+                    checked={formData.medicalConditions.hypertension}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="hypertension">
+                    Hypertension (High Blood Pressure)
+                  </label>
+                </div>
+                
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="cardiovascularDisease"
+                    name="cardiovascularDisease"
+                    checked={formData.medicalConditions.cardiovascularDisease}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="cardiovascularDisease">
+                    Cardiovascular Disease
+                  </label>
+                </div>
+              </div>
+              
+              <div>
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="chronicKidneyDisease"
+                    name="chronicKidneyDisease"
+                    checked={formData.medicalConditions.chronicKidneyDisease}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="chronicKidneyDisease">
+                    Chronic Kidney Disease
+                  </label>
+                </div>
+                
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="acidReflux"
+                    name="acidReflux"
+                    checked={formData.medicalConditions.acidReflux}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="acidReflux">
+                    GERD/Acid Reflux
+                  </label>
+                </div>
+                
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="irritableBowelSyndrome"
+                    name="irritableBowelSyndrome"
+                    checked={formData.medicalConditions.irritableBowelSyndrome}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="irritableBowelSyndrome">
+                    Irritable Bowel Syndrome
+                  </label>
+                </div>
+                
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="gout"
+                    name="gout"
+                    checked={formData.medicalConditions.gout}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="gout">Gout</label>
+                </div>
+                
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="phenylketonuria"
+                    name="phenylketonuria"
+                    checked={formData.medicalConditions.phenylketonuria}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="phenylketonuria">
+                    Phenylketonuria (PKU)
+                  </label>
+                </div>
+                
+                <div className="checkbox-item">
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    id="liverDisease"
+                    name="liverDisease"
+                    checked={formData.medicalConditions.liverDisease}
+                    onChange={handleConditionChange}
+                  />
+                  <label className="checkbox-label" htmlFor="liverDisease">
+                    Liver Disease
+                  </label>
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {/* "Other" is shown only if "No medical conditions" is not checked */}
+          {!formData.medicalConditions.noMedicalConditions && (
+            <div className="other-item">
+              <div className="checkbox-item">
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  id="other-condition"
+                  name="other"
+                  checked={formData.medicalConditions.other.selected}
+                  onChange={handleConditionChange}
+                />
+                <label className="checkbox-label" htmlFor="other-condition">
+                  Other medical condition
+                </label>
+              </div>
+              {formData.medicalConditions.other.selected && (
+                <input
+                  className="input-text"
+                  type="text"
+                  name="other"
+                  value={formData.medicalConditions.other.details}
+                  onChange={handleConditionDetailsChange}
+                  placeholder="Specify other conditions"
+                />
+              )}
+            </div>
+          )}
         </div>
 
         {/* Dietary Goals Section */}
