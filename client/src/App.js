@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import UserDashboard from './UserDashboard';
-import QuestionnaireContainer from './QuestionnaireContainer'; // Assuming you created this
+import QuestionnaireContainer from './QuestionnaireContainer';
+import LandingPage from './LandingPage';
 import Chatbot from './Chatbot';
 
 function App() {
@@ -33,11 +34,16 @@ function App() {
       });
   }, []);
 
-
   return (
     <Router>
       <div className="App">
         <Routes>
+          {/* New route for the landing page */}
+          <Route 
+            path="/" 
+            element={<LandingPage />} 
+          />
+          
           {/* Route for the questionnaire */}
           <Route 
             path="/questionnaire" 
@@ -59,14 +65,10 @@ function App() {
             } 
           />
           
-          {/* Default route - redirect to questionnaire or dashboard */}
+          {/* Default route - redirect to landing page */}
           <Route 
             path="*" 
-            element={
-              isQuestionnaireCompleted ? 
-                <Navigate to="/dashboard" replace /> : 
-                <Navigate to="/questionnaire" replace />
-            } 
+            element={<Navigate to="/" replace />} 
           />
         </Routes>
         <Chatbot/>

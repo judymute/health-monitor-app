@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import avatarImage from './cutecowprofile.png';
+import ShoppingList from './ShoppingList'; 
+import StylizedTabs from './StylizedTabs';
 
 const UserDashboard = ({ userData }) => {
   const navigate = useNavigate();
@@ -9,6 +11,7 @@ const UserDashboard = ({ userData }) => {
   const [error, setError] = useState(null);
   const [errorDetails, setErrorDetails] = useState(null);
   const [activeDay, setActiveDay] = useState(new Date().getDate());
+  const [activeTab, setActiveTab] = useState('mealPlan');
 
   // Color palette based on the pastel purple theme
   const colors = {
@@ -105,50 +108,6 @@ const UserDashboard = ({ userData }) => {
       setError(`Failed to refresh your recommendations: ${err.message}`);
       setLoading(false);
     }
-  };
-
-  // Generate day selector for the week
-  const renderDaySelector = () => {
-    const days = [];
-    const currentDate = new Date();
-    const currentDay = currentDate.getDate();
-    
-    // Show a week of days (current day and 6 days ahead)
-    for (let i = 0; i < 7; i++) {
-      const date = new Date(currentDate);
-      date.setDate(currentDay + i);
-      const dayNum = date.getDate();
-      
-      days.push(
-        <div 
-          key={i} 
-          className={`day-selector ${activeDay === dayNum ? 'active' : ''}`}
-          onClick={() => setActiveDay(dayNum)}
-          style={{
-            width: '40px',
-            height: '40px',
-            borderRadius: '12px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: activeDay === dayNum ? colors.primary : colors.light,
-            color: activeDay === dayNum ? 'white' : colors.text,
-            cursor: 'pointer',
-            fontWeight: '600',
-            boxShadow: activeDay === dayNum ? '0 4px 8px rgba(139, 128, 249, 0.3)' : 'none',
-            transition: 'all 0.2s ease'
-          }}
-        >
-          {dayNum}
-        </div>
-      );
-    }
-    
-    return (
-      <div className="d-flex gap-2 mb-4 justify-content-center">
-        {days}
-      </div>
-    );
   };
 
   // If we're loading
@@ -453,10 +412,44 @@ const UserDashboard = ({ userData }) => {
                     </button>
                   </div>
                 </div>
+                                  {/* Tab Integration */}
+                                  <StylizedTabs 
+  activeTab={activeTab} 
+  setActiveTab={setActiveTab}
+  colors={colors} 
+/>
               </div>
             </div>
           </div>
         </div>
+
+         {/* Conditional Rendering Based on Active Tab - NEW */}
+         {activeTab === 'shoppingList' ? (
+          <div className="row">
+            <div className="col-12">
+              <div 
+                className="card border-0 rounded-4 shadow-sm mb-4"
+                style={{ background: 'white' }}
+              >
+                <div className="card-body p-4">
+                  <h2 style={{ color: colors.text, fontSize: '1.5rem', marginBottom: '1.5rem' }}>
+                    Shopping List
+                    <span className="badge ms-2 rounded-pill" style={{ backgroundColor: colors.accent1, color: colors.secondary, fontSize: '0.7rem', padding: '0.4em 0.8em' }}>
+                      For Today's Meals
+                    </span>
+                  </h2>
+                  
+                  {/* Render the ShoppingList component */}
+                  <div className="d-flex justify-content-center">
+                    <div className="col-lg-10">
+                      <ShoppingList mealPlan={recommendations} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
 
         <div className="row">
           <div className="col-lg-8">
@@ -871,8 +864,9 @@ const UserDashboard = ({ userData }) => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+          </div>
+      )}
+    </div>
     </div>
   );
 };

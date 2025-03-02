@@ -1,0 +1,226 @@
+.shopping-list-card {
+  width: 100%;
+  max-width: 36rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 128, 0, 0.08);
+  background-color: white;
+  font-family: "SF Pro Display", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.shopping-list-header {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(150deg, #e8f5e9, #c8e6c9);
+  position: relative;
+}
+
+.shopping-list-header:after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: white;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  z-index: 1;
+}
+
+.shopping-list-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.shopping-list-counter {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.shopping-list-content {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.shopping-list-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.shopping-list-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  background-color: #f1f8e9;
+  border: none;
+  color: #388e3c;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.shopping-list-button:hover {
+  background-color: #dcedc8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(0, 128, 0, 0.1);
+}
+
+.shopping-list-button:active {
+  transform: translateY(0);
+}
+
+.shopping-list-button-right {
+  margin-left: auto;
+}
+
+.shopping-list-icon {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+  color: #4caf50;
+}
+
+.shopping-list-items-container {
+  max-height: 24rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-right: -0.5rem;
+}
+
+.shopping-list-items-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.shopping-list-items-container::-webkit-scrollbar-track {
+  background: #f1f8e9;
+  border-radius: 10px;
+}
+
+.shopping-list-items-container::-webkit-scrollbar-thumb {
+  background: #a5d6a7;
+  border-radius: 10px;
+}
+
+.shopping-list-meal-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.shopping-list-meal-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #388e3c;
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid #a5d6a7;
+}
+
+.shopping-list-meal-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shopping-list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  background-color: #f9fcf9;
+  transition: all 0.2s ease;
+}
+
+.shopping-list-item:hover {
+  background-color: #f1f8e9;
+  transform: translateX(3px);
+}
+
+.custom-checkbox-container {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+}
+
+.shopping-list-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #e8f5e9;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.shopping-list-checkbox:checked ~ .custom-checkbox {
+  background-color: #4caf50;
+}
+
+.custom-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.shopping-list-checkbox:checked ~ .custom-checkbox:after {
+  display: block;
+}
+
+.shopping-list-label {
+  font-size: 1rem;
+  cursor: pointer;
+  flex: 1;
+  color: #33691e;
+  transition: all 0.2s ease;
+}
+
+.shopping-list-checked {
+  text-decoration: line-through;
+  color: #81c784;
+}
+
+.shopping-list-empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: #aed581;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.empty-state-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
