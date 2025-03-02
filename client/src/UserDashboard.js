@@ -12,15 +12,15 @@ const UserDashboard = ({ userData }) => {
 
   // Color palette based on the pastel purple theme
   const colors = {
-    primary: '#8B80F9',    // Main purple color
-    secondary: '#A594F9',  // Lighter purple
-    light: '#EAE6FF',      // Very light purple/lavender
-    accent1: '#FFD6E0',    // Soft pink
-    accent2: '#A1EAFB',    // Soft blue
-    text: '#2A2D43',       // Dark blue/purple for text
-    success: '#77DD77',    // Soft green for success indicators
-    warning: '#FFB347',    // Soft orange for warnings
-    danger: '#FF6B6B'      // Soft red for danger/avoid
+   primary: '#2ECC71',    // Main green color
+    secondary: '#27AE60',  // Darker green
+    light: '#E8F8F5',      // Very light green
+    accent1: '#D5F5E3',    // Soft light green
+    accent2: '#A2DED0',    // Soft mint
+    text: '#2C3E50',       // Dark blue/green for text
+    success: '#58D68D',    // Bright green for success indicators
+    warning: '#F4D03F',    // Soft yellow for warnings
+    danger: '#E74C3C'      // Soft red for danger/avoid
   };
 
   useEffect(() => {
