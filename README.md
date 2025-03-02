@@ -3,11 +3,13 @@
 ## 📌 Overview  
 HenCare is an **AI-driven wellness platform** that helps users improve their health by providing **personalized meal plans, nutritional insights, and health recommendations** based on their dietary preferences, allergies, and medical conditions. By integrating **Gemini AI**, we ensure users receive **scientifically backed** health guidance tailored to their needs.  
 
-### Category: 
+### Category
 Health & Wellness | Productivity & Organization
+
 ### Target Audience: 
 Everyone (People who pay attention to their health and plan to maintain healthy for long term)
-### Purpose: 
+
+### Purpose
 Design wellness tracker, allowing users to monitor their daily health
 
 ## 🚀 Features  
