@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// No need for custom CSS file when using Bootstrap
+import avatarImage from './cutecowprofile.png';
 
 const UserDashboard = ({ userData }) => {
   const navigate = useNavigate();
@@ -264,6 +264,156 @@ const UserDashboard = ({ userData }) => {
   return (
     <div className="container-fluid py-4" style={{ background: 'rgba(234, 230, 255, 0.3)' }}>
       <div className="container">
+        {/* User Profile Section */}
+        <div className="row mb-4">
+          <div className="col-12">
+            <div 
+              className="card border-0 rounded-4 shadow-sm"
+              style={{ background: 'white' }}
+            >
+              <div className="card-body p-4">
+                <div className="d-flex flex-wrap align-items-center">
+                  {/* Profile Picture */}
+                  <div className="me-4 mb-3 mb-md-0">
+                    <div
+                      style={{
+                        width: '120px',
+                        height: '120px',
+                        borderRadius: '50%',
+                        overflow: 'hidden',
+                        border: `3px solid ${colors.primary}`,
+                        boxShadow: '0 4px 10px rgba(139, 128, 249, 0.3)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        background: colors.light
+                      }}
+                    >
+ <img src={avatarImage} alt="Profile" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                    </div>
+                  </div>
+
+                  {/* User Information */}
+                  <div className="flex-grow-1">
+                    <h2 
+                      style={{ 
+                        color: colors.text, 
+                        fontSize: '1.8rem',
+                        marginBottom: '0.5rem' 
+                      }}
+                    >
+                      {userData?.basicInformation?.fullName || "User"}
+                    </h2>
+                    
+                    <div className="row mt-3">
+                      <div className="col-md-6 col-lg-3 mb-2">
+                        <div className="d-flex align-items-center">
+                          <div 
+                            className="rounded-circle d-flex align-items-center justify-content-center me-2"
+                            style={{ 
+                              width: '28px',
+                              height: '28px',
+                              background: colors.light,
+                              color: colors.primary
+                            }}
+                          >
+                            <i className="bi bi-calendar3"></i>
+                          </div>
+                          <div>
+                            <span style={{ fontSize: '0.85rem', color: colors.text, opacity: 0.7 }}>Age</span>
+                            <p style={{ margin: 0, fontWeight: '500' }}>{userData?.basicInformation?.age || "-"}</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="col-md-6 col-lg-3 mb-2">
+                        <div className="d-flex align-items-center">
+                          <div 
+                            className="rounded-circle d-flex align-items-center justify-content-center me-2"
+                            style={{ 
+                              width: '28px',
+                              height: '28px',
+                              background: colors.light,
+                              color: colors.primary
+                            }}
+                          >
+                            <i className="bi bi-rulers"></i>
+                          </div>
+                          <div>
+                            <span style={{ fontSize: '0.85rem', color: colors.text, opacity: 0.7 }}>Height</span>
+                            <p style={{ margin: 0, fontWeight: '500' }}>
+                              {userData?.basicInformation?.height?.value || "-"} {userData?.basicInformation?.height?.unit || ""}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="col-md-6 col-lg-3 mb-2">
+                        <div className="d-flex align-items-center">
+                          <div 
+                            className="rounded-circle d-flex align-items-center justify-content-center me-2"
+                            style={{ 
+                              width: '28px',
+                              height: '28px',
+                              background: colors.light,
+                              color: colors.primary
+                            }}
+                          >
+                            <i className="bi bi-speedometer"></i>
+                          </div>
+                          <div>
+                            <span style={{ fontSize: '0.85rem', color: colors.text, opacity: 0.7 }}>Weight</span>
+                            <p style={{ margin: 0, fontWeight: '500' }}>
+                              {userData?.basicInformation?.weight?.value || "-"} {userData?.basicInformation?.weight?.unit || ""}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="col-md-6 col-lg-3 mb-2">
+                        <div className="d-flex align-items-center">
+                          <div 
+                            className="rounded-circle d-flex align-items-center justify-content-center me-2"
+                            style={{ 
+                              width: '28px',
+                              height: '28px',
+                              background: colors.light,
+                              color: colors.primary
+                            }}
+                          >
+                            <i className="bi bi-droplet"></i>
+                          </div>
+                          <div>
+                            <span style={{ fontSize: '0.85rem', color: colors.text, opacity: 0.7 }}>Blood Type</span>
+                            <p style={{ margin: 0, fontWeight: '500' }}>{userData?.basicInformation?.bloodType || "-"}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Edit Profile Button */}
+                  <div className="ms-md-auto mt-3 mt-md-0">
+                    <button 
+                      className="btn px-3 py-2 rounded-pill" 
+                      onClick={handleRetakeQuestionnaire}
+                      style={{ 
+                        background: 'white', 
+                        color: colors.primary, 
+                        border: `1px solid ${colors.primary}`,
+                        fontSize: '0.9rem'
+                      }}
+                    >
+                      <i className="bi bi-pencil me-2"></i>
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="row mb-4">
           <div className="col-12">
             <div 
@@ -361,20 +511,19 @@ const UserDashboard = ({ userData }) => {
                       <div className="col-md-6">
                         <h5 style={{ fontSize: '1rem', color: colors.text }}>Preparation</h5>
                         <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
-  {recommendations.dailyPlan.breakfast.preparation.split('. ').map((step, idx) => (
-    step.trim() && (
-      <li 
-        key={idx} 
-        className="list-group-item px-0 py-1"
-        style={{ background: 'transparent', border: 'none' }}
-      >
-        <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
-        {step}.
-      </li>
-    )
-  ))}
-</ul>
-
+                          {recommendations.dailyPlan.breakfast.preparation.split('. ').map((step, idx) => (
+                            step.trim() && (
+                              <li 
+                                key={idx} 
+                                className="list-group-item px-0 py-1"
+                                style={{ background: 'transparent', border: 'none' }}
+                              >
+                                <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+                                {step}.
+                              </li>
+                            )
+                          ))}
+                        </ul>
                       </div>
                     </div>
                     
@@ -436,20 +585,19 @@ const UserDashboard = ({ userData }) => {
                       <div className="col-md-6">
                         <h5 style={{ fontSize: '1rem', color: colors.text }}>Preparation</h5>
                         <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
-  {recommendations.dailyPlan.lunch.preparation.split('. ').map((step, idx) => (
-    step.trim() && (
-      <li 
-        key={idx} 
-        className="list-group-item px-0 py-1"
-        style={{ background: 'transparent', border: 'none' }}
-      >
-        <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
-        {step}.
-      </li>
-    )
-  ))}
-</ul>
-
+                          {recommendations.dailyPlan.lunch.preparation.split('. ').map((step, idx) => (
+                            step.trim() && (
+                              <li 
+                                key={idx} 
+                                className="list-group-item px-0 py-1"
+                                style={{ background: 'transparent', border: 'none' }}
+                              >
+                                <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+                                {step}.
+                              </li>
+                            )
+                          ))}
+                        </ul>
                       </div>
                     </div>
                     
@@ -511,20 +659,19 @@ const UserDashboard = ({ userData }) => {
                       <div className="col-md-6">
                         <h5 style={{ fontSize: '1rem', color: colors.text }}>Preparation</h5>
                         <ul className="list-group list-group-flush" style={{ background: 'transparent' }}>
-  {recommendations.dailyPlan.dinner.preparation.split('. ').map((step, idx) => (
-    step.trim() && (
-      <li 
-        key={idx} 
-        className="list-group-item px-0 py-1"
-        style={{ background: 'transparent', border: 'none' }}
-      >
-        <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
-        {step}.
-      </li>
-    )
-  ))}
-</ul>
-
+                          {recommendations.dailyPlan.dinner.preparation.split('. ').map((step, idx) => (
+                            step.trim() && (
+                              <li 
+                                key={idx} 
+                                className="list-group-item px-0 py-1"
+                                style={{ background: 'transparent', border: 'none' }}
+                              >
+                                <i className="bi bi-check2-circle me-2" style={{ color: colors.primary }}></i>
+                                {step}.
+                              </li>
+                            )
+                          ))}
+                        </ul>
                       </div>
                     </div>
                     
@@ -562,6 +709,7 @@ const UserDashboard = ({ userData }) => {
                       </div>
                       <h3 style={{ fontSize: '1.3rem', color: colors.text, margin: 0 }}>Snacks</h3>
                     </div>
+                    
                     
                     {recommendations.dailyPlan.snacks.map((snack, idx) => (
                       <div 
