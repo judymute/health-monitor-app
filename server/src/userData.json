@@ -1,0 +1,89 @@
+{
+  "basicInformation": {
+    "fullName": "Zihao",
+    "age": 24,
+    "weight": {
+      "value": 44,
+      "unit": "kg"
+    },
+    "height": {
+      "value": 42.6,
+      "unit": "cm"
+    },
+    "bloodType": "A-"
+  },
+  "dietaryPreferences": {
+    "dietType": "Vegan",
+    "dietTypeOther": "",
+    "allergiesIntolerances": {
+      "dairy": false,
+      "eggs": true,
+      "nuts": {
+        "selected": false,
+        "details": ""
+      },
+      "seafoodShellfish": false,
+      "gluten": false,
+      "soy": false,
+      "other": {
+        "selected": false,
+        "details": ""
+      }
+    },
+    "favoriteCuisines": {
+      "italian": false,
+      "mexican": false,
+      "indian": false,
+      "chinese": false,
+      "japanese": false,
+      "thai": true,
+      "mediterranean": false,
+      "american": false,
+      "middleEastern": false,
+      "other": {
+        "selected": false,
+        "details": ""
+      }
+    },
+    "spiceTolerance": 2,
+    "dislikedFoods": "Banana"
+  },
+  "medicalConditions": {
+    "diabetes": {
+      "selected": false,
+      "type": ""
+    },
+    "celiacDisease": true,
+    "inflammatoryBowelDisease": {
+      "selected": false,
+      "type": ""
+    },
+    "hypertension": false,
+    "cardiovascularDisease": false,
+    "chronicKidneyDisease": false,
+    "acidReflux": false,
+    "irritableBowelSyndrome": false,
+    "gout": false,
+    "phenylketonuria": false,
+    "liverDisease": false,
+    "other": {
+      "selected": false,
+      "details": ""
+    }
+  },
+  "dietaryGoals": {
+    "weightLoss": false,
+    "weightGain": true,
+    "maintenance": false,
+    "increasedEnergy": false,
+    "betterDigestion": false,
+    "improvedSleep": false,
+    "muscleBuilding": false,
+    "other": {
+      "selected": false,
+      "details": ""
+    }
+  },
+  "lifestyleInformation": {},
+  "mealPreferences": {}
+}
