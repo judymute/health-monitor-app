@@ -48,7 +48,7 @@ const Chatbot = () => {
     // AI Profile Data
     const aiProfile = {
         name: "Hen",
-        avatar: "https://randomuser.me/api/portraits/women/44.jpg" // Example AI avatar
+        avatar: "https://www.henhackshackathon.com/images/favicon-25.svg" // Example AI avatar
     };
 
     // Function to send message and get AI response
