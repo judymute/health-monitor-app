@@ -1,16 +1,16 @@
 {
   "basicInformation": {
-    "fullName": "Julie ",
+    "fullName": "as",
     "age": 18,
     "weight": {
-      "value": 70,
+      "value": 12,
       "unit": "kg"
     },
     "height": {
-      "value": 180,
+      "value": 121,
       "unit": "cm"
     },
-    "bloodType": "A-"
+    "bloodType": "B+"
   },
   "dietaryPreferences": {
     "dietType": "Vegan",
@@ -18,14 +18,13 @@
     "allergiesIntolerances": {
       "noAllergies": true,
       "dairy": false,
-      "eggs": false,
-      "eggs": false,
+      "eggs": true,
       "nuts": {
         "selected": false,
         "details": ""
       },
-      "seafoodShellfish": true,
-      "gluten": true,
+      "seafoodShellfish": false,
+      "gluten": false,
       "soy": false,
       "other": {
         "selected": false,
@@ -34,9 +33,9 @@
     },
     "favoriteCuisines": {
       "italian": false,
-      "mexican": false,
+      "mexican": true,
       "indian": false,
-      "chinese": true,
+      "chinese": false,
       "japanese": false,
       "thai": false,
       "mediterranean": false,
@@ -62,13 +61,13 @@
       "type": ""
     },
     "hypertension": false,
-    "cardiovascularDisease": true,
+    "cardiovascularDisease": false,
     "chronicKidneyDisease": false,
     "acidReflux": false,
     "irritableBowelSyndrome": false,
     "gout": false,
     "phenylketonuria": false,
-    "liverDisease": false,
+    "liverDisease": true,
     "other": {
       "selected": false,
       "details": "",

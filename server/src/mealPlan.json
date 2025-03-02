@@ -1,150 +1,133 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Tofu Scramble with Chinese Vegetables and Brown Rice",
+      "name": "Vegan Breakfast Burrito",
       "ingredients": [
-        "Firm Tofu (crumbled)",
-        "Broccoli Florets",
-        "Carrot (diced)",
-        "Soy Sauce (low sodium, gluten-free)",
-        "Sesame Oil",
-        "Ginger (grated)",
-        "Garlic (minced)",
-        "Turmeric",
-        "Brown Rice (cooked)",
-        "Green Onions (chopped)"
+        "Whole wheat tortilla",
+        "Black beans",
+        "Scrambled tofu (turmeric for color)",
+        "Salsa",
+        "Avocado",
+        "Spinach"
       ],
-      "preparation": "Sauté ginger and garlic in sesame oil. Add broccoli and carrot, cook until tender-crisp. Add tofu, soy sauce, and turmeric. Scramble until heated through. Serve over brown rice and garnish with green onions.",
-      "nutritionalBenefits": "High in protein, fiber, and complex carbohydrates. Good source of vitamins and minerals like iron, calcium, and vitamin A.",
-      "healthNotes": "Tofu is a good source of protein and helps with weight gain. Brown rice provides sustained energy. Low sodium soy sauce is important for cardiovascular health. Turmeric has anti-inflammatory properties."
+      "preparation": "Sauté tofu with turmeric and black salt for an egg-like flavor. Warm the tortilla. Fill with tofu, beans, salsa, avocado, and spinach. Wrap and serve.",
+      "nutritionalBenefits": "High in protein, fiber, and healthy fats. Provides sustained energy for the morning.",
+      "healthNotes": "Tofu provides protein and can be easier on the liver than some animal proteins. Use low-sodium salsa to manage sodium intake, crucial for liver health."
     },
     "lunch": {
-      "name": "Vegan Mapo Tofu with Edamame and Quinoa",
+      "name": "Vegan Mexican Quinoa Bowl",
       "ingredients": [
-        "Soft Tofu (cubed)",
-        "Vegetable Broth (low sodium)",
-        "Fermented Black Beans (rinsed and mashed)",
-        "Chili Bean Paste (doubanjiang, check for gluten-free)",
-        "Soy Sauce (low sodium, gluten-free)",
-        "Cornstarch",
-        "Sugar",
-        "Edamame (shelled)",
-        "Quinoa (cooked)",
-        "Sesame Oil",
-        "Green Onions (chopped)"
+        "Cooked quinoa",
+        "Black beans",
+        "Corn",
+        "Diced bell peppers (red and yellow)",
+        "Avocado",
+        "Chopped cilantro",
+        "Lime juice",
+        "Olive oil",
+        "Spices (cumin, chili powder, garlic powder)"
       ],
-      "preparation": "Sauté fermented black beans and chili bean paste in sesame oil. Add vegetable broth, soy sauce, cornstarch slurry, and sugar. Simmer. Gently add tofu and simmer until heated through. Serve with edamame and quinoa. Garnish with green onions.",
-      "nutritionalBenefits": "Excellent source of plant-based protein and fiber. Quinoa provides complete protein and essential amino acids. Edamame is rich in vitamins and minerals.",
-      "healthNotes": "Fermented black beans and chili bean paste provide umami flavor. Quinoa offers sustained energy and supports cardiovascular health. Careful sodium control is crucial."
+      "preparation": "Combine all ingredients in a bowl. Dress with lime juice, olive oil, and spices. Adjust seasoning to taste.",
+      "nutritionalBenefits": "Complete protein source from quinoa, good source of fiber, and provides essential vitamins and minerals.",
+      "healthNotes": "Quinoa is gentle on the digestive system and provides sustained energy. Be mindful of spice levels, avoiding excessive heat that might irritate the digestive system. Use fresh, whole ingredients to minimize processed food intake."
     },
     "dinner": {
-      "name": "Vegan Chow Mein with Extra Tofu and Vegetables",
+      "name": "Vegan Enchiladas with Sweet Potato and Black Beans",
       "ingredients": [
-        "Gluten-Free Noodles (rice noodles)",
-        "Firm Tofu (cubed and pan-fried)",
-        "Broccoli Florets",
-        "Bell Peppers (sliced)",
-        "Carrots (julienned)",
-        "Mushrooms (sliced)",
-        "Soy Sauce (low sodium, gluten-free)",
-        "Sesame Oil",
-        "Ginger (grated)",
-        "Garlic (minced)",
-        "Vegetable Broth (low sodium)",
-        "Cornstarch",
-        "Green Onions (chopped)"
+        "Corn tortillas",
+        "Cooked sweet potato, mashed",
+        "Black beans",
+        "Vegan enchilada sauce (homemade or low-sodium)",
+        "Vegan cheese alternative (optional)",
+        "Chopped onion",
+        "Spices (chili powder, cumin)"
       ],
-      "preparation": "Cook noodles according to package directions. Sauté ginger and garlic in sesame oil. Add vegetables and cook until tender-crisp. Add pan-fried tofu, noodles, soy sauce, vegetable broth, and cornstarch slurry. Stir-fry until heated through. Garnish with green onions.",
-      "nutritionalBenefits": "Provides complex carbohydrates, protein, and fiber. A good source of vitamins and minerals from the vegetables.",
-      "healthNotes": "Use rice noodles for a gluten-free option. Pan-fried tofu adds extra protein for weight gain. Ensure low sodium content to manage cardiovascular health."
+      "preparation": "Sauté onion. Mix mashed sweet potato, black beans, sautéed onion, and spices. Fill each tortilla with the mixture, roll them up, and place in a baking dish. Cover with enchilada sauce and vegan cheese (optional). Bake until heated through and cheese is melted (if using).",
+      "nutritionalBenefits": "Rich in fiber, complex carbohydrates, and vitamins A and C. Provides a satisfying and nutritious meal.",
+      "healthNotes": "Sweet potatoes are easily digested. Use low-sodium enchilada sauce or make your own to control sodium intake, important for liver health. Ensure the enchilada sauce is free from any ingredients known to be harmful for liver disease."
     },
     "snacks": [
       {
-        "name": "Peanut Butter and Banana Sandwich on Gluten-Free Bread",
+        "name": "Avocado Toast with a sprinkle of nutritional yeast",
         "ingredients": [
-          "Gluten-Free Bread",
-          "Peanut Butter (natural)",
-          "Banana (sliced)"
+          "Whole grain toast",
+          "Avocado, mashed",
+          "Nutritional yeast",
+          "Hemp seeds"
         ],
-        "preparation": "Spread peanut butter on gluten-free bread slices. Add sliced banana. Top with another slice of bread.",
-        "nutritionalBenefits": "Provides healthy fats, protein, and carbohydrates for sustained energy. Good source of potassium and fiber.",
-        "healthNotes": "Provides a boost of calories and protein to support weight gain. Choose natural peanut butter without added sugars or salt."
-        "preparation": "Layer Greek yogurt, granola, and berries in a bowl. Drizzle with honey if desired.",
-        "nutritionalBenefits": "Provides protein, calcium, probiotics, and antioxidants. Granola adds fiber and healthy fats.",
-        "healthNotes": "Choose a low-sugar granola. Use plain Greek yogurt to avoid added sugar. Berries contribute antioxidants and vitamins. Full-fat greek yogurt can help with satiety."
+        "preparation": "Toast the bread. Spread mashed avocado on top. Sprinkle with nutritional yeast and hemp seeds.",
+        "nutritionalBenefits": "Healthy fats, fiber, B vitamins, and protein. Keeps you feeling full and satisfied between meals.",
+        "healthNotes": "Avocados are rich in healthy fats that are beneficial for overall health, but monitor portion sizes due to their caloric density. Nutritional yeast provides B vitamins and a cheesy flavor without dairy. Hemp seeds add extra protein."
       }
     ]
   },
   "nutritionalFocus": [
     {
       "nutrient": "Protein",
-      "reason": "Essential for muscle building and weight gain.",
-      "reason": "Essential for muscle growth and repair to support healthy weight gain. Also important for feeling full and satisfied.",
+      "reason": "Essential for growth, repair, and muscle building. Important for healthy weight gain.",
       "sources": [
         "Tofu",
-        "Edamame",
-        "Quinoa",
-        "Peanut Butter"
-        "Tofu",
         "Black beans",
-        "Greek yogurt",
-        "Cheese",
-        "Nuts and seeds"
+        "Quinoa",
+        "Hemp seeds"
       ]
     },
     {
       "nutrient": "Complex Carbohydrates",
-      "reason": "Provide sustained energy and muscle building. Important for fueling workouts.",
+      "reason": "Provides sustained energy and fiber for healthy digestion and supports weight gain.",
       "sources": [
-        "Brown Rice",
         "Quinoa",
-        "Gluten-Free Noodles",
-        "Gluten-Free Bread"
+        "Sweet potato",
         "Whole wheat tortillas",
-        "Brown rice",
-        "Sweet potatoes",
-        "Black beans",
         "Corn"
       ]
     },
     {
       "nutrient": "Healthy Fats",
-      "reason": "Important for hormone production and overall health; calorie-dense for weight gain.",
-      "reason": "Essential for hormone production, brain function, and overall health. Also helps with satiety and absorption of fat-soluble vitamins.",
+      "reason": "Supports hormone production, brain function, and nutrient absorption. Important for overall health and weight gain.",
       "sources": [
-        "Peanut Butter",
-        "Sesame Oil"
         "Avocado",
-        "Nuts and seeds",
         "Olive oil",
-        "Full-fat Greek yogurt"
+        "Hemp seeds"
+      ]
+    },
+    {
+      "nutrient": "B Vitamins",
+      "reason": "Important for energy metabolism and nerve function. Critical for individuals with liver disease.",
+      "sources": [
+        "Nutritional Yeast",
+        "Whole Grains",
+        "Legumes"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Seafood/Shellfish",
-      "reason": "Allergy - can cause a severe allergic reaction."
+      "food": "Eggs",
+      "reason": "Allergy"
     },
     {
-      "food": "Milk",
-      "reason": "Dietary preference (Vegan)"
+      "food": "High Fructose Corn Syrup",
+      "reason": "Can be damaging to the liver"
     },
     {
-      "food": "Gluten",
-      "reason": "Allergy/Intolerance - can cause digestive issues and other symptoms."
-      "food": "Starberry",
-      "reason": "User Preference"
+      "food": "Excessive Processed Foods",
+      "reason": "Can contain additives and preservatives harmful to the liver."
+    },
+    {
+      "food": "Alcohol",
+      "reason": "Damaging to the liver."
+    },
+    {
+      "food": "High-Sodium Foods",
+      "reason": "Can contribute to fluid retention and liver stress."
     }
   ],
   "weeklyHabitTips": [
-    "Eat frequent, smaller meals and snacks throughout the day to increase calorie intake.",
-    "Focus on incorporating healthy fats into your diet for increased calorie density.",
-    "Track your calorie intake to ensure you are consuming enough calories for weight gain."
-    "Increase portion sizes slightly to promote weight gain.",
-    "Incorporate strength training exercises 2-3 times per week to build muscle mass.",
-    "Drink plenty of water throughout the day to stay hydrated.",
-    "Add healthy fats to your meals and snacks (e.g., nuts, seeds, avocado).",
-    "Ensure adequate sleep to support muscle recovery and overall health."
+    "Eat consistently throughout the day to support healthy weight gain.",
+    "Choose whole, unprocessed foods whenever possible to support liver health.",
+    "Stay hydrated by drinking plenty of water throughout the day. Water helps the liver function more effectively.",
+    "Incorporate light exercise, like walking, to improve overall health and well-being.",
+    "Consult with a registered dietitian or healthcare professional for personalized guidance on weight gain and managing liver disease."
   ]
 }
