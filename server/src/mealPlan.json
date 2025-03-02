@@ -1,133 +1,101 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Vegan Breakfast Burrito",
+      "name": "Breakfast Burrito with Scrambled Eggs, Black Beans, and Avocado",
       "ingredients": [
-        "Whole wheat tortilla",
-        "Black beans",
-        "Scrambled tofu (turmeric for color)",
-        "Salsa",
-        "Avocado",
-        "Spinach"
+        "2 large eggs",
+        "1/4 cup black beans",
+        "1/4 avocado",
+        "1 whole wheat tortilla",
+        "1 tbsp salsa",
+        "1 tbsp shredded cheese (optional)"
       ],
-      "preparation": "Sauté tofu with turmeric and black salt for an egg-like flavor. Warm the tortilla. Fill with tofu, beans, salsa, avocado, and spinach. Wrap and serve.",
-      "nutritionalBenefits": "High in protein, fiber, and healthy fats. Provides sustained energy for the morning.",
-      "healthNotes": "Tofu provides protein and can be easier on the liver than some animal proteins. Use low-sodium salsa to manage sodium intake, crucial for liver health."
+      "preparation": "Scramble eggs in a pan. Heat black beans. Mash avocado. Warm tortilla. Assemble burrito with all ingredients. Add salsa and cheese (optional).",
+      "nutritionalBenefits": "Provides protein, healthy fats, fiber, and complex carbohydrates for sustained energy.",
+      "healthNotes": "Good source of protein and healthy fats to start the day, promoting satiety and muscle growth."
     },
     "lunch": {
-      "name": "Vegan Mexican Quinoa Bowl",
+      "name": "Chicken Quesadilla with Mexican Rice",
       "ingredients": [
-        "Cooked quinoa",
-        "Black beans",
-        "Corn",
-        "Diced bell peppers (red and yellow)",
-        "Avocado",
-        "Chopped cilantro",
-        "Lime juice",
-        "Olive oil",
-        "Spices (cumin, chili powder, garlic powder)"
+        "4 oz cooked chicken breast (shredded)",
+        "1 whole wheat tortilla",
+        "1/4 cup shredded cheese",
+        "1/4 cup Mexican rice (brown rice cooked with tomato, onion, and spices)",
+        "2 tbsp salsa",
+        "1 tbsp sour cream (optional)"
       ],
-      "preparation": "Combine all ingredients in a bowl. Dress with lime juice, olive oil, and spices. Adjust seasoning to taste.",
-      "nutritionalBenefits": "Complete protein source from quinoa, good source of fiber, and provides essential vitamins and minerals.",
-      "healthNotes": "Quinoa is gentle on the digestive system and provides sustained energy. Be mindful of spice levels, avoiding excessive heat that might irritate the digestive system. Use fresh, whole ingredients to minimize processed food intake."
+      "preparation": "Place chicken and cheese on one half of the tortilla. Fold in half. Cook in a pan over medium heat until golden brown and cheese is melted. Serve with Mexican rice and salsa. Add sour cream (optional).",
+      "nutritionalBenefits": "Provides lean protein, carbohydrates, and fiber. Mexican rice adds vitamins and minerals.",
+      "healthNotes": "Balanced meal providing protein and carbohydrates for energy and muscle support."
     },
     "dinner": {
-      "name": "Vegan Enchiladas with Sweet Potato and Black Beans",
+      "name": "Tacos al Pastor (using lean pork) with Corn Tortillas and Pineapple Salsa",
       "ingredients": [
-        "Corn tortillas",
-        "Cooked sweet potato, mashed",
-        "Black beans",
-        "Vegan enchilada sauce (homemade or low-sodium)",
-        "Vegan cheese alternative (optional)",
-        "Chopped onion",
-        "Spices (chili powder, cumin)"
+        "4 oz lean pork (marinated in al pastor seasoning)",
+        "3 corn tortillas",
+        "1/4 cup pineapple salsa (diced pineapple, red onion, cilantro, lime juice)",
+        "1/4 cup chopped cilantro",
+        "1 lime wedge"
       ],
-      "preparation": "Sauté onion. Mix mashed sweet potato, black beans, sautéed onion, and spices. Fill each tortilla with the mixture, roll them up, and place in a baking dish. Cover with enchilada sauce and vegan cheese (optional). Bake until heated through and cheese is melted (if using).",
-      "nutritionalBenefits": "Rich in fiber, complex carbohydrates, and vitamins A and C. Provides a satisfying and nutritious meal.",
-      "healthNotes": "Sweet potatoes are easily digested. Use low-sodium enchilada sauce or make your own to control sodium intake, important for liver health. Ensure the enchilada sauce is free from any ingredients known to be harmful for liver disease."
+      "preparation": "Cook pork. Warm tortillas. Assemble tacos with pork, pineapple salsa, and cilantro. Serve with a lime wedge.",
+      "nutritionalBenefits": "Lean protein source. Corn tortillas are a source of complex carbohydrates. Pineapple salsa provides vitamins and antioxidants.",
+      "healthNotes": "Lean protein supports muscle growth. Pineapple salsa adds a sweet and savory flavor and provides vitamin C."
     },
     "snacks": [
       {
-        "name": "Avocado Toast with a sprinkle of nutritional yeast",
+        "name": "Greek Yogurt with Granola and Berries",
         "ingredients": [
-          "Whole grain toast",
-          "Avocado, mashed",
-          "Nutritional yeast",
-          "Hemp seeds"
+          "1 cup plain Greek yogurt (full-fat)",
+          "1/4 cup granola",
+          "1/2 cup mixed berries (strawberries, blueberries, raspberries)"
         ],
-        "preparation": "Toast the bread. Spread mashed avocado on top. Sprinkle with nutritional yeast and hemp seeds.",
-        "nutritionalBenefits": "Healthy fats, fiber, B vitamins, and protein. Keeps you feeling full and satisfied between meals.",
-        "healthNotes": "Avocados are rich in healthy fats that are beneficial for overall health, but monitor portion sizes due to their caloric density. Nutritional yeast provides B vitamins and a cheesy flavor without dairy. Hemp seeds add extra protein."
+        "preparation": "Combine Greek yogurt, granola, and berries in a bowl.",
+        "nutritionalBenefits": "Provides protein, calcium, probiotics, and antioxidants.",
+        "healthNotes": "Good source of protein and healthy fats to support muscle growth and satiety."
       }
     ]
   },
   "nutritionalFocus": [
     {
       "nutrient": "Protein",
-      "reason": "Essential for growth, repair, and muscle building. Important for healthy weight gain.",
+      "reason": "Essential for muscle growth and repair, crucial for weight gain.",
       "sources": [
-        "Tofu",
-        "Black beans",
-        "Quinoa",
-        "Hemp seeds"
-      ]
-    },
-    {
-      "nutrient": "Complex Carbohydrates",
-      "reason": "Provides sustained energy and fiber for healthy digestion and supports weight gain.",
-      "sources": [
-        "Quinoa",
-        "Sweet potato",
-        "Whole wheat tortillas",
-        "Corn"
+        "Eggs",
+        "Chicken",
+        "Pork",
+        "Greek Yogurt",
+        "Black Beans"
       ]
     },
     {
       "nutrient": "Healthy Fats",
-      "reason": "Supports hormone production, brain function, and nutrient absorption. Important for overall health and weight gain.",
+      "reason": "Provides energy, supports hormone production, and aids in nutrient absorption.",
       "sources": [
         "Avocado",
-        "Olive oil",
-        "Hemp seeds"
+        "Greek Yogurt",
+        "Nuts (in granola)"
       ]
     },
     {
-      "nutrient": "B Vitamins",
-      "reason": "Important for energy metabolism and nerve function. Critical for individuals with liver disease.",
+      "nutrient": "Complex Carbohydrates",
+      "reason": "Provides sustained energy and supports muscle glycogen replenishment.",
       "sources": [
-        "Nutritional Yeast",
-        "Whole Grains",
-        "Legumes"
+        "Whole Wheat Tortillas",
+        "Corn Tortillas",
+        "Brown Rice",
+        "Beans"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Eggs",
-      "reason": "Allergy"
-    },
-    {
-      "food": "High Fructose Corn Syrup",
-      "reason": "Can be damaging to the liver"
-    },
-    {
-      "food": "Excessive Processed Foods",
-      "reason": "Can contain additives and preservatives harmful to the liver."
-    },
-    {
-      "food": "Alcohol",
-      "reason": "Damaging to the liver."
-    },
-    {
-      "food": "High-Sodium Foods",
-      "reason": "Can contribute to fluid retention and liver stress."
+      "food": "Excessive Sugary Drinks",
+      "reason": "Provide empty calories and can hinder healthy weight gain."
     }
   ],
   "weeklyHabitTips": [
-    "Eat consistently throughout the day to support healthy weight gain.",
-    "Choose whole, unprocessed foods whenever possible to support liver health.",
-    "Stay hydrated by drinking plenty of water throughout the day. Water helps the liver function more effectively.",
-    "Incorporate light exercise, like walking, to improve overall health and well-being.",
-    "Consult with a registered dietitian or healthcare professional for personalized guidance on weight gain and managing liver disease."
+    "Eat consistently throughout the day to ensure adequate calorie intake.",
+    "Focus on nutrient-dense foods to support muscle growth and overall health.",
+    "Incorporate strength training exercises to build muscle mass effectively."
   ]
 }
