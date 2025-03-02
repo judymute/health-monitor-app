@@ -7,6 +7,7 @@ const UserDashboard = ({ userData }) => {
   const [recommendations, setRecommendations] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [errorDetails, setErrorDetails] = useState(null);
 
   useEffect(() => {
     // Check if we have user data
@@ -19,79 +20,40 @@ const UserDashboard = ({ userData }) => {
     const fetchRecommendations = async () => {
       try {
         setLoading(true);
+        setError(null);
+        setErrorDetails(null);
         
-        // This would be your actual API call to get recommendations from your backend
-        // For this example, we'll simulate a response
-        await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API delay
+        console.log('Fetching meal plan recommendations...');
         
-        // Simulate a successful response
-        const mockRecommendations = {
-          dailyPlan: {
-            breakfast: {
-              name: "Overnight Oats with Berries",
-              ingredients: ["rolled oats", "almond milk", "chia seeds", "mixed berries", "honey"],
-              preparation: "Mix oats, milk, and chia seeds. Refrigerate overnight. Top with berries and honey before eating.",
-              nutritionalBenefits: "High in fiber, antioxidants, and provides sustained energy",
-              healthNotes: "Good for heart health and blood sugar management"
-            },
-            lunch: {
-              name: "Mediterranean Quinoa Bowl",
-              ingredients: ["quinoa", "cucumber", "cherry tomatoes", "red onion", "feta cheese", "olive oil", "lemon juice"],
-              preparation: "Combine cooked quinoa with chopped vegetables, feta, olive oil, and lemon juice.",
-              nutritionalBenefits: "Rich in protein, fiber, and healthy fats",
-              healthNotes: "Anti-inflammatory properties from olive oil and vegetables"
-            },
-            dinner: {
-              name: "Baked Salmon with Roasted Vegetables",
-              ingredients: ["salmon fillet", "broccoli", "carrots", "bell peppers", "olive oil", "garlic", "lemon"],
-              preparation: "Season salmon and bake. Roast vegetables with olive oil and garlic.",
-              nutritionalBenefits: "High in omega-3 fatty acids, protein, and essential nutrients",
-              healthNotes: "Supports heart and brain health"
-            },
-            snacks: [
-              {
-                name: "Greek Yogurt with Nuts",
-                ingredients: ["Greek yogurt", "mixed nuts", "honey"],
-                preparation: "Top yogurt with nuts and a drizzle of honey.",
-                nutritionalBenefits: "Good source of protein and probiotics",
-                healthNotes: "Supports gut health and provides protein"
-              }
-            ]
+        // Call the backend API to generate meal plan
+        const response = await fetch('http://localhost:3001/api/generateMealPlan', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
           },
-          nutritionalFocus: [
-            {
-              nutrient: "Vitamin D",
-              reason: "Important for immune function and bone health",
-              sources: ["salmon", "egg yolks", "mushrooms", "fortified foods"]
-            },
-            {
-              nutrient: "Fiber",
-              reason: "Supports digestive health and maintains healthy blood sugar",
-              sources: ["whole grains", "vegetables", "fruits", "legumes"]
-            }
-          ],
-          avoidList: [
-            {
-              food: "Processed sugars",
-              reason: "Can cause energy crashes and inflammation"
-            },
-            {
-              food: "Highly processed foods",
-              reason: "Often high in sodium and unhealthy fats"
-            }
-          ],
-          weeklyHabitTips: [
-            "Drink a glass of water before each meal",
-            "Add an extra serving of vegetables to your lunch and dinner",
-            "Take a 10-minute walk after each meal to aid digestion"
-          ]
-        };
+          body: JSON.stringify({}),
+        });
         
-        setRecommendations(mockRecommendations);
+        // Log the status code to help diagnose issues
+        console.log('Response status:', response.status);
+        
+        const data = await response.json();
+        console.log('Response data:', data);
+        
+        if (!response.ok) {
+          throw new Error(data.message || 'Failed to generate meal plan');
+        }
+        
+        if (!data.success) {
+          throw new Error(data.message || 'Failed to generate meal plan');
+        }
+        
+        setRecommendations(data.mealPlan);
         setLoading(false);
       } catch (err) {
         console.error("Error fetching recommendations:", err);
-        setError("Failed to load your recommendations. Please try again later.");
+        setError(`Failed to load your recommendations: ${err.message}`);
+        setErrorDetails(err.stack || "No additional details available");
         setLoading(false);
       }
     };
@@ -104,12 +66,40 @@ const UserDashboard = ({ userData }) => {
     navigate('/questionnaire');
   };
 
+  // Function to manually refresh recommendations
+  const handleRefreshRecommendations = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:3001/api/generateMealPlan', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({}),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Failed to generate meal plan');
+      }
+      
+      setRecommendations(data.mealPlan);
+      setLoading(false);
+    } catch (err) {
+      console.error("Error refreshing recommendations:", err);
+      setError(`Failed to refresh your recommendations: ${err.message}`);
+      setLoading(false);
+    }
+  };
+
   // If we're loading
   if (loading) {
     return (
       <div className="user-dashboard loading">
         <h2>Generating your personalized meal recommendations...</h2>
         <div className="loading-spinner"></div>
+        <p className="loading-message">This may take a few moments as we analyze your health profile.</p>
       </div>
     );
   }
@@ -120,9 +110,20 @@ const UserDashboard = ({ userData }) => {
       <div className="user-dashboard error">
         <h2>Something went wrong</h2>
         <p>{error}</p>
-        <button className="btn-primary" onClick={handleRetakeQuestionnaire}>
-          Retake Questionnaire
-        </button>
+        {errorDetails && (
+          <details className="error-details">
+            <summary>Technical Details</summary>
+            <pre>{errorDetails}</pre>
+          </details>
+        )}
+        <div className="error-actions">
+          <button className="btn-primary" onClick={handleRetakeQuestionnaire}>
+            Retake Questionnaire
+          </button>
+          <button className="btn-secondary" onClick={handleRefreshRecommendations}>
+            Try Again
+          </button>
+        </div>
       </div>
     );
   }
@@ -145,9 +146,14 @@ const UserDashboard = ({ userData }) => {
     <div className="user-dashboard">
       <header className="dashboard-header">
         <h1>Your Health Dashboard</h1>
-        <button className="btn-secondary" onClick={handleRetakeQuestionnaire}>
-          Update Health Profile
-        </button>
+        <div className="dashboard-actions">
+          <button className="btn-secondary" onClick={handleRetakeQuestionnaire}>
+            Update Health Profile
+          </button>
+          <button className="btn-refresh" onClick={handleRefreshRecommendations}>
+            Refresh Meal Plan
+          </button>
+        </div>
       </header>
 
       <div className="dashboard-content">
@@ -180,13 +186,47 @@ const UserDashboard = ({ userData }) => {
           <div className="meal-card">
             <h3>Lunch</h3>
             <h4>{recommendations.dailyPlan.lunch.name}</h4>
-            {/* Similar structure as breakfast */}
+            <div className="meal-details">
+              <div className="ingredients">
+                <h5>Ingredients:</h5>
+                <ul>
+                  {recommendations.dailyPlan.lunch.ingredients.map((ingredient, idx) => (
+                    <li key={idx}>{ingredient}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="preparation">
+                <h5>Preparation:</h5>
+                <p>{recommendations.dailyPlan.lunch.preparation}</p>
+              </div>
+            </div>
+            <div className="health-notes">
+              <p><strong>Benefits:</strong> {recommendations.dailyPlan.lunch.nutritionalBenefits}</p>
+              <p><strong>Health Notes:</strong> {recommendations.dailyPlan.lunch.healthNotes}</p>
+            </div>
           </div>
 
           <div className="meal-card">
             <h3>Dinner</h3>
             <h4>{recommendations.dailyPlan.dinner.name}</h4>
-            {/* Similar structure as breakfast */}
+            <div className="meal-details">
+              <div className="ingredients">
+                <h5>Ingredients:</h5>
+                <ul>
+                  {recommendations.dailyPlan.dinner.ingredients.map((ingredient, idx) => (
+                    <li key={idx}>{ingredient}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="preparation">
+                <h5>Preparation:</h5>
+                <p>{recommendations.dailyPlan.dinner.preparation}</p>
+              </div>
+            </div>
+            <div className="health-notes">
+              <p><strong>Benefits:</strong> {recommendations.dailyPlan.dinner.nutritionalBenefits}</p>
+              <p><strong>Health Notes:</strong> {recommendations.dailyPlan.dinner.healthNotes}</p>
+            </div>
           </div>
 
           <div className="meal-card">
@@ -194,7 +234,24 @@ const UserDashboard = ({ userData }) => {
             {recommendations.dailyPlan.snacks.map((snack, idx) => (
               <div key={idx} className="snack-item">
                 <h4>{snack.name}</h4>
-                {/* Similar structure as meals */}
+                <div className="meal-details">
+                  <div className="ingredients">
+                    <h5>Ingredients:</h5>
+                    <ul>
+                      {snack.ingredients.map((ingredient, ingredientIdx) => (
+                        <li key={ingredientIdx}>{ingredient}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="preparation">
+                    <h5>Preparation:</h5>
+                    <p>{snack.preparation}</p>
+                  </div>
+                </div>
+                <div className="health-notes">
+                  <p><strong>Benefits:</strong> {snack.nutritionalBenefits}</p>
+                  <p><strong>Health Notes:</strong> {snack.healthNotes}</p>
+                </div>
               </div>
             ))}
           </div>
