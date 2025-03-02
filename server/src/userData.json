@@ -1,23 +1,24 @@
 {
   "basicInformation": {
-    "fullName": "as",
+    "fullName": "Julie Lam",
     "age": 18,
     "weight": {
-      "value": 12,
+      "value": 56,
       "unit": "kg"
     },
     "height": {
-      "value": 121,
+      "value": 122,
       "unit": "cm"
     },
-    "bloodType": "B+"
+    "bloodType": "AB-"
   },
   "dietaryPreferences": {
-    "dietType": "Vegan",
+    "dietType": "Vegetarian",
     "dietTypeOther": "",
     "allergiesIntolerances": {
+      "noAllergies": true,
       "dairy": false,
-      "eggs": true,
+      "eggs": false,
       "nuts": {
         "selected": false,
         "details": ""
@@ -46,9 +47,10 @@
       }
     },
     "spiceTolerance": 1,
-    "dislikedFoods": ""
+    "dislikedFoods": "Starberry"
   },
   "medicalConditions": {
+    "noMedicalConditions": true,
     "diabetes": {
       "selected": false,
       "type": ""
@@ -65,10 +67,11 @@
     "irritableBowelSyndrome": false,
     "gout": false,
     "phenylketonuria": false,
-    "liverDisease": true,
+    "liverDisease": false,
     "other": {
       "selected": false,
-      "details": ""
+      "details": "",
+      "type": ""
     }
   },
   "dietaryGoals": {
