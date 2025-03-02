@@ -1,19 +1,19 @@
 {
   "basicInformation": {
-    "fullName": "Xinyi Xu",
+    "fullName": "马梓豪",
     "age": 18,
     "weight": {
-      "value": 50,
+      "value": 48,
       "unit": "kg"
     },
     "height": {
-      "value": 170,
+      "value": 172,
       "unit": "cm"
     },
-    "bloodType": "A+"
+    "bloodType": "B-"
   },
   "dietaryPreferences": {
-    "dietType": "Pescatarian",
+    "dietType": "Flexitarian",
     "dietTypeOther": "",
     "allergiesIntolerances": {
       "dairy": false,
@@ -46,12 +46,12 @@
       }
     },
     "spiceTolerance": 1,
-    "dislikedFoods": "Strawberry"
+    "dislikedFoods": "Duck"
   },
   "medicalConditions": {
     "diabetes": {
       "selected": false,
-      "type": ""
+      "type": "Gestational"
     },
     "celiacDisease": false,
     "inflammatoryBowelDisease": {
@@ -59,21 +59,21 @@
       "type": ""
     },
     "hypertension": false,
-    "cardiovascularDisease": true,
+    "cardiovascularDisease": false,
     "chronicKidneyDisease": false,
     "acidReflux": false,
     "irritableBowelSyndrome": false,
     "gout": false,
     "phenylketonuria": false,
-    "liverDisease": false,
+    "liverDisease": true,
     "other": {
       "selected": false,
       "details": ""
     }
   },
   "dietaryGoals": {
-    "weightLoss": true,
-    "weightGain": false,
+    "weightLoss": false,
+    "weightGain": true,
     "maintenance": false,
     "increasedEnergy": false,
     "betterDigestion": false,
