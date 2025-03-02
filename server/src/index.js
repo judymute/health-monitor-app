@@ -426,3 +426,91 @@ app.get('/api/checkModels', async (req, res) => {
       });
     }
   });
+
+
+  app.get('/api/getShoppingList', (req, res) => {
+    try {
+      // Check if meal plan exists
+      const mealPlanPath = path.join(__dirname, 'mealPlan.json');
+      
+      if (!fs.existsSync(mealPlanPath)) {
+        return res.status(404).json({ 
+          success: false, 
+          message: 'Meal plan not found. Please generate a meal plan first.' 
+        });
+      }
+      
+      // Read meal plan data
+      const mealPlanData = JSON.parse(fs.readFileSync(mealPlanPath, 'utf8'));
+      
+      // Extract ingredients from all meals
+      const shoppingList = extractIngredients(mealPlanData.dailyPlan);
+      
+      res.json({
+        success: true,
+        shoppingList
+      });
+    } catch (error) {
+      console.error('Error generating shopping list:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: 'Failed to generate shopping list',
+        error: error.message
+      });
+    }
+  });
+  
+  // Helper function to extract ingredients from meal plan
+  function extractIngredients(dailyPlan) {
+    const ingredients = [];
+    
+    // Process breakfast
+    if (dailyPlan.breakfast && dailyPlan.breakfast.ingredients) {
+      dailyPlan.breakfast.ingredients.forEach(ingredient => {
+        ingredients.push({
+          name: ingredient,
+          meal: 'Breakfast',
+          checked: false
+        });
+      });
+    }
+    
+    // Process lunch
+    if (dailyPlan.lunch && dailyPlan.lunch.ingredients) {
+      dailyPlan.lunch.ingredients.forEach(ingredient => {
+        ingredients.push({
+          name: ingredient,
+          meal: 'Lunch',
+          checked: false
+        });
+      });
+    }
+    
+    // Process dinner
+    if (dailyPlan.dinner && dailyPlan.dinner.ingredients) {
+      dailyPlan.dinner.ingredients.forEach(ingredient => {
+        ingredients.push({
+          name: ingredient,
+          meal: 'Dinner',
+          checked: false
+        });
+      });
+    }
+    
+    // Process snacks
+    if (dailyPlan.snacks && dailyPlan.snacks.length > 0) {
+      dailyPlan.snacks.forEach((snack, index) => {
+        if (snack.ingredients) {
+          snack.ingredients.forEach(ingredient => {
+            ingredients.push({
+              name: ingredient,
+              meal: `Snack ${index + 1}`,
+              checked: false
+            });
+          });
+        }
+      });
+    }
+    
+    return ingredients;
+  }
