@@ -1,68 +1,130 @@
 import React, { useState } from 'react';
-import './DietaryPreferences.css'; // You'll create this for styling
+import './DietaryPreferences.css'; // You'll need to create this for styling
 
-const DietaryPreferences = ({ onSave, prevData = {} }) => {
+const DietaryPreferences = ({ onSave, prevData = {}, onPrevious }) => {
   // Initialize form state with previous data or defaults
   const [formData, setFormData] = useState({
-    dietType: prevData.dietType || 'No specific diet',
-    otherDiet: prevData.otherDiet || '',
-    foodAllergies: prevData.foodAllergies || ['No food allergies'],
-    otherAllergies: prevData.otherAllergies || '',
-    foodIntolerance: prevData.foodIntolerance || ['No food intolerances'],
-    dislikedFoods: prevData.dislikedFoods || [],
+    dietType: prevData.dietType || '',
+    dietTypeOther: prevData.dietTypeOther || '',
+    allergiesIntolerances: prevData.allergiesIntolerances || {
+      dairy: false,
+      eggs: false,
+      nuts: {
+        selected: false,
+        details: ''
+      },
+      seafoodShellfish: false,
+      gluten: false,
+      soy: false,
+      other: {
+        selected: false,
+        details: ''
+      }
+    },
+    favoriteCuisines: prevData.favoriteCuisines || {
+      italian: false,
+      mexican: false,
+      indian: false,
+      chinese: false,
+      japanese: false,
+      thai: false,
+      mediterranean: false,
+      american: false,
+      middleEastern: false,
+      other: {
+        selected: false,
+        details: ''
+      }
+    },
+    spiceTolerance: prevData.spiceTolerance || null,
+    dislikedFoods: prevData.dislikedFoods || ''
   });
 
-  // For handling tags input
-  const [tagInput, setTagInput] = useState('');
-
-  // Handle all input changes
+  // Handle basic input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle checkbox changes
-  const handleCheckboxChange = (e, group) => {
-    const { value, checked } = e.target;
+  // Handle checkbox changes for allergies/intolerances
+  const handleAllergyChange = (e) => {
+    const { name, checked } = e.target;
     
-    let updatedValues;
-    
-    // Special handling for "None/No" options
-    if ((value === "No food allergies" || value === "No food intolerances") && checked) {
-      // If "None" is checked, uncheck all others
-      updatedValues = [value];
-    } else if (checked) {
-      // If any other option is checked, remove "None" option if present
-      updatedValues = formData[group].filter(item => 
-        item !== "No food allergies" && item !== "No food intolerances"
-      );
-      updatedValues.push(value);
+    if (name === 'nuts' || name === 'other') {
+      setFormData({
+        ...formData,
+        allergiesIntolerances: {
+          ...formData.allergiesIntolerances,
+          [name]: {
+            ...formData.allergiesIntolerances[name],
+            selected: checked
+          }
+        }
+      });
     } else {
-      // If unchecked, remove the value
-      updatedValues = formData[group].filter(item => item !== value);
-    }
-    
-    setFormData({ ...formData, [group]: updatedValues });
-  };
-
-  // Handle tag input
-  const handleTagKeyDown = (e) => {
-    if (e.key === 'Enter' && tagInput.trim()) {
-      e.preventDefault();
-      if (!formData.dislikedFoods.includes(tagInput.trim())) {
-        setFormData({
-          ...formData,
-          dislikedFoods: [...formData.dislikedFoods, tagInput.trim()]
-        });
-      }
-      setTagInput('');
+      setFormData({
+        ...formData,
+        allergiesIntolerances: {
+          ...formData.allergiesIntolerances,
+          [name]: checked
+        }
+      });
     }
   };
 
-  const removeTag = (tag) => {
+  // Handle text input for allergy details
+  const handleAllergyDetailsChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      dislikedFoods: formData.dislikedFoods.filter(t => t !== tag)
+      allergiesIntolerances: {
+        ...formData.allergiesIntolerances,
+        [name]: {
+          ...formData.allergiesIntolerances[name],
+          details: value
+        }
+      }
+    });
+  };
+
+  // Handle checkbox changes for favorite cuisines
+  const handleCuisineChange = (e) => {
+    const { name, checked } = e.target;
+    
+    if (name === 'other') {
+      setFormData({
+        ...formData,
+        favoriteCuisines: {
+          ...formData.favoriteCuisines,
+          [name]: {
+            ...formData.favoriteCuisines[name],
+            selected: checked
+          }
+        }
+      });
+    } else {
+      setFormData({
+        ...formData,
+        favoriteCuisines: {
+          ...formData.favoriteCuisines,
+          [name]: checked
+        }
+      });
+    }
+  };
+
+  // Handle text input for cuisine details
+  const handleCuisineDetailsChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      favoriteCuisines: {
+        ...formData.favoriteCuisines,
+        [name]: {
+          ...formData.favoriteCuisines[name],
+          details: value
+        }
+      }
     });
   };
 
@@ -78,7 +140,7 @@ const DietaryPreferences = ({ onSave, prevData = {} }) => {
       <form onSubmit={handleSubmit}>
         {/* Diet Type */}
         <div className="form-group">
-          <label htmlFor="dietType">Do you follow any specific diet?</label>
+          <label htmlFor="dietType">Diet Type:</label>
           <select 
             id="dietType" 
             name="dietType" 
@@ -86,137 +148,311 @@ const DietaryPreferences = ({ onSave, prevData = {} }) => {
             onChange={handleChange}
             required
           >
-            <option value="No specific diet">No specific diet</option>
+            <option value="">Select Diet Type</option>
+            <option value="Omnivore">Omnivore</option>
             <option value="Vegetarian">Vegetarian</option>
             <option value="Vegan">Vegan</option>
             <option value="Pescatarian">Pescatarian</option>
+            <option value="Flexitarian">Flexitarian</option>
             <option value="Keto">Keto</option>
             <option value="Paleo">Paleo</option>
             <option value="Mediterranean">Mediterranean</option>
-            <option value="Low-carb">Low-carb</option>
-            <option value="Low-fat">Low-fat</option>
-            <option value="Gluten-free">Gluten-free</option>
-            <option value="Dairy-free">Dairy-free</option>
             <option value="Other">Other</option>
           </select>
         </div>
 
-        {/* Other Diet - Conditional Field */}
+        {/* Other Diet Type - Conditional Field */}
         {formData.dietType === 'Other' && (
           <div className="form-group">
-            <label htmlFor="otherDiet">Please specify your diet:</label>
+            <label htmlFor="dietTypeOther">Please specify your diet:</label>
             <input
               type="text"
-              id="otherDiet"
-              name="otherDiet"
-              value={formData.otherDiet}
+              id="dietTypeOther"
+              name="dietTypeOther"
+              value={formData.dietTypeOther}
               onChange={handleChange}
               placeholder="Describe your diet"
+              required
             />
           </div>
         )}
 
-        {/* Food Allergies */}
+        {/* Food Allergies/Intolerances */}
         <div className="form-group">
-          <label>Do you have any food allergies?</label>
+          <label>Food Allergies/Intolerances:</label>
           <div className="checkbox-group">
-            {[
-              "No food allergies",
-              "Dairy",
-              "Eggs",
-              "Peanuts",
-              "Tree nuts",
-              "Soy",
-              "Wheat/Gluten",
-              "Fish",
-              "Shellfish",
-              "Other"
-            ].map(allergy => (
-              <div key={allergy} className="checkbox-item">
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="dairy"
+                name="dairy"
+                checked={formData.allergiesIntolerances.dairy}
+                onChange={handleAllergyChange}
+              />
+              <label htmlFor="dairy">Dairy</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="eggs"
+                name="eggs"
+                checked={formData.allergiesIntolerances.eggs}
+                onChange={handleAllergyChange}
+              />
+              <label htmlFor="eggs">Eggs</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="nuts"
+                name="nuts"
+                checked={formData.allergiesIntolerances.nuts.selected}
+                onChange={handleAllergyChange}
+              />
+              <label htmlFor="nuts">Nuts</label>
+              {formData.allergiesIntolerances.nuts.selected && (
                 <input
-                  type="checkbox"
-                  id={`allergy-${allergy}`}
-                  name="allergy"
-                  value={allergy}
-                  checked={formData.foodAllergies.includes(allergy)}
-                  onChange={(e) => handleCheckboxChange(e, 'foodAllergies')}
+                  type="text"
+                  name="nuts"
+                  value={formData.allergiesIntolerances.nuts.details}
+                  onChange={handleAllergyDetailsChange}
+                  placeholder="Specify which nuts"
+                  className="indented-input"
                 />
-                <label htmlFor={`allergy-${allergy}`}>{allergy}</label>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Other Allergies - Conditional Field */}
-        {formData.foodAllergies.includes('Other') && (
-          <div className="form-group">
-            <label htmlFor="otherAllergies">Please specify your allergies:</label>
-            <input
-              type="text"
-              id="otherAllergies"
-              name="otherAllergies"
-              value={formData.otherAllergies}
-              onChange={handleChange}
-              placeholder="List any other food allergies"
-            />
-          </div>
-        )}
-
-        {/* Food Intolerances */}
-        <div className="form-group">
-          <label>Do you have any food intolerances?</label>
-          <div className="checkbox-group">
-            {[
-              "No food intolerances",
-              "Lactose",
-              "Gluten",
-              "Fructose",
-              "Histamine",
-              "Salicylates",
-              "FODMAPs",
-              "Other"
-            ].map(intolerance => (
-              <div key={intolerance} className="checkbox-item">
+              )}
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="seafoodShellfish"
+                name="seafoodShellfish"
+                checked={formData.allergiesIntolerances.seafoodShellfish}
+                onChange={handleAllergyChange}
+              />
+              <label htmlFor="seafoodShellfish">Seafood/Shellfish</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="gluten"
+                name="gluten"
+                checked={formData.allergiesIntolerances.gluten}
+                onChange={handleAllergyChange}
+              />
+              <label htmlFor="gluten">Gluten</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="soy"
+                name="soy"
+                checked={formData.allergiesIntolerances.soy}
+                onChange={handleAllergyChange}
+              />
+              <label htmlFor="soy">Soy</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="other-allergy"
+                name="other"
+                checked={formData.allergiesIntolerances.other.selected}
+                onChange={handleAllergyChange}
+              />
+              <label htmlFor="other-allergy">Other</label>
+              {formData.allergiesIntolerances.other.selected && (
                 <input
-                  type="checkbox"
-                  id={`intolerance-${intolerance}`}
-                  name="intolerance"
-                  value={intolerance}
-                  checked={formData.foodIntolerance.includes(intolerance)}
-                  onChange={(e) => handleCheckboxChange(e, 'foodIntolerance')}
+                  type="text"
+                  name="other"
+                  value={formData.allergiesIntolerances.other.details}
+                  onChange={handleAllergyDetailsChange}
+                  placeholder="Specify other allergies/intolerances"
+                  className="indented-input"
                 />
-                <label htmlFor={`intolerance-${intolerance}`}>{intolerance}</label>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Disliked Foods */}
-        <div className="form-group">
-          <label htmlFor="dislikedFoods">Are there any foods you strongly dislike?</label>
-          <div className="tags-input-container">
-            <input
-              type="text"
-              id="dislikedFoods"
-              value={tagInput}
-              onChange={(e) => setTagInput(e.target.value)}
-              onKeyDown={handleTagKeyDown}
-              placeholder="Type foods you dislike and press Enter"
-            />
-            <div className="tags-container">
-              {formData.dislikedFoods.map((tag, index) => (
-                <div className="tag" key={index}>
-                  {tag}
-                  <button type="button" onClick={() => removeTag(tag)}>×</button>
-                </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
 
+        {/* Favorite Cuisines */}
+        <div className="form-group">
+          <label>Favorite Cuisines:</label>
+          <div className="checkbox-group">
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="italian"
+                name="italian"
+                checked={formData.favoriteCuisines.italian}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="italian">Italian</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="mexican"
+                name="mexican"
+                checked={formData.favoriteCuisines.mexican}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="mexican">Mexican</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="indian"
+                name="indian"
+                checked={formData.favoriteCuisines.indian}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="indian">Indian</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="chinese"
+                name="chinese"
+                checked={formData.favoriteCuisines.chinese}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="chinese">Chinese</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="japanese"
+                name="japanese"
+                checked={formData.favoriteCuisines.japanese}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="japanese">Japanese</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="thai"
+                name="thai"
+                checked={formData.favoriteCuisines.thai}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="thai">Thai</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="mediterranean"
+                name="mediterranean"
+                checked={formData.favoriteCuisines.mediterranean}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="mediterranean">Mediterranean</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="american"
+                name="american"
+                checked={formData.favoriteCuisines.american}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="american">American</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="middleEastern"
+                name="middleEastern"
+                checked={formData.favoriteCuisines.middleEastern}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="middleEastern">Middle Eastern</label>
+            </div>
+            
+            <div className="checkbox-item">
+              <input
+                type="checkbox"
+                id="other-cuisine"
+                name="other"
+                checked={formData.favoriteCuisines.other.selected}
+                onChange={handleCuisineChange}
+              />
+              <label htmlFor="other-cuisine">Other</label>
+              {formData.favoriteCuisines.other.selected && (
+                <input
+                  type="text"
+                  name="other"
+                  value={formData.favoriteCuisines.other.details}
+                  onChange={handleCuisineDetailsChange}
+                  placeholder="Specify other cuisines"
+                  className="indented-input"
+                />
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Spice Tolerance */}
+        <div className="form-group">
+          <label>Spice Tolerance:</label>
+          <div className="radio-group">
+            {[
+              { value: 1, label: '1 - Mild (No spice)' },
+              { value: 2, label: '2 - Light spice' },
+              { value: 3, label: '3 - Moderate spice' },
+              { value: 4, label: '4 - Spicy' },
+              { value: 5, label: '5 - Very spicy (Heat enthusiast)' }
+            ].map(option => (
+              <div key={option.value} className="radio-item">
+                <input
+                  type="radio"
+                  id={`spice-${option.value}`}
+                  name="spiceTolerance"
+                  value={option.value}
+                  checked={formData.spiceTolerance === option.value}
+                  onChange={() => setFormData({...formData, spiceTolerance: option.value})}
+                  required
+                />
+                <label htmlFor={`spice-${option.value}`}>{option.label}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Foods You Dislike */}
+        <div className="form-group">
+          <label htmlFor="dislikedFoods">Foods You Dislike:</label>
+          <textarea
+            id="dislikedFoods"
+            name="dislikedFoods"
+            value={formData.dislikedFoods}
+            onChange={handleChange}
+            placeholder="Enter foods you dislike, separated by commas"
+            rows="4"
+          />
+        </div>
+
         <div className="form-buttons">
-          <button type="button" className="btn-secondary">Previous</button>
-          <button type="submit" className="btn-primary">Next</button>
+          <button type="button" className="btn-secondary" onClick={onPrevious}>
+            Previous
+          </button>
+          <button type="submit" className="btn-primary">
+            Next
+          </button>
         </div>
       </form>
     </div>
