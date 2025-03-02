@@ -1,41 +1,438 @@
-/* Add these styles to your UserDashboard.css file */
+/* Soft Green Dashboard Styles - Updated with softer, cuter aesthetic */
 
-.dashboard-actions {
-  display: flex;
-  gap: 12px;
+:root {
+  --primary: #2ECC71;
+  --primary-dark: #27AE60;
+  --primary-light: #E8F8F5;
+  --accent1: #D5F5E3;
+  --accent2: #A2DED0;
+  --text: #2C3E50;
+  --success: #58D68D;
+  --warning: #F4D03F;
+  --danger: #E74C3C;
 }
 
-.btn-refresh {
-  background-color: #4caf50;
+body {
+  background-color: rgba(234, 250, 241, 0.3);
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+}
+
+/* Card styling with increased roundness */
+.soft-card {
+  border-radius: 24px !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.1) !important;
+  transition: transform 0.25s, box-shadow 0.25s;
+  overflow: hidden;
+}
+
+.soft-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(46, 204, 113, 0.18) !important;
+}
+
+/* Buttons with more playful design */
+.btn-soft-primary {
+  background-color: var(--primary);
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
+  border-radius: 50px;
+  padding: 10px 20px;
   font-weight: 600;
-  transition: background-color 0.3s;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.3);
+  transition: all 0.25s ease;
 }
 
-.btn-refresh:hover {
-  background-color: #388e3c;
+.btn-soft-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.35);
 }
 
-.btn-refresh:active {
-  background-color: #2e7d32;
+.btn-soft-secondary {
+  background-color: white;
+  color: var(--primary);
+  border: 1px solid var(--accent1);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.15);
+  transition: all 0.25s ease;
 }
 
-/* Enhance the loading spinner */
-.loading-spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
+.btn-soft-secondary:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.2);
+}
+
+/* Custom Tab Styles with bubblier appearance */
+.soft-tabs-container {
+  background-color: rgba(213, 245, 227, 0.4);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 25px 0;
+  border: 1px solid var(--accent1);
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.15);
+}
+
+.soft-tab {
+  border-radius: 50px;
+  padding: 12px 25px;
+  margin: 0 8px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soft-tab.active {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.25);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.soft-tab:not(.active) {
+  background-color: white;
+  color: var(--primary);
+  border: 1px solid var(--accent1);
+}
+
+.soft-tab:hover:not(.active) {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.15);
+}
+
+/* Meal cards styling with more playful elements */
+.meal-card {
+  background-color: var(--primary-light);
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.12);
+  transition: transform 0.25s ease;
+}
+
+.meal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(46, 204, 113, 0.18);
+}
+
+.meal-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-dark);
+  color: white;
   border-radius: 50%;
-  border-top: 4px solid #3498db;
-  width: 40px;
-  height: 40px;
-  margin: 20px auto;
-  animation: spin 1s linear infinite;
+  margin-right: 15px;
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.meal-card:hover .meal-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.meal-title {
+  font-size: 1.4rem;
+  color: var(--text);
+  margin: 0;
+  font-weight: 700;
+}
+
+.meal-name {
+  color: var(--primary);
+  font-size: 1.25rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.ingredient-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.ingredient-item {
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s ease;
+}
+
+.ingredient-item:hover {
+  transform: translateX(5px);
+}
+
+.ingredient-item i {
+  color: var(--primary);
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.benefits-box {
+  background-color: white;
+  border-radius: 18px;
+  padding: 15px;
+  margin-top: 15px;
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.08);
+  border-left: 4px solid var(--primary);
+}
+
+/* Profile section styling */
+.profile-container {
+  background-color: white;
+  border-radius: 24px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(46, 204, 113, 0.12);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-image {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  overflow: hidden;
+  margin-right: 25px;
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.profile-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-stat {
+  background-color: var(--primary-light);
+  padding: 12px 18px;
+  border-radius: 16px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.1);
+}
+
+.profile-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.15);
+}
+
+.stat-icon {
+  width: 35px;
+  height: 35px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.25);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text);
+  opacity: 0.8;
+  margin-bottom: 3px;
+}
+
+.stat-value {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--text);
+}
+
+/* Nutritional section cards */
+.nutrition-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.1);
+  transition: transform 0.25s ease;
+  border-left: 5px solid var(--primary);
+}
+
+.nutrition-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(46, 204, 113, 0.15);
+}
+
+.nutrition-title {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.nutrition-badge {
+  background-color: var(--accent1);
+  color: var(--primary-dark);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+/* Animation for loading */
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(46, 204, 113, 0.15);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+  margin: 40px auto;
+}
+
+.loading-pulse {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 rgba(46, 204, 113, 0.4);
+  animation: pulse 1.5s infinite;
+  margin: 0 10px;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(46, 204, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+/* Custom progress bars */
+.progress.soft-progress {
+  height: 12px;
+  background-color: rgba(46, 204, 113, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar.soft-progress-bar {
+  background-color: var(--primary);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar.soft-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: progress-shine 2s infinite;
+}
+
+@keyframes progress-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Dashboard list items */
+.dashboard-list-item {
+  padding: 12px 15px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  background-color: var(--primary-light);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-list-item:hover {
+  transform: translateX(5px);
+  background-color: rgba(46, 204, 113, 0.15);
+}
+
+.dashboard-list-item i {
+  color: var(--primary);
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+/* Custom calendar styling */
+.calendar-day {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  background-color: white;
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.1);
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.calendar-day.active {
+  background-color: var(--primary);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.25);
+}
+
+.calendar-day:hover:not(.active) {
+  border-color: var(--primary);
+  transform: scale(1.05);
 }

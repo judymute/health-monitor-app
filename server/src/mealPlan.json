@@ -1,116 +1,153 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Vegan Shakshuka with Whole Wheat Pita",
+      "name": "Creamy Polenta with Roasted Vegetables",
       "ingredients": [
-        "1 tbsp olive oil",
-        "1/2 onion, chopped",
-        "1 red bell pepper, chopped",
-        "2 cloves garlic, minced",
-        "1 tsp cumin",
-        "1/2 tsp paprika",
-        "1/4 tsp cayenne pepper (optional)",
-        "1 (28 ounce) can crushed tomatoes",
-        "1/4 cup vegetable broth",
-        "Salt and pepper to taste",
-        "1 can chickpeas, drained and rinsed",
-        "Fresh parsley, chopped",
-        "2 whole wheat pita breads"
+        "Polenta (cornmeal)",
+        "Vegetable broth",
+        "Nutritional yeast",
+        "Olive oil",
+        "Assorted roasted vegetables (e.g., bell peppers, zucchini, eggplant)",
+        "Fresh basil",
+        "Salt",
+        "Pepper"
       ],
-      "preparation": "Sauté onion and bell pepper in olive oil until softened. Add garlic and spices and cook for 1 minute. Stir in crushed tomatoes and vegetable broth. Season with salt and pepper. Simmer for 10 minutes, then gently stir in the chickpeas. Garnish with parsley and serve with whole wheat pita.",
-      "nutritionalBenefits": "High in fiber, protein, and vitamins A and C. Provides sustained energy and aids digestion.",
-      "healthNotes": "Chickpeas add protein and fiber, promoting satiety and healthy gut bacteria. Spices aid digestion."
+      "preparation": "Cook polenta according to package directions using vegetable broth. Stir in nutritional yeast for cheesy flavor. Roast vegetables with olive oil, salt, and pepper until tender. Top polenta with roasted vegetables and fresh basil.",
+      "nutritionalBenefits": "Provides complex carbohydrates for energy, fiber for digestion, and vitamins and minerals from vegetables.  Polenta is easily digestible and gentle on the liver.",
+      "healthNotes": "Choose low-sodium vegetable broth to reduce sodium intake.  Roasting vegetables enhances their sweetness and digestibility."
     },
     "lunch": {
-      "name": "Mujadara with Tahini Dressing",
+      "name": "Lentil Bolognese with Whole Wheat Pasta",
       "ingredients": [
-        "1 tbsp olive oil",
-        "1 onion, thinly sliced",
-        "1 cup brown lentils, rinsed",
-        "2 cups vegetable broth",
-        "1/2 cup brown rice, rinsed",
-        "Salt and pepper to taste",
-        "1/4 cup tahini",
-        "2 tbsp lemon juice",
-        "2 tbsp water",
-        "1 clove garlic, minced",
-        "Pinch of cumin",
-        "Fresh parsley, chopped"
+        "Whole wheat pasta",
+        "Brown or green lentils",
+        "Crushed tomatoes",
+        "Vegetable broth",
+        "Onion",
+        "Garlic",
+        "Carrot",
+        "Celery",
+        "Olive oil",
+        "Italian herbs (oregano, basil, thyme)",
+        "Salt",
+        "Pepper"
       ],
-      "preparation": "Caramelize onions in olive oil. Add lentils, vegetable broth, and rice to the pot. Season with salt and pepper. Bring to a boil, then reduce heat and simmer for 30-40 minutes, or until lentils and rice are cooked through. Whisk together tahini, lemon juice, water, garlic, and cumin for the dressing. Drizzle tahini dressing over the mujadara and garnish with parsley.",
-      "nutritionalBenefits": "Rich in protein, fiber, and iron. Supports energy levels and aids digestion. Lentils are an excellent source of plant-based protein.",
-      "healthNotes": "Brown rice provides complex carbohydrates for sustained energy. Tahini offers healthy fats and calcium."
+      "preparation": "Cook pasta according to package directions. Sauté onion, garlic, carrot, and celery in olive oil. Add lentils, crushed tomatoes, vegetable broth, and Italian herbs. Simmer until lentils are tender. Season with salt and pepper. Serve lentil bolognese over pasta.",
+      "nutritionalBenefits": "High in protein and fiber from lentils, provides complex carbohydrates from pasta, and rich in antioxidants from tomatoes and herbs.  Lentils are a good source of iron, which is important for vegans. Easily digestible.",
+      "healthNotes": "Limit the amount of olive oil used. Use whole wheat pasta to increase fiber intake."
     },
     "dinner": {
-      "name": "Vegan Stuffed Bell Peppers with Quinoa and Vegetables",
+      "name": "Vegan Risotto with Asparagus and Peas",
       "ingredients": [
-        "4 bell peppers (various colors)",
-        "1 tbsp olive oil",
-        "1 onion, chopped",
-        "1 zucchini, diced",
-        "1/2 cup cooked quinoa",
-        "1/2 cup chopped tomatoes",
-        "1/4 cup chopped walnuts",
-        "1/4 cup chopped parsley",
-        "1 tsp dried oregano",
-        "Salt and pepper to taste",
-        "Vegan feta cheese (optional)"
+        "Arborio rice",
+        "Vegetable broth",
+        "White wine (optional, alcohol should evaporate during cooking)",
+        "Asparagus",
+        "Peas",
+        "Onion",
+        "Garlic",
+        "Nutritional yeast",
+        "Olive oil",
+        "Salt",
+        "Pepper"
       ],
-      "preparation": "Preheat oven to 375°F (190°C). Cut bell peppers in half lengthwise and remove seeds. Sauté onion and zucchini in olive oil until softened. Stir in quinoa, tomatoes, walnuts, parsley, oregano, salt, and pepper. Fill bell peppers with the quinoa mixture. Bake for 30-40 minutes, or until bell peppers are tender. Top with vegan feta cheese (optional) before serving.",
-      "nutritionalBenefits": "Good source of vitamins A and C, fiber, and protein. Quinoa provides all essential amino acids.",
-      "healthNotes": "Colorful bell peppers offer antioxidants and fiber. Walnuts contribute healthy fats and plant-based protein."
+      "preparation": "Sauté onion and garlic in olive oil. Add Arborio rice and toast lightly. Deglaze with white wine (if using). Gradually add vegetable broth, stirring constantly, until rice is creamy and cooked through. Stir in asparagus, peas, and nutritional yeast. Season with salt and pepper. ",
+      "nutritionalBenefits": "Provides carbohydrates for energy, vitamins and minerals from asparagus and peas, and a creamy texture from the Arborio rice.  This is a filling meal that is easy on the digestive system.",
+      "healthNotes": "Using a good quality vegetable broth is important for flavor.  Cook the risotto slowly and patiently for the best results. The use of alcohol is optional and can be omitted."
     },
     "snacks": [
       {
-        "name": "Dates Stuffed with Almond Butter",
+        "name": "Almond Milk Smoothie with Banana and Spinach",
         "ingredients": [
-          "4 Medjool dates, pitted",
-          "2 tbsp almond butter"
+          "Almond milk",
+          "Banana",
+          "Spinach",
+          "Chia seeds",
+          "Plant-based protein powder (optional)"
         ],
-        "preparation": "Simply stuff each date with 1/2 tablespoon of almond butter.",
-        "nutritionalBenefits": "Provides quick energy, fiber, and healthy fats.",
-        "healthNotes": "Dates are a natural source of sugars and fiber. Almond butter adds healthy fats and protein."
+        "preparation": "Blend all ingredients together until smooth.",
+        "nutritionalBenefits": "Provides protein, fiber, and vitamins and minerals.  The smoothie is quick, easily digested, and packed with nutrients.",
+        "healthNotes": "Adjust the amount of almond milk to achieve desired consistency. Ensure the protein powder is liver-friendly, avoiding high doses of additives and artificial sweeteners."
       }
     ]
   },
   "nutritionalFocus": [
     {
-      "nutrient": "Fiber",
-      "reason": "Promotes healthy digestion, regulates blood sugar levels, and keeps you feeling full.",
+      "nutrient": "Protein",
+      "reason": "Essential for muscle building and repair, especially crucial for weight gain. Important for liver health and regeneration.",
       "sources": [
         "Lentils",
-        "Chickpeas",
+        "Beans",
+        "Tofu",
+        "Tempeh",
+        "Plant-based protein powder",
+        "Nuts",
+        "Seeds",
+        "Nutritional Yeast"
+      ]
+    },
+    {
+      "nutrient": "Complex Carbohydrates",
+      "reason": "Provide sustained energy for weight gain and are easily digestible. Important for fuel and liver function.",
+      "sources": [
+        "Whole wheat pasta",
         "Brown rice",
+        "Polenta",
+        "Quinoa",
+        "Potatoes",
+        "Sweet potatoes"
+      ]
+    },
+    {
+      "nutrient": "Healthy Fats",
+      "reason": "Important for hormone production, cell function, and calorie intake for weight gain. Good for liver function when consumed in moderate amounts.",
+      "sources": [
+        "Olive oil",
+        "Avocado",
+        "Nuts",
+        "Seeds"
+      ]
+    },
+    {
+      "nutrient": "Fiber",
+      "reason": "Promotes digestive health and helps regulate blood sugar levels. Essential for gut health, which has a secondary role in liver health",
+      "sources": [
+        "Fruits",
         "Vegetables",
-        "Fruits"
-      ]
-    },
-    {
-      "nutrient": "Plant-Based Protein",
-      "reason": "Essential for muscle building, repair, and overall health. Important for satiety and energy levels.",
-      "sources": [
-        "Lentils",
-        "Chickpeas",
-        "Quinoa",
-        "Almond butter",
-        "Nuts"
-      ]
-    },
-    {
-      "nutrient": "Iron",
-      "reason": "Crucial for energy production and oxygen transport throughout the body. Important for young women.",
-      "sources": [
-        "Lentils",
-        "Chickpeas",
-        "Quinoa",
-        "Spinach"
+        "Whole grains",
+        "Legumes",
+        "Nuts",
+        "Seeds"
       ]
     }
   ],
-  "avoidList": [],
+  "avoidList": [
+    {
+      "food": "Excessive Sugar",
+      "reason": "Can contribute to fatty liver disease and inflammation, further stressing the liver."
+    },
+    {
+      "food": "Processed Foods",
+      "reason": "Often high in unhealthy fats, sodium, and additives that can be harmful to the liver."
+    },
+    {
+      "food": "Alcohol",
+      "reason": "Highly toxic to the liver and should be completely avoided with liver disease."
+    },
+    {
+      "food": "Excessive Salt",
+      "reason": "Can contribute to fluid retention and stress the liver."
+    },
+    {
+      "food": "High-Fat Fried Foods",
+      "reason": "Difficult to digest and can contribute to fatty liver disease."
+    }
+  ],
   "weeklyHabitTips": [
-    "Drink at least 8 glasses of water per day to aid digestion.",
-    "Incorporate a variety of colorful fruits and vegetables into your diet.",
-    "Practice mindful eating by paying attention to your hunger cues and chewing your food thoroughly."
+    "Eat smaller, more frequent meals to aid digestion and nutrient absorption.",
+    "Stay hydrated by drinking plenty of water throughout the day.",
+    "Focus on whole, unprocessed foods to support liver health.",
+    "Incorporate moderate exercise into your routine to improve overall health.",
+    "Consult with a registered dietitian or healthcare professional for personalized dietary advice."
   ]
 }

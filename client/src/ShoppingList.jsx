@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Button } from '@/components/ui/button';
-import { Check, Copy, Printer } from 'lucide-react';
+import './ShoppingList.css';
 
 const ShoppingList = ({ mealPlan }) => {
   const [ingredients, setIngredients] = useState([]);
@@ -133,10 +130,10 @@ const ShoppingList = ({ mealPlan }) => {
         <head>
           <title>Shopping List</title>
           <style>
-            body { font-family: Arial, sans-serif; padding: 20px; }
-            h1 { text-align: center; }
+            body { font-family: "SF Pro Display", "Helvetica Neue", sans-serif; padding: 20px; background-color: #f7fcf7; }
+            h1 { text-align: center; color: #2e7d32; }
             ul { list-style-type: none; padding: 0; }
-            li { padding: 8px; border-bottom: 1px solid #eee; }
+            li { padding: 12px; border-bottom: 1px solid #e8f5e9; font-size: 16px; color: #2e7d32; }
             @media print {
               button { display: none; }
             }
@@ -167,71 +164,75 @@ const ShoppingList = ({ mealPlan }) => {
   const checkedItemsCount = Object.values(checkedItems).filter(Boolean).length;
   
   return (
-    <Card className="w-full max-w-xl">
-      <CardHeader className="pb-2">
-        <CardTitle className="flex justify-between items-center">
-          <span>Shopping List</span>
-          <span className="text-sm font-normal text-gray-500">
+    <div className="shopping-list-card">
+      <div className="shopping-list-header">
+        <h2 className="shopping-list-title">
+          Shopping List
+          <span className="shopping-list-counter">
             {checkedItemsCount}/{totalItems} items
           </span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="flex gap-2 mb-4">
-          <Button 
-            variant="outline" 
-            size="sm" 
+        </h2>
+      </div>
+      <div className="shopping-list-content">
+        <div className="shopping-list-actions">
+          <button 
+            className="shopping-list-button"
             onClick={handleClearAll}
-            className="text-xs"
           >
             Clear All
-          </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
+          </button>
+          <button 
+            className="shopping-list-button"
             onClick={handleCheckAll}
-            className="text-xs"
           >
             Check All
-          </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
+          </button>
+          <button 
+            className="shopping-list-button shopping-list-button-right"
             onClick={copyToClipboard}
-            className="text-xs ml-auto"
           >
-            <Copy className="h-4 w-4 mr-1" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shopping-list-icon">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
             Copy
-          </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
+          </button>
+          <button 
+            className="shopping-list-button"
             onClick={printList}
-            className="text-xs"
           >
-            <Printer className="h-4 w-4 mr-1" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shopping-list-icon">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
             Print
-          </Button>
+          </button>
         </div>
         
-        <div className="max-h-96 overflow-y-auto">
+        <div className="shopping-list-items-container">
           {Object.entries(groupedIngredients).map(([meal, mealIngredients]) => (
-            <div key={meal} className="mb-4">
-              <h3 className="text-sm font-medium text-gray-700 mb-2">{meal}</h3>
-              <div className="space-y-2">
+            <div key={meal} className="shopping-list-meal-group">
+              <h3 className="shopping-list-meal-title">{meal}</h3>
+              <div className="shopping-list-meal-items">
                 {mealIngredients.map(ingredient => (
                   <div 
                     key={ingredient.id}
-                    className="flex items-center space-x-2 py-1 px-2 rounded hover:bg-gray-50"
+                    className="shopping-list-item"
                   >
-                    <Checkbox 
-                      id={ingredient.id}
-                      checked={checkedItems[ingredient.id] || false}
-                      onCheckedChange={() => handleCheckboxChange(ingredient.id)}
-                    />
+                    <div className="custom-checkbox-container">
+                      <input 
+                        type="checkbox"
+                        id={ingredient.id}
+                        checked={checkedItems[ingredient.id] || false}
+                        onChange={() => handleCheckboxChange(ingredient.id)}
+                        className="shopping-list-checkbox"
+                      />
+                      <span className="custom-checkbox"></span>
+                    </div>
                     <label 
                       htmlFor={ingredient.id}
-                      className={`text-sm cursor-pointer flex-1 ${checkedItems[ingredient.id] ? 'line-through text-gray-400' : ''}`}
+                      className={`shopping-list-label ${checkedItems[ingredient.id] ? 'shopping-list-checked' : ''}`}
                     >
                       {ingredient.name}
                     </label>
@@ -243,12 +244,13 @@ const ShoppingList = ({ mealPlan }) => {
         </div>
         
         {ingredients.length === 0 && (
-          <div className="text-center py-8 text-gray-500">
-            No ingredients found in meal plan
+          <div className="shopping-list-empty">
+            <div className="empty-state-icon">🌱</div>
+            <div>No ingredients found in meal plan</div>
           </div>
         )}
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 
