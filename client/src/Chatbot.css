@@ -16,12 +16,56 @@
 .chatbot-header {
   display: flex;
   align-items: left;
-  background-color: #4285F4;
+  background-color: #7868E6;
   color: white;
   padding: 10px;
   font-size: 16px;
   font-weight: bold;
   justify-content: space-between;
+}
+
+.chatbot-toggle {
+  position: fixed; 
+  bottom: 120px;
+  right: 120px;
+  display: inline-block; /* Or block, depending on your layout */
+  padding: 15px 20px; /* Adjust padding as needed */
+  background-color: #7868E6; /* Or your preferred background color */
+  color: white; /* Or your preferred text color */
+  border-radius: 20px; /* Adjust for desired roundness */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  font-size: 16px; /* Adjust font size as needed */
+  text-align: center; /* Center text if needed */
+  /* Remove default button styles if needed */
+  border: none;
+  outline: none;
+}
+
+/* Chat bubble "tail" */
+.chatbot-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Adjust for tail length */
+  left: 30px; /* Adjust for tail position */
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #7868E6 transparent; /* Match background color */
+}
+
+/* Optional hover effects */
+.chatbot-toggle:hover {
+  background-color: #5749b0;
+}
+
+.chatbot-toggle:hover::after{
+    border-color: #5749b0 transparent;
+}
+
+/* Optional active effects */
+.chatbot-toggle:active {
+  transform: translateY(2px); /* Slight downward push */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Reduced shadow */
 }
 
 .ai-avatar {
@@ -45,6 +89,7 @@
   padding: 10px;
   max-height: 300px;
   overflow-y: auto;
+
 }
 
 .message-container {
@@ -90,11 +135,12 @@
   font-size: 14px;
   line-height: 1.4;
   padding-top: 12px;
+  text-align: left;
 }
 
 .user {
   align-self: flex-end;
-  background-color: #4285F4;
+  background-color: #7868E6;
   color: white;
   padding: 8px 12px;
   border-radius: 10px;
@@ -116,7 +162,7 @@
 }
 
 .input-area button {
-  background-color: #4285F4;
+  background-color: #7868E6;
   color: white;
   border: none;
   padding: 8px 12px;
