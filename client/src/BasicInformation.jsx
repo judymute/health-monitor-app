@@ -42,12 +42,13 @@ const BasicInformation = ({ onSave, prevData = {}, onPrevious }) => {
   };
 
   // Generate age dropdown options
-  const ageOptions = [];
-  for (let i = 18; i <= 100; i++) {
-    ageOptions.push(
-      <option key={i} value={i}>{i}</option>
-    );
-  }
+// Generate age dropdown options
+const ageOptions = [];
+for (let i = 1; i <= 100; i++) {
+  ageOptions.push(
+    <option key={i} value={i}>{i}</option>
+  );
+}
 
   return (
     <div className="form-container">

@@ -1,153 +1,140 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Creamy Polenta with Roasted Vegetables",
+      "name": "Vegan Polenta with Roasted Vegetables",
       "ingredients": [
-        "Polenta (cornmeal)",
+        "Polenta (coarse ground)",
         "Vegetable broth",
-        "Nutritional yeast",
+        "Cherry tomatoes",
+        "Bell peppers (red, yellow)",
+        "Zucchini",
+        "Onion",
+        "Garlic",
         "Olive oil",
-        "Assorted roasted vegetables (e.g., bell peppers, zucchini, eggplant)",
         "Fresh basil",
-        "Salt",
-        "Pepper"
+        "Nutritional yeast (optional)",
+        "Salt and pepper"
       ],
-      "preparation": "Cook polenta according to package directions using vegetable broth. Stir in nutritional yeast for cheesy flavor. Roast vegetables with olive oil, salt, and pepper until tender. Top polenta with roasted vegetables and fresh basil.",
-      "nutritionalBenefits": "Provides complex carbohydrates for energy, fiber for digestion, and vitamins and minerals from vegetables.  Polenta is easily digestible and gentle on the liver.",
-      "healthNotes": "Choose low-sodium vegetable broth to reduce sodium intake.  Roasting vegetables enhances their sweetness and digestibility."
+      "preparation": "Cook polenta according to package directions using vegetable broth. Roast chopped vegetables with olive oil, garlic, salt, and pepper until tender. Top polenta with roasted vegetables and fresh basil. Sprinkle with nutritional yeast if desired.",
+      "nutritionalBenefits": "Provides complex carbohydrates, fiber, vitamins, and antioxidants. Good source of energy for weight gain.",
+      "healthNotes": "Easy to digest. Choose gluten-free polenta if necessary. Roasting vegetables enhances their flavor and digestibility, important for liver health."
     },
     "lunch": {
       "name": "Lentil Bolognese with Whole Wheat Pasta",
       "ingredients": [
         "Whole wheat pasta",
-        "Brown or green lentils",
-        "Crushed tomatoes",
-        "Vegetable broth",
+        "Green lentils",
+        "Canned crushed tomatoes",
         "Onion",
-        "Garlic",
         "Carrot",
         "Celery",
+        "Garlic",
         "Olive oil",
-        "Italian herbs (oregano, basil, thyme)",
-        "Salt",
-        "Pepper"
+        "Vegetable broth",
+        "Dried oregano",
+        "Dried basil",
+        "Bay leaf",
+        "Salt and pepper",
+        "Nutritional yeast (optional)"
       ],
-      "preparation": "Cook pasta according to package directions. Sauté onion, garlic, carrot, and celery in olive oil. Add lentils, crushed tomatoes, vegetable broth, and Italian herbs. Simmer until lentils are tender. Season with salt and pepper. Serve lentil bolognese over pasta.",
-      "nutritionalBenefits": "High in protein and fiber from lentils, provides complex carbohydrates from pasta, and rich in antioxidants from tomatoes and herbs.  Lentils are a good source of iron, which is important for vegans. Easily digestible.",
-      "healthNotes": "Limit the amount of olive oil used. Use whole wheat pasta to increase fiber intake."
+      "preparation": "Sauté onion, carrot, and celery in olive oil. Add garlic and lentils and cook for a few minutes. Stir in crushed tomatoes, vegetable broth, oregano, basil, bay leaf, salt, and pepper. Simmer until lentils are tender. Cook pasta according to package directions. Serve lentil bolognese over pasta. Sprinkle with nutritional yeast if desired.",
+      "nutritionalBenefits": "Rich in protein, fiber, and iron. Provides sustained energy release and promotes muscle growth. Whole wheat pasta adds complex carbohydrates.",
+      "healthNotes": "Lentils are a good source of plant-based protein and are generally well-tolerated. Avoid adding excessive amounts of oil.  This meal is helpful for liver health as it's rich in fiber which helps detoxify the body."
     },
     "dinner": {
-      "name": "Vegan Risotto with Asparagus and Peas",
+      "name": "Vegan Mushroom Risotto",
       "ingredients": [
         "Arborio rice",
+        "Mixed mushrooms (cremini, shiitake, oyster)",
         "Vegetable broth",
-        "White wine (optional, alcohol should evaporate during cooking)",
-        "Asparagus",
-        "Peas",
         "Onion",
         "Garlic",
-        "Nutritional yeast",
         "Olive oil",
-        "Salt",
-        "Pepper"
+        "White wine (optional)",
+        "Vegan Parmesan cheese (optional)",
+        "Fresh parsley",
+        "Salt and pepper"
       ],
-      "preparation": "Sauté onion and garlic in olive oil. Add Arborio rice and toast lightly. Deglaze with white wine (if using). Gradually add vegetable broth, stirring constantly, until rice is creamy and cooked through. Stir in asparagus, peas, and nutritional yeast. Season with salt and pepper. ",
-      "nutritionalBenefits": "Provides carbohydrates for energy, vitamins and minerals from asparagus and peas, and a creamy texture from the Arborio rice.  This is a filling meal that is easy on the digestive system.",
-      "healthNotes": "Using a good quality vegetable broth is important for flavor.  Cook the risotto slowly and patiently for the best results. The use of alcohol is optional and can be omitted."
+      "preparation": "Sauté onion and garlic in olive oil. Add rice and cook for a minute. Add white wine (if using) and let it evaporate. Gradually add warm vegetable broth, stirring constantly, until rice is creamy and cooked through. Sauté mushrooms in olive oil until tender. Stir mushrooms into risotto. Garnish with vegan parmesan cheese and fresh parsley. Season with salt and pepper.",
+      "nutritionalBenefits": "Provides carbohydrates for energy and essential nutrients from mushrooms. Offers a satisfying and flavorful meal.",
+      "healthNotes": "Ensure the rice is cooked thoroughly.  Use low-sodium vegetable broth to minimize sodium intake, which is important for maintaining liver health. The mushrooms also add valuable nutrients"
     },
     "snacks": [
       {
-        "name": "Almond Milk Smoothie with Banana and Spinach",
+        "name": "Avocado Toast with Hemp Seeds",
         "ingredients": [
-          "Almond milk",
-          "Banana",
-          "Spinach",
-          "Chia seeds",
-          "Plant-based protein powder (optional)"
+          "Whole grain bread",
+          "Avocado",
+          "Hemp seeds",
+          "Lemon juice",
+          "Salt and pepper"
         ],
-        "preparation": "Blend all ingredients together until smooth.",
-        "nutritionalBenefits": "Provides protein, fiber, and vitamins and minerals.  The smoothie is quick, easily digested, and packed with nutrients.",
-        "healthNotes": "Adjust the amount of almond milk to achieve desired consistency. Ensure the protein powder is liver-friendly, avoiding high doses of additives and artificial sweeteners."
+        "preparation": "Toast bread. Mash avocado with lemon juice, salt, and pepper. Spread avocado on toast and sprinkle with hemp seeds.",
+        "nutritionalBenefits": "Healthy fats, protein, and fiber. Provides a quick energy boost.",
+        "healthNotes": "Avocado is a good source of healthy fats. Hemp seeds provide protein and omega-3 fatty acids."
       }
     ]
   },
   "nutritionalFocus": [
     {
       "nutrient": "Protein",
-      "reason": "Essential for muscle building and repair, especially crucial for weight gain. Important for liver health and regeneration.",
+      "reason": "Essential for muscle growth and repair, crucial for weight gain.",
       "sources": [
         "Lentils",
-        "Beans",
         "Tofu",
         "Tempeh",
-        "Plant-based protein powder",
-        "Nuts",
-        "Seeds",
-        "Nutritional Yeast"
+        "Hemp seeds",
+        "Chia seeds",
+        "Nutritional yeast"
       ]
     },
     {
       "nutrient": "Complex Carbohydrates",
-      "reason": "Provide sustained energy for weight gain and are easily digestible. Important for fuel and liver function.",
+      "reason": "Provide sustained energy release for weight gain and physical activity.",
       "sources": [
         "Whole wheat pasta",
         "Brown rice",
-        "Polenta",
         "Quinoa",
-        "Potatoes",
+        "Oats",
+        "Polenta",
         "Sweet potatoes"
       ]
     },
     {
       "nutrient": "Healthy Fats",
-      "reason": "Important for hormone production, cell function, and calorie intake for weight gain. Good for liver function when consumed in moderate amounts.",
+      "reason": "Important for hormone production, energy storage, and overall health. Aids nutrient absorption.",
       "sources": [
-        "Olive oil",
         "Avocado",
+        "Olive oil",
         "Nuts",
-        "Seeds"
-      ]
-    },
-    {
-      "nutrient": "Fiber",
-      "reason": "Promotes digestive health and helps regulate blood sugar levels. Essential for gut health, which has a secondary role in liver health",
-      "sources": [
-        "Fruits",
-        "Vegetables",
-        "Whole grains",
-        "Legumes",
-        "Nuts",
-        "Seeds"
+        "Seeds",
+        "Nut butters"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Excessive Sugar",
-      "reason": "Can contribute to fatty liver disease and inflammation, further stressing the liver."
+      "food": "Processed Foods",
+      "reason": "Often high in unhealthy fats, sodium, and added sugars, which can negatively impact liver health and overall weight gain goals."
     },
     {
-      "food": "Processed Foods",
-      "reason": "Often high in unhealthy fats, sodium, and additives that can be harmful to the liver."
+      "food": "Excessive Sugar",
+      "reason": "Can contribute to liver inflammation and hinder weight gain in a healthy manner."
     },
     {
       "food": "Alcohol",
-      "reason": "Highly toxic to the liver and should be completely avoided with liver disease."
+      "reason": "Extremely harmful to the liver, especially with existing liver disease. Should be completely avoided."
     },
     {
-      "food": "Excessive Salt",
-      "reason": "Can contribute to fluid retention and stress the liver."
-    },
-    {
-      "food": "High-Fat Fried Foods",
-      "reason": "Difficult to digest and can contribute to fatty liver disease."
+      "food": "Saturated and Trans Fats",
+      "reason": "Can worsen liver health issues. Found in fried foods and some processed vegan products. Focus on unsaturated fats."
     }
   ],
   "weeklyHabitTips": [
-    "Eat smaller, more frequent meals to aid digestion and nutrient absorption.",
-    "Stay hydrated by drinking plenty of water throughout the day.",
-    "Focus on whole, unprocessed foods to support liver health.",
-    "Incorporate moderate exercise into your routine to improve overall health.",
-    "Consult with a registered dietitian or healthcare professional for personalized dietary advice."
+    "Eat small, frequent meals throughout the day to increase calorie intake without overwhelming the digestive system.",
+    "Incorporate healthy fats into every meal to boost calorie density.",
+    "Track your calorie intake to ensure you are consistently consuming enough calories for weight gain.",
+    "Prioritize rest and recovery to allow your body to rebuild muscle tissue.",
+    "Consider consulting a registered dietitian or nutritionist for personalized guidance."
   ]
 }
