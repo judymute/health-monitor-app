@@ -1,115 +1,124 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Thai-inspired Oatmeal with Mango and Almonds",
+      "name": "Labneh with Za'atar and Whole Wheat Pita",
       "ingredients": [
-        "1/2 cup rolled oats",
-        "1 cup unsweetened almond milk",
-        "1/4 teaspoon ginger powder",
-        "1/4 teaspoon cinnamon",
-        "1/4 cup diced mango",
-        "1 tablespoon slivered almonds",
-        "1 teaspoon chia seeds",
-        "Pinch of sea salt"
+        "Labneh (strained yogurt)",
+        "Za'atar spice blend",
+        "Olive oil",
+        "Whole wheat pita bread",
+        "Cucumber slices",
+        "Tomato slices"
       ],
-      "preparation": "Combine oats, almond milk, ginger, cinnamon, and salt in a saucepan. Bring to a boil, then reduce heat and simmer for 5-7 minutes, or until desired consistency is reached. Top with diced mango, almonds, and chia seeds.",
-      "nutritionalBenefits": "Provides fiber, protein, healthy fats, and vitamins. Mango is a good source of Vitamin C.",
-      "healthNotes": "Oatmeal is a good source of soluble fiber, which can help lower cholesterol. Ginger and cinnamon have anti-inflammatory properties."
+      "preparation": "Spread labneh on a plate, drizzle with olive oil, and sprinkle with za'atar. Serve with whole wheat pita, cucumber, and tomato slices.",
+      "nutritionalBenefits": "Labneh provides protein and probiotics. Za'atar contains antioxidants. Whole wheat pita offers fiber.",
+      "healthNotes": "The probiotics in labneh are generally beneficial, though consult with a doctor about liver considerations. Choose low-sodium za'atar blends."
     },
     "lunch": {
-      "name": "Chicken Larb Salad (Thai Ground Chicken Salad)",
+      "name": "Mujadara (Lentils and Rice with Caramelized Onions)",
       "ingredients": [
-        "4 oz ground chicken breast",
-        "1 tablespoon fish sauce (low sodium)",
-        "1 tablespoon lime juice",
-        "1/2 tablespoon rice vinegar",
-        "1/4 teaspoon chili flakes (adjust to taste)",
-        "1 tablespoon chopped cilantro",
-        "1 tablespoon chopped mint",
-        "1/4 cup finely chopped red onion",
-        "1/4 cup chopped green onion",
-        "Lettuce cups for serving",
-        "1/4 cup cooked brown rice"
+        "Brown or green lentils",
+        "Basmati rice",
+        "Onions",
+        "Olive oil",
+        "Cumin",
+        "Coriander",
+        "Salt",
+        "Pepper",
+        "Vegetable broth"
       ],
-      "preparation": "Cook the ground chicken until browned and cooked through. Drain any excess fat. In a bowl, combine fish sauce, lime juice, rice vinegar, chili flakes, cilantro, mint, red onion, and green onion. Add the cooked chicken and cooked brown rice to the dressing and mix well. Serve in lettuce cups.",
-      "nutritionalBenefits": "High in protein, low in carbohydrates, and rich in herbs and spices. Provides essential amino acids and antioxidants.",
-      "healthNotes": "Use low-sodium fish sauce and adjust chili flakes according to your tolerance for spice. This is a lean protein source that aids weight loss efforts."
+      "preparation": "Caramelize onions in olive oil. Cook lentils and rice in vegetable broth with cumin and coriander. Combine caramelized onions with the lentil and rice mixture. Season with salt and pepper.",
+      "nutritionalBenefits": "Mujadara is a good source of protein, fiber, and complex carbohydrates. Lentils provide iron.",
+      "healthNotes": "Control the oil used in caramelizing the onions to manage fat intake. Ensure the salt content is low to support liver health."
     },
     "dinner": {
-      "name": "Thai Green Curry with Tofu and Vegetables",
+      "name": "Vegetable Tagine with Chickpeas and Couscous",
       "ingredients": [
-        "4 oz firm tofu, pressed and cubed",
-        "1 tablespoon coconut oil",
-        "1/2 cup broccoli florets",
-        "1/2 cup sliced bell peppers (mixed colors)",
-        "1/4 cup snap peas",
-        "1/2 cup bamboo shoots",
-        "1/2 cup coconut milk (lite)",
-        "2 tablespoons green curry paste (low sodium)",
-        "1 tablespoon fish sauce (low sodium)",
-        "1 teaspoon lime juice",
-        "1/4 cup chopped Thai basil",
-        "1/2 cup cooked quinoa"
+        "Chickpeas (canned or cooked)",
+        "Carrots",
+        "Zucchini",
+        "Eggplant",
+        "Bell peppers",
+        "Onions",
+        "Garlic",
+        "Ginger",
+        "Cumin",
+        "Turmeric",
+        "Cinnamon",
+        "Vegetable broth",
+        "Couscous",
+        "Dried apricots",
+        "Almonds (slivered)"
       ],
-      "preparation": "Heat coconut oil in a wok or large skillet over medium heat. Add tofu and cook until golden brown. Add broccoli, bell peppers, snap peas, and bamboo shoots and stir-fry for 3-5 minutes. Add green curry paste and coconut milk, bring to a simmer. Stir in fish sauce and lime juice. Simmer for 5 minutes, or until vegetables are tender-crisp. Stir in Thai basil. Serve over cooked quinoa.",
-      "nutritionalBenefits": "Provides protein from tofu, fiber from vegetables, and healthy fats from coconut milk. Green curry paste provides a variety of beneficial spices.",
-      "healthNotes": "Use low-sodium green curry paste and fish sauce to manage blood pressure. Increase vegetable serving to increase fiber intake."
+      "preparation": "Sauté onions, garlic, and ginger. Add carrots, zucchini, eggplant, and bell peppers. Season with cumin, turmeric, and cinnamon. Add chickpeas and vegetable broth and simmer until vegetables are tender. Prepare couscous according to package instructions. Top the tagine with dried apricots and almonds. Serve with couscous.",
+      "nutritionalBenefits": "Provides a variety of vitamins, minerals, and fiber. Chickpeas are a good source of protein and fiber. Turmeric is an anti-inflammatory.",
+      "healthNotes": "Use low-sodium vegetable broth and be mindful of salt. Smaller portions can help manage overall calorie intake. Consult with a doctor regarding the use of turmeric with liver disease."
     },
     "snacks": [
       {
-        "name": "Edamame",
+        "name": "Dates with Almond Butter",
         "ingredients": [
-          "1 cup edamame (in pods)",
-          "Pinch of sea salt"
+          "Dates (Medjool or other)",
+          "Almond butter"
         ],
-        "preparation": "Steam edamame pods for 5-7 minutes, or until tender. Sprinkle with sea salt.",
-        "nutritionalBenefits": "Provides protein, fiber, and essential nutrients. A good source of plant-based protein.",
-        "healthNotes": "Edamame is a low-sodium and healthy snack option."
+        "preparation": "Stuff each date with a small amount of almond butter.",
+        "nutritionalBenefits": "Dates provide natural sugars and fiber. Almond butter offers healthy fats and protein.",
+        "healthNotes": "Dates are high in sugar, so limit portion size. Choose almond butter without added sugar or salt."
       }
     ]
   },
   "nutritionalFocus": [
     {
-      "nutrient": "Potassium",
-      "reason": "Helps regulate blood pressure by balancing the effects of sodium.",
-      "sources": [
-        "Mango",
-        "Bell Peppers",
-        "Spinach",
-        "Bananas"
-      ]
-    },
-    {
       "nutrient": "Fiber",
-      "reason": "Promotes satiety, aids digestion, and can help regulate blood sugar levels. Also important for heart health.",
+      "reason": "Promotes healthy digestion, supports liver function, and helps regulate blood sugar levels.",
       "sources": [
-        "Oats",
-        "Brown Rice",
-        "Quinoa",
+        "Lentils",
+        "Chickpeas",
+        "Whole wheat pita",
         "Vegetables",
-        "Edamame"
+        "Fruits"
       ]
     },
     {
-      "nutrient": "Lean Protein",
-      "reason": "Supports muscle mass, boosts metabolism, and helps you feel full and satisfied. Crucial for weight loss.",
+      "nutrient": "Protein",
+      "reason": "Essential for cell repair and function, supports overall health, and helps with satiety.",
       "sources": [
-        "Chicken Breast",
-        "Tofu",
-        "Edamame",
-        "Almonds"
+        "Labneh",
+        "Lentils",
+        "Chickpeas",
+        "Almond butter"
+      ]
+    },
+    {
+      "nutrient": "Antioxidants",
+      "reason": "Help protect the body from damage caused by free radicals, supporting liver health.",
+      "sources": [
+        "Za'atar",
+        "Turmeric",
+        "Fruits",
+        "Vegetables"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "High Sodium Foods",
-      "reason": "Can increase blood pressure and lead to fluid retention. Avoid processed foods, fast food, and excessive salt intake."
+      "food": "High-Sodium Foods",
+      "reason": "Sodium can worsen fluid retention and increase blood pressure, both of which can negatively impact liver health."
+    },
+    {
+      "food": "Excessive Added Sugars",
+      "reason": "Excess sugar intake can contribute to fatty liver disease."
+    },
+    {
+      "food": "Processed Foods",
+      "reason": "Often high in sodium, unhealthy fats, and additives that can burden the liver."
     }
   ],
   "weeklyHabitTips": [
-    "Monitor your blood pressure regularly and keep a record for your doctor.",
-    "Engage in at least 30 minutes of moderate-intensity exercise most days of the week.",
-    "Practice mindful eating by paying attention to your hunger and fullness cues."
+    "Drink plenty of water throughout the day to stay hydrated and support liver function.",
+    "Engage in gentle exercise, such as walking or yoga, to improve circulation and reduce stress.",
+    "Practice mindful eating to improve digestion and prevent overeating.",
+    "Establish a regular sleep schedule to promote restful sleep.",
+    "Consult with a registered dietitian or healthcare professional for personalized dietary guidance tailored to your specific liver condition."
   ]
 }
