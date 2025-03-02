@@ -1,6 +1,6 @@
 {
   "basicInformation": {
-    "fullName": "1",
+    "fullName": "Zihao",
     "age": 18,
     "weight": {
       "value": 1,
@@ -33,7 +33,7 @@
     },
     "favoriteCuisines": {
       "italian": false,
-      "mexican": false,
+      "mexican": true,
       "indian": false,
       "chinese": false,
       "japanese": false,
@@ -50,7 +50,7 @@
     "dislikedFoods": ""
   },
   "medicalConditions": {
-    "noMedicalConditions": false,
+    "noMedicalConditions": true,
     "diabetes": {
       "selected": false,
       "type": ""
@@ -70,13 +70,12 @@
     "liverDisease": false,
     "other": {
       "selected": false,
-      "details": "",
-      "type": ""
+      "details": ""
     }
   },
   "dietaryGoals": {
     "weightLoss": false,
-    "weightGain": false,
+    "weightGain": true,
     "maintenance": false,
     "increasedEnergy": false,
     "betterDigestion": false,

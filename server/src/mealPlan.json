@@ -1,90 +1,121 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Mashed Banana with Plant-Based Milk",
+      "name": "Mexican Tofu Scramble with Black Beans and Avocado",
       "ingredients": [
-        "1/4 of a ripe banana",
-        "20ml plant-based milk (unsweetened almond or soy)",
-        "Pinch of cinnamon (optional)"
+        "Firm Tofu",
+        "Black Beans",
+        "Avocado",
+        "Onion",
+        "Bell Pepper",
+        "Tomato",
+        "Chili Powder",
+        "Cumin",
+        "Turmeric",
+        "Olive Oil",
+        "Cilantro"
       ],
-      "preparation": "Mash the banana thoroughly. Mix in the plant-based milk until it reaches a smooth, slightly liquid consistency. Sprinkle with cinnamon if desired.",
-      "nutritionalBenefits": "Provides easily digestible carbohydrates, potassium, and a small amount of calcium and vitamins. The softness is appropriate for someone of this size.",
-      "healthNotes": "Extremely small portions are necessary given the user's weight. This is just to provide a tiny amount of nutrition. Monitor for any digestive issues."
+      "preparation": "Crumble tofu and sautee with chopped onion and bell pepper. Add black beans, diced tomato, chili powder, cumin, and turmeric. Cook until heated through. Serve with sliced avocado and chopped cilantro.",
+      "nutritionalBenefits": "High in protein, fiber, and healthy fats. Provides essential amino acids and supports muscle growth.",
+      "healthNotes": "Tofu is a complete protein source and a great alternative to meat. Avocado provides healthy monounsaturated fats."
     },
     "lunch": {
-      "name": "Pureed Sweet Potato",
+      "name": "Vegetarian Burrito Bowl with Quinoa",
       "ingredients": [
-        "10g cooked sweet potato",
-        "10ml water"
+        "Quinoa",
+        "Black Beans",
+        "Corn",
+        "Salsa",
+        "Avocado",
+        "Red Onion",
+        "Bell Pepper",
+        "Lime Juice",
+        "Cilantro",
+        "Vegetable Broth"
       ],
-      "preparation": "Steam or bake a small amount of sweet potato until very soft. Puree the sweet potato with the water until smooth.",
-      "nutritionalBenefits": "Provides Vitamin A, fiber, and antioxidants. Easy to digest.",
-      "healthNotes": "Extremely small portion due to weight. Monitor stool consistency."
+      "preparation": "Cook quinoa in vegetable broth. Combine cooked quinoa with black beans, corn, salsa, diced avocado, red onion, and bell pepper. Drizzle with lime juice and garnish with cilantro.",
+      "nutritionalBenefits": "Provides complex carbohydrates, protein, fiber, and vitamins. Supports energy levels and digestive health.",
+      "healthNotes": "Quinoa is a complete protein source and a good source of iron. Black beans are high in fiber and help regulate blood sugar levels."
     },
     "dinner": {
-      "name": "Rice Cereal Porridge (Plain)",
+      "name": "Sweet Potato and Black Bean Enchiladas with Mole Sauce",
       "ingredients": [
-        "5g rice cereal (unfortified)",
-        "20ml water"
+        "Sweet Potatoes",
+        "Black Beans",
+        "Corn Tortillas",
+        "Mole Sauce (Vegetarian)",
+        "Onion",
+        "Garlic",
+        "Cilantro",
+        "Vegetable Broth",
+        "Cheese (Optional, check dietary preference)",
+        "Olive Oil"
       ],
-      "preparation": "Cook rice cereal with water according to package directions, ensuring it forms a smooth, lump-free porridge. Cool slightly before serving.",
-      "nutritionalBenefits": "Easily digestible carbohydrates and provides some energy.",
-      "healthNotes": "Choose unfortified rice cereal to minimize potential reactions. Observe for any signs of allergy or intolerance."
+      "preparation": "Roast sweet potatoes until tender. Sautee onion and garlic, then add black beans and diced sweet potatoes. Fill corn tortillas with the mixture and roll them up. Place in a baking dish, cover with mole sauce, and bake until heated through. Garnish with cilantro and cheese (if desired).",
+      "nutritionalBenefits": "Rich in vitamins, minerals, and fiber. Provides antioxidants and supports immune function.",
+      "healthNotes": "Sweet potatoes are a good source of Vitamin A and potassium. Black beans are a good source of protein and fiber."
     },
     "snacks": [
       {
-        "name": "Small amount of unsweetened applesauce",
+        "name": "Mexican Fruit Salad with Chili Lime Dressing",
         "ingredients": [
-          "5g unsweetened applesauce"
+          "Mango",
+          "Pineapple",
+          "Watermelon",
+          "Papaya",
+          "Lime Juice",
+          "Chili Powder"
         ],
-        "preparation": "Serve a small spoonful of unsweetened applesauce.",
-        "nutritionalBenefits": "Provides Vitamin C and fiber.",
-        "healthNotes": "Ensure applesauce is smooth and easily digestible. Monitor for gas or bloating."
+        "preparation": "Dice mango, pineapple, watermelon, and papaya. Combine with lime juice and chili powder.",
+        "nutritionalBenefits": "Provides vitamins, minerals, and hydration. Supports energy levels and overall health.",
+        "healthNotes": "Fruits are a good source of vitamins, minerals, and antioxidants."
       }
     ]
   },
   "nutritionalFocus": [
     {
-      "nutrient": "Calories",
-      "reason": "Crucial for energy and growth, though extremely limited by the user's weight. Small, frequent feedings are likely needed under professional medical guidance.",
+      "nutrient": "Protein",
+      "reason": "Essential for muscle growth and repair, particularly important for weight gain.",
       "sources": [
-        "Bananas",
-        "Sweet Potato",
-        "Rice Cereal",
-        "Applesauce"
+        "Tofu",
+        "Black Beans",
+        "Quinoa",
+        "Nuts",
+        "Seeds"
       ]
     },
     {
-      "nutrient": "Hydration",
-      "reason": "Essential for all bodily functions. Monitor fluid intake closely.",
+      "nutrient": "Complex Carbohydrates",
+      "reason": "Provide sustained energy and support weight gain through calorie surplus.",
       "sources": [
-        "Plant-based milk",
-        "Water in purees"
+        "Quinoa",
+        "Sweet Potatoes",
+        "Black Beans",
+        "Corn Tortillas",
+        "Oats"
       ]
     },
     {
-      "nutrient": "Vitamin A",
-      "reason": "Important for vision, immune function, and cell growth. Provided by sweet potato",
+      "nutrient": "Healthy Fats",
+      "reason": "Important for hormone production, energy storage, and overall health. Contribute to calorie surplus for weight gain.",
       "sources": [
-        "Sweet Potato"
+        "Avocado",
+        "Nuts",
+        "Seeds",
+        "Olive Oil"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Large portions",
-      "reason": "Given the user's extremely low weight, even slightly larger portions could be detrimental."
-    },
-    {
-      "food": "Highly processed foods",
-      "reason": "Difficult to digest and may contain additives that are not suitable for the user's system."
+      "food": "Empty Calories (Processed Foods, Sugary Drinks)",
+      "reason": "Provide minimal nutritional value and can hinder healthy weight gain."
     }
   ],
   "weeklyHabitTips": [
-    "Consult a pediatrician or registered dietitian immediately for a comprehensive feeding plan.",
-    "Introduce new foods slowly and one at a time, observing for any reactions.",
-    "Monitor weight gain and overall health closely, documenting any changes.",
-    "Maintain a sterile preparation environment to prevent infections.",
-    "Ensure all foods are properly pureed or mashed to prevent choking hazards."
+    "Eat frequent meals and snacks throughout the day.",
+    "Prioritize protein and complex carbohydrates in each meal.",
+    "Track your calorie intake to ensure you are in a surplus.",
+    "Incorporate strength training exercises to build muscle mass."
   ]
 }
