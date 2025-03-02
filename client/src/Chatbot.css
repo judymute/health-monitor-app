@@ -16,7 +16,7 @@
 .chatbot-header {
   display: flex;
   align-items: left;
-  background-color: #7868E6;
+  background-color: #68B168;
   color: white;
   padding: 10px;
   font-size: 16px;
@@ -30,7 +30,7 @@
   right: 120px;
   display: inline-block; /* Or block, depending on your layout */
   padding: 15px 20px; /* Adjust padding as needed */
-  background-color: #7868E6; /* Or your preferred background color */
+  background-color: #68B168; /* Or your preferred background color */
   color: white; /* Or your preferred text color */
   border-radius: 20px; /* Adjust for desired roundness */
   cursor: pointer;
@@ -50,17 +50,17 @@
   left: 30px; /* Adjust for tail position */
   border-width: 10px 10px 0;
   border-style: solid;
-  border-color: #7868E6 transparent; /* Match background color */
+  border-color: #68B168 transparent; /* Match background color */
 }
 
 
 /* Optional hover effects */
 .chatbot-toggle:hover {
-  background-color: #5749b0;
+  background-color: #4D9A4D;
 }
 
 .chatbot-toggle:hover::after{
-    border-color: #5749b0 transparent;
+    border-color: #4D9A4D transparent;
 }
 
 /* Optional active effects */
@@ -141,7 +141,7 @@
 
 .user {
   align-self: flex-end;
-  background-color: #7868E6;
+  background-color: #68B168;
   color: white;
   padding: 8px 12px;
   border-radius: 10px;
@@ -163,7 +163,7 @@
 }
 
 .input-area button {
-  background-color: #7868E6;
+  background-color: #68B168;
   color: white;
   border: none;
   padding: 8px 12px;
