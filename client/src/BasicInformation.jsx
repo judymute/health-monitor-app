@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// No need for custom CSS file when using Bootstrap
+import './BasicInformation.css';
 
 const BasicInformation = ({ onSave, prevData = {}, onPrevious }) => {
   // Initialize form state with previous data or defaults
@@ -50,30 +50,37 @@ const BasicInformation = ({ onSave, prevData = {}, onPrevious }) => {
   }
 
   return (
-    <div className="container mt-4">
-      <div className="card shadow">
-        <div className="card-header bg-primary text-white">
-          <h2 className="mb-0">Basic Information</h2>
-        </div>
-        <div className="card-body">
-          <form onSubmit={handleSubmit}>
+    <div className="form-container">
+      <div className="form-header">
+        <h2 className="form-title">Basic Information</h2>
+        <p className="form-subtitle">Please provide your personal information</p>
+      </div>
+      
+      <div className="form-content">
+        <form onSubmit={handleSubmit}>
+          <div className="form-row">
             {/* Full Name */}
-            <div className="mb-3">
-              <label htmlFor="fullName" className="form-label">Full Name:</label>
+            <div>
+              <label className="form-label">
+                Full Name
+              </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-input"
                 id="fullName"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
                 required
+                placeholder="Enter your name"
               />
             </div>
 
             {/* Age */}
-            <div className="mb-3">
-              <label htmlFor="age" className="form-label">Age:</label>
+            <div>
+              <label className="form-label">
+                Age
+              </label>
               <select 
                 className="form-select"
                 id="age" 
@@ -85,14 +92,18 @@ const BasicInformation = ({ onSave, prevData = {}, onPrevious }) => {
                 {ageOptions}
               </select>
             </div>
+          </div>
 
+          <div className="form-row">
             {/* Weight */}
-            <div className="mb-3">
-              <label htmlFor="weight" className="form-label">Weight:</label>
-              <div className="input-group">
+            <div>
+              <label className="form-label">
+                Weight
+              </label>
+              <div className="input-with-unit">
                 <input
                   type="number"
-                  className="form-control"
+                  className="form-input"
                   id="weight"
                   name="weight"
                   value={formData.weight}
@@ -100,11 +111,10 @@ const BasicInformation = ({ onSave, prevData = {}, onPrevious }) => {
                   required
                   min="1"
                   step="0.1"
-                  placeholder="Enter your weight"
+                  placeholder="Weight"
                 />
                 <select
-                  className="form-select"
-                  style={{ maxWidth: '100px' }}
+                  className="unit-select"
                   name="weightUnit"
                   value={formData.weightUnit}
                   onChange={handleChange}
@@ -117,12 +127,14 @@ const BasicInformation = ({ onSave, prevData = {}, onPrevious }) => {
             </div>
 
             {/* Height */}
-            <div className="mb-3">
-              <label htmlFor="height" className="form-label">Height:</label>
-              <div className="input-group">
+            <div>
+              <label className="form-label">
+                Height
+              </label>
+              <div className="input-with-unit">
                 <input
                   type="number"
-                  className="form-control"
+                  className="form-input"
                   id="height"
                   name="height"
                   value={formData.height}
@@ -130,11 +142,10 @@ const BasicInformation = ({ onSave, prevData = {}, onPrevious }) => {
                   required
                   min="1"
                   step="0.1"
-                  placeholder="Enter your height"
+                  placeholder="Height"
                 />
                 <select
-                  className="form-select"
-                  style={{ maxWidth: '100px' }}
+                  className="unit-select"
                   name="heightUnit"
                   value={formData.heightUnit}
                   onChange={handleChange}
@@ -145,43 +156,64 @@ const BasicInformation = ({ onSave, prevData = {}, onPrevious }) => {
                 </select>
               </div>
             </div>
+          </div>
 
-            {/* Blood Type */}
-            <div className="mb-3">
-              <label htmlFor="bloodType" className="form-label">Blood Type:</label>
-              <select
-                className="form-select"
-                id="bloodType"
-                name="bloodType"
-                value={formData.bloodType}
-                onChange={handleChange}
-                required
+          {/* Blood Type */}
+          <div className="form-row">
+            <div style={{ textAlign: 'center' }}>
+              <label className="form-label" style={{ textAlign: 'center' }}>
+                Blood Type
+              </label>
+            <select
+              className="form-select blood-type-select"
+              id="bloodType"
+              name="bloodType"
+              value={formData.bloodType}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Blood Type</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+            </div>
+          </div>
+
+          <div className="form-buttons">
+            {onPrevious && (
+              <button 
+                type="button" 
+                className="button-secondary"
+                onClick={onPrevious}
               >
-                <option value="">Select Blood Type</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-              </select>
-            </div>
-
-            <div className="d-flex justify-content-between mt-4">
-              {onPrevious && (
-                <button 
-                  type="button" 
-                  className="btn btn-secondary" 
-                  onClick={onPrevious}
-                >
-                  Previous
-                </button>
-              )}
-              <button type="submit" className="btn btn-primary">Next</button>
-            </div>
-          </form>
+                Previous
+              </button>
+            )}
+            <button 
+              type="submit" 
+              className={`button-primary ${!onPrevious ? 'button-primary-right' : ''}`}
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+      
+      {/* Progress indicator */}
+      <div className="progress-container">
+        <div className="progress-dots">
+          {[1, 2, 3].map(i => (
+            <div 
+              key={i} 
+              className={`progress-dot ${i === 1 ? 'progress-dot-active' : 'progress-dot-inactive'}`}
+            />
+          ))}
         </div>
       </div>
     </div>

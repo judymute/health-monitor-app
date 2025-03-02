@@ -1,0 +1,168 @@
+/* Container styling */
+.medical-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.subsection-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.section-description {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Grid layouts */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+/* Checkbox styling */
+.checkbox-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  margin-right: 8px;
+  accent-color: #7868E6;
+}
+
+.checkbox-label {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* Select and input styling */
+.select {
+  width: 100%;
+  max-width: 250px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: white;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%237868E6%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 10px auto;
+  margin-top: 8px;
+  margin-left: 24px;
+}
+
+.input-text {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: white;
+  outline: none;
+  margin-top: 8px;
+  margin-left: 24px;
+}
+
+.other-item {
+  margin-top: 16px;
+}
+
+/* Disclaimer section */
+.disclaimer {
+  padding: 16px 20px;
+  background-color: #f5f5ff;
+  border-radius: 6px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0f0;
+}
+
+.disclaimer-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.disclaimer-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* Button styling */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.button-previous {
+  padding: 0 20px;
+  height: 44px;
+  border-radius: 6px;
+  border: 1px solid #7868E6;
+  background-color: white;
+  color: #7868E6;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-complete {
+  padding: 0 30px;
+  height: 44px;
+  border-radius: 6px;
+  border: none;
+  background-color: #7868E6;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
