@@ -141,12 +141,12 @@
 }
 
 .button-previous {
-  padding: 0 20px;
+  padding: 0 30px;
   height: 44px;
   border-radius: 6px;
-  border: 1px solid #68B168;
-  background-color: white;
-  color: #68B168;
+  border: none;
+  background-color: #68B168;
+  color: white;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;

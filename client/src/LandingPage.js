@@ -21,7 +21,7 @@ function LandingPage() {
             <path d="M115 75C118.866 75 122 71.866 122 68C122 64.134 118.866 61 115 61C111.134 61 108 64.134 108 68C108 71.866 111.134 75 115 75Z" fill="white"/>
           </svg>
         </div>
-        <h1>Welcome to Health Buddy</h1>
+        <h1>Welcome to Hen Care</h1>
         <p>Track your health goals, monitor your progress, and achieve a healthier lifestyle with our cute and fun app!</p>
         <button 
           className="get-started-button"
