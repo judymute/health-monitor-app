@@ -1,124 +1,116 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Labneh with Za'atar and Whole Wheat Pita",
+      "name": "Vegan Shakshuka with Whole Wheat Pita",
       "ingredients": [
-        "Labneh (strained yogurt)",
-        "Za'atar spice blend",
-        "Olive oil",
-        "Whole wheat pita bread",
-        "Cucumber slices",
-        "Tomato slices"
+        "1 tbsp olive oil",
+        "1/2 onion, chopped",
+        "1 red bell pepper, chopped",
+        "2 cloves garlic, minced",
+        "1 tsp cumin",
+        "1/2 tsp paprika",
+        "1/4 tsp cayenne pepper (optional)",
+        "1 (28 ounce) can crushed tomatoes",
+        "1/4 cup vegetable broth",
+        "Salt and pepper to taste",
+        "1 can chickpeas, drained and rinsed",
+        "Fresh parsley, chopped",
+        "2 whole wheat pita breads"
       ],
-      "preparation": "Spread labneh on a plate, drizzle with olive oil, and sprinkle with za'atar. Serve with whole wheat pita, cucumber, and tomato slices.",
-      "nutritionalBenefits": "Labneh provides protein and probiotics. Za'atar contains antioxidants. Whole wheat pita offers fiber.",
-      "healthNotes": "The probiotics in labneh are generally beneficial, though consult with a doctor about liver considerations. Choose low-sodium za'atar blends."
+      "preparation": "Sauté onion and bell pepper in olive oil until softened. Add garlic and spices and cook for 1 minute. Stir in crushed tomatoes and vegetable broth. Season with salt and pepper. Simmer for 10 minutes, then gently stir in the chickpeas. Garnish with parsley and serve with whole wheat pita.",
+      "nutritionalBenefits": "High in fiber, protein, and vitamins A and C. Provides sustained energy and aids digestion.",
+      "healthNotes": "Chickpeas add protein and fiber, promoting satiety and healthy gut bacteria. Spices aid digestion."
     },
     "lunch": {
-      "name": "Mujadara (Lentils and Rice with Caramelized Onions)",
+      "name": "Mujadara with Tahini Dressing",
       "ingredients": [
-        "Brown or green lentils",
-        "Basmati rice",
-        "Onions",
-        "Olive oil",
-        "Cumin",
-        "Coriander",
-        "Salt",
-        "Pepper",
-        "Vegetable broth"
+        "1 tbsp olive oil",
+        "1 onion, thinly sliced",
+        "1 cup brown lentils, rinsed",
+        "2 cups vegetable broth",
+        "1/2 cup brown rice, rinsed",
+        "Salt and pepper to taste",
+        "1/4 cup tahini",
+        "2 tbsp lemon juice",
+        "2 tbsp water",
+        "1 clove garlic, minced",
+        "Pinch of cumin",
+        "Fresh parsley, chopped"
       ],
-      "preparation": "Caramelize onions in olive oil. Cook lentils and rice in vegetable broth with cumin and coriander. Combine caramelized onions with the lentil and rice mixture. Season with salt and pepper.",
-      "nutritionalBenefits": "Mujadara is a good source of protein, fiber, and complex carbohydrates. Lentils provide iron.",
-      "healthNotes": "Control the oil used in caramelizing the onions to manage fat intake. Ensure the salt content is low to support liver health."
+      "preparation": "Caramelize onions in olive oil. Add lentils, vegetable broth, and rice to the pot. Season with salt and pepper. Bring to a boil, then reduce heat and simmer for 30-40 minutes, or until lentils and rice are cooked through. Whisk together tahini, lemon juice, water, garlic, and cumin for the dressing. Drizzle tahini dressing over the mujadara and garnish with parsley.",
+      "nutritionalBenefits": "Rich in protein, fiber, and iron. Supports energy levels and aids digestion. Lentils are an excellent source of plant-based protein.",
+      "healthNotes": "Brown rice provides complex carbohydrates for sustained energy. Tahini offers healthy fats and calcium."
     },
     "dinner": {
-      "name": "Vegetable Tagine with Chickpeas and Couscous",
+      "name": "Vegan Stuffed Bell Peppers with Quinoa and Vegetables",
       "ingredients": [
-        "Chickpeas (canned or cooked)",
-        "Carrots",
-        "Zucchini",
-        "Eggplant",
-        "Bell peppers",
-        "Onions",
-        "Garlic",
-        "Ginger",
-        "Cumin",
-        "Turmeric",
-        "Cinnamon",
-        "Vegetable broth",
-        "Couscous",
-        "Dried apricots",
-        "Almonds (slivered)"
+        "4 bell peppers (various colors)",
+        "1 tbsp olive oil",
+        "1 onion, chopped",
+        "1 zucchini, diced",
+        "1/2 cup cooked quinoa",
+        "1/2 cup chopped tomatoes",
+        "1/4 cup chopped walnuts",
+        "1/4 cup chopped parsley",
+        "1 tsp dried oregano",
+        "Salt and pepper to taste",
+        "Vegan feta cheese (optional)"
       ],
-      "preparation": "Sauté onions, garlic, and ginger. Add carrots, zucchini, eggplant, and bell peppers. Season with cumin, turmeric, and cinnamon. Add chickpeas and vegetable broth and simmer until vegetables are tender. Prepare couscous according to package instructions. Top the tagine with dried apricots and almonds. Serve with couscous.",
-      "nutritionalBenefits": "Provides a variety of vitamins, minerals, and fiber. Chickpeas are a good source of protein and fiber. Turmeric is an anti-inflammatory.",
-      "healthNotes": "Use low-sodium vegetable broth and be mindful of salt. Smaller portions can help manage overall calorie intake. Consult with a doctor regarding the use of turmeric with liver disease."
+      "preparation": "Preheat oven to 375°F (190°C). Cut bell peppers in half lengthwise and remove seeds. Sauté onion and zucchini in olive oil until softened. Stir in quinoa, tomatoes, walnuts, parsley, oregano, salt, and pepper. Fill bell peppers with the quinoa mixture. Bake for 30-40 minutes, or until bell peppers are tender. Top with vegan feta cheese (optional) before serving.",
+      "nutritionalBenefits": "Good source of vitamins A and C, fiber, and protein. Quinoa provides all essential amino acids.",
+      "healthNotes": "Colorful bell peppers offer antioxidants and fiber. Walnuts contribute healthy fats and plant-based protein."
     },
     "snacks": [
       {
-        "name": "Dates with Almond Butter",
+        "name": "Dates Stuffed with Almond Butter",
         "ingredients": [
-          "Dates (Medjool or other)",
-          "Almond butter"
+          "4 Medjool dates, pitted",
+          "2 tbsp almond butter"
         ],
-        "preparation": "Stuff each date with a small amount of almond butter.",
-        "nutritionalBenefits": "Dates provide natural sugars and fiber. Almond butter offers healthy fats and protein.",
-        "healthNotes": "Dates are high in sugar, so limit portion size. Choose almond butter without added sugar or salt."
+        "preparation": "Simply stuff each date with 1/2 tablespoon of almond butter.",
+        "nutritionalBenefits": "Provides quick energy, fiber, and healthy fats.",
+        "healthNotes": "Dates are a natural source of sugars and fiber. Almond butter adds healthy fats and protein."
       }
     ]
   },
   "nutritionalFocus": [
     {
       "nutrient": "Fiber",
-      "reason": "Promotes healthy digestion, supports liver function, and helps regulate blood sugar levels.",
+      "reason": "Promotes healthy digestion, regulates blood sugar levels, and keeps you feeling full.",
       "sources": [
         "Lentils",
         "Chickpeas",
-        "Whole wheat pita",
+        "Brown rice",
         "Vegetables",
         "Fruits"
       ]
     },
     {
-      "nutrient": "Protein",
-      "reason": "Essential for cell repair and function, supports overall health, and helps with satiety.",
+      "nutrient": "Plant-Based Protein",
+      "reason": "Essential for muscle building, repair, and overall health. Important for satiety and energy levels.",
       "sources": [
-        "Labneh",
         "Lentils",
         "Chickpeas",
-        "Almond butter"
+        "Quinoa",
+        "Almond butter",
+        "Nuts"
       ]
     },
     {
-      "nutrient": "Antioxidants",
-      "reason": "Help protect the body from damage caused by free radicals, supporting liver health.",
+      "nutrient": "Iron",
+      "reason": "Crucial for energy production and oxygen transport throughout the body. Important for young women.",
       "sources": [
-        "Za'atar",
-        "Turmeric",
-        "Fruits",
-        "Vegetables"
+        "Lentils",
+        "Chickpeas",
+        "Quinoa",
+        "Spinach"
       ]
     }
   ],
-  "avoidList": [
-    {
-      "food": "High-Sodium Foods",
-      "reason": "Sodium can worsen fluid retention and increase blood pressure, both of which can negatively impact liver health."
-    },
-    {
-      "food": "Excessive Added Sugars",
-      "reason": "Excess sugar intake can contribute to fatty liver disease."
-    },
-    {
-      "food": "Processed Foods",
-      "reason": "Often high in sodium, unhealthy fats, and additives that can burden the liver."
-    }
-  ],
+  "avoidList": [],
   "weeklyHabitTips": [
-    "Drink plenty of water throughout the day to stay hydrated and support liver function.",
-    "Engage in gentle exercise, such as walking or yoga, to improve circulation and reduce stress.",
-    "Practice mindful eating to improve digestion and prevent overeating.",
-    "Establish a regular sleep schedule to promote restful sleep.",
-    "Consult with a registered dietitian or healthcare professional for personalized dietary guidance tailored to your specific liver condition."
+    "Drink at least 8 glasses of water per day to aid digestion.",
+    "Incorporate a variety of colorful fruits and vegetables into your diet.",
+    "Practice mindful eating by paying attention to your hunger cues and chewing your food thoroughly."
   ]
 }
