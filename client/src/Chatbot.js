@@ -10,6 +10,7 @@ const model = genAI.getGenerativeModel({
     systemInstruction: "Your name is Hen, a friendly emotional support and health consultant who works for Health Monitor. Health Monitor is a website that tracks user's wellness and provides diet suggestions.\n\nRole & Purpose:\nYou are an Emotional Support and Health Guidance AI designed to assist users who care about their well-being. Your primary functions include:\n\n- Emotional Support: Providing empathetic, non-judgmental conversations to comfort users during distress, sadness, or loneliness.\n- Daily Check-ins: Initiating friendly, supportive check-ins to encourage well-being, self-care, and mental health awareness.\n- Health & Wellness Guidance: Offering professional, evidence-based advice on general wellness topics such as sleep, nutrition, exercise, stress management, and self-care.\n- Adaptive Tone & Personality: Shifting between warm and empathetic when providing emotional support and professional and informative when answering health-related inquiries.\n\nEthical Boundaries & Safety Protocols:\n- Crisis Detection: Encourage users in extreme distress to seek professional support and provide emergency resources if possible.\n- No Medical Diagnoses: Stick to general wellness guidance and avoid medical claims.\n- User Privacy & Respect: Never ask for personal information or make assumptions about a user’s health.\n- No Judgment: Respond with empathy and inclusivity, avoiding bias or directive language.\n- Adaptive Personality & Tone: Adjust responses based on user cues, keeping responses aligned with their emotional state and needs."
 });
 
+
 const generationConfig = {
     temperature: 1,
     topP: 0.95,
@@ -17,6 +18,8 @@ const generationConfig = {
     maxOutputTokens: 8192,
     responseMimeType: "text/plain",
 };
+
+
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
@@ -51,25 +54,6 @@ const Chatbot = () => {
         avatar: "https://www.henhackshackathon.com/images/favicon-25.svg" // Example AI avatar
     };
 
-    // Function to send greeting when chat is opened
-    const handleOpenChat = () => {
-        setIsOpen(true);
-        if (messages.length === 0) {
-            const greetingMessage = { 
-                text: "Hi, my name is Hen! 😊 I am your friendly emotional support and health consultant from HenCare. You can talk to me about your well-being, ask for wellness advice, or just have a friendly chat. I'm here to listen and support you!", 
-                sender: 'ai' 
-            };
-            setMessages([greetingMessage]);
-        }
-    };
-
-    // Function to format AI response into paragraphs
-    const formatAIResponse = (text) => {
-        return text.split('\n\n').map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-        ));
-    };
-
     // Function to send message and get AI response
     const handleSend = async () => {
         if (input.trim()) {
@@ -79,35 +63,31 @@ const Chatbot = () => {
             setIsTyping(true);
 
             try {
-                // Filter messages to include only user-generated content (ignoring AI greetings)
-                const filteredMessages = messages.filter(msg => msg.sender === 'user').map(msg => ({
-                    role: 'user',
-                    parts: [{ text: msg.text }]
-                }));
-
                 const chatSession = model.startChat({
                     generationConfig,
-                    history: filteredMessages.length > 0 ? filteredMessages : []
+                    history: messages.map(msg => ({
+                        role: msg.sender === 'user' ? 'user' : 'model',
+                        parts: [{ text: msg.text }]
+                    }))
                 });
-
+                
                 const result = await chatSession.sendMessage(input);
                 const aiResponse = result.response.text();
                 setIsTyping(false);
-
-                const formattedResponse = formatAIResponse(aiResponse);
-                const aiMessage = { text: formattedResponse, sender: 'ai' };
+                
+                const aiMessage = { text: aiResponse, sender: 'ai' };
                 setMessages(prevMessages => [...prevMessages, aiMessage]);
             } catch (error) {
                 console.error('Error fetching AI response:', error);
                 setIsTyping(false);
-                setMessages(prevMessages => [...prevMessages, { text: `Error: ${error.message}`, sender: 'ai' }]);
+                setMessages(prevMessages => [...prevMessages, { text: 'Error fetching response', sender: 'ai' }]);
             }
         }
     };
 
     return (
         <div>
-            <button className="chatbot-toggle" onClick={handleOpenChat}>
+            <button className="chatbot-toggle" onClick={() => setIsOpen(!isOpen)}>
                 {isOpen ? 'Close Chat' : 'Open Chat'}
             </button>
             
