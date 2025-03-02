@@ -1,140 +1,90 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Vegan Polenta with Roasted Vegetables",
+      "name": "Mashed Banana with Plant-Based Milk",
       "ingredients": [
-        "Polenta (coarse ground)",
-        "Vegetable broth",
-        "Cherry tomatoes",
-        "Bell peppers (red, yellow)",
-        "Zucchini",
-        "Onion",
-        "Garlic",
-        "Olive oil",
-        "Fresh basil",
-        "Nutritional yeast (optional)",
-        "Salt and pepper"
+        "1/4 of a ripe banana",
+        "20ml plant-based milk (unsweetened almond or soy)",
+        "Pinch of cinnamon (optional)"
       ],
-      "preparation": "Cook polenta according to package directions using vegetable broth. Roast chopped vegetables with olive oil, garlic, salt, and pepper until tender. Top polenta with roasted vegetables and fresh basil. Sprinkle with nutritional yeast if desired.",
-      "nutritionalBenefits": "Provides complex carbohydrates, fiber, vitamins, and antioxidants. Good source of energy for weight gain.",
-      "healthNotes": "Easy to digest. Choose gluten-free polenta if necessary. Roasting vegetables enhances their flavor and digestibility, important for liver health."
+      "preparation": "Mash the banana thoroughly. Mix in the plant-based milk until it reaches a smooth, slightly liquid consistency. Sprinkle with cinnamon if desired.",
+      "nutritionalBenefits": "Provides easily digestible carbohydrates, potassium, and a small amount of calcium and vitamins. The softness is appropriate for someone of this size.",
+      "healthNotes": "Extremely small portions are necessary given the user's weight. This is just to provide a tiny amount of nutrition. Monitor for any digestive issues."
     },
     "lunch": {
-      "name": "Lentil Bolognese with Whole Wheat Pasta",
+      "name": "Pureed Sweet Potato",
       "ingredients": [
-        "Whole wheat pasta",
-        "Green lentils",
-        "Canned crushed tomatoes",
-        "Onion",
-        "Carrot",
-        "Celery",
-        "Garlic",
-        "Olive oil",
-        "Vegetable broth",
-        "Dried oregano",
-        "Dried basil",
-        "Bay leaf",
-        "Salt and pepper",
-        "Nutritional yeast (optional)"
+        "10g cooked sweet potato",
+        "10ml water"
       ],
-      "preparation": "Sauté onion, carrot, and celery in olive oil. Add garlic and lentils and cook for a few minutes. Stir in crushed tomatoes, vegetable broth, oregano, basil, bay leaf, salt, and pepper. Simmer until lentils are tender. Cook pasta according to package directions. Serve lentil bolognese over pasta. Sprinkle with nutritional yeast if desired.",
-      "nutritionalBenefits": "Rich in protein, fiber, and iron. Provides sustained energy release and promotes muscle growth. Whole wheat pasta adds complex carbohydrates.",
-      "healthNotes": "Lentils are a good source of plant-based protein and are generally well-tolerated. Avoid adding excessive amounts of oil.  This meal is helpful for liver health as it's rich in fiber which helps detoxify the body."
+      "preparation": "Steam or bake a small amount of sweet potato until very soft. Puree the sweet potato with the water until smooth.",
+      "nutritionalBenefits": "Provides Vitamin A, fiber, and antioxidants. Easy to digest.",
+      "healthNotes": "Extremely small portion due to weight. Monitor stool consistency."
     },
     "dinner": {
-      "name": "Vegan Mushroom Risotto",
+      "name": "Rice Cereal Porridge (Plain)",
       "ingredients": [
-        "Arborio rice",
-        "Mixed mushrooms (cremini, shiitake, oyster)",
-        "Vegetable broth",
-        "Onion",
-        "Garlic",
-        "Olive oil",
-        "White wine (optional)",
-        "Vegan Parmesan cheese (optional)",
-        "Fresh parsley",
-        "Salt and pepper"
+        "5g rice cereal (unfortified)",
+        "20ml water"
       ],
-      "preparation": "Sauté onion and garlic in olive oil. Add rice and cook for a minute. Add white wine (if using) and let it evaporate. Gradually add warm vegetable broth, stirring constantly, until rice is creamy and cooked through. Sauté mushrooms in olive oil until tender. Stir mushrooms into risotto. Garnish with vegan parmesan cheese and fresh parsley. Season with salt and pepper.",
-      "nutritionalBenefits": "Provides carbohydrates for energy and essential nutrients from mushrooms. Offers a satisfying and flavorful meal.",
-      "healthNotes": "Ensure the rice is cooked thoroughly.  Use low-sodium vegetable broth to minimize sodium intake, which is important for maintaining liver health. The mushrooms also add valuable nutrients"
+      "preparation": "Cook rice cereal with water according to package directions, ensuring it forms a smooth, lump-free porridge. Cool slightly before serving.",
+      "nutritionalBenefits": "Easily digestible carbohydrates and provides some energy.",
+      "healthNotes": "Choose unfortified rice cereal to minimize potential reactions. Observe for any signs of allergy or intolerance."
     },
     "snacks": [
       {
-        "name": "Avocado Toast with Hemp Seeds",
+        "name": "Small amount of unsweetened applesauce",
         "ingredients": [
-          "Whole grain bread",
-          "Avocado",
-          "Hemp seeds",
-          "Lemon juice",
-          "Salt and pepper"
+          "5g unsweetened applesauce"
         ],
-        "preparation": "Toast bread. Mash avocado with lemon juice, salt, and pepper. Spread avocado on toast and sprinkle with hemp seeds.",
-        "nutritionalBenefits": "Healthy fats, protein, and fiber. Provides a quick energy boost.",
-        "healthNotes": "Avocado is a good source of healthy fats. Hemp seeds provide protein and omega-3 fatty acids."
+        "preparation": "Serve a small spoonful of unsweetened applesauce.",
+        "nutritionalBenefits": "Provides Vitamin C and fiber.",
+        "healthNotes": "Ensure applesauce is smooth and easily digestible. Monitor for gas or bloating."
       }
     ]
   },
   "nutritionalFocus": [
     {
-      "nutrient": "Protein",
-      "reason": "Essential for muscle growth and repair, crucial for weight gain.",
+      "nutrient": "Calories",
+      "reason": "Crucial for energy and growth, though extremely limited by the user's weight. Small, frequent feedings are likely needed under professional medical guidance.",
       "sources": [
-        "Lentils",
-        "Tofu",
-        "Tempeh",
-        "Hemp seeds",
-        "Chia seeds",
-        "Nutritional yeast"
+        "Bananas",
+        "Sweet Potato",
+        "Rice Cereal",
+        "Applesauce"
       ]
     },
     {
-      "nutrient": "Complex Carbohydrates",
-      "reason": "Provide sustained energy release for weight gain and physical activity.",
+      "nutrient": "Hydration",
+      "reason": "Essential for all bodily functions. Monitor fluid intake closely.",
       "sources": [
-        "Whole wheat pasta",
-        "Brown rice",
-        "Quinoa",
-        "Oats",
-        "Polenta",
-        "Sweet potatoes"
+        "Plant-based milk",
+        "Water in purees"
       ]
     },
     {
-      "nutrient": "Healthy Fats",
-      "reason": "Important for hormone production, energy storage, and overall health. Aids nutrient absorption.",
+      "nutrient": "Vitamin A",
+      "reason": "Important for vision, immune function, and cell growth. Provided by sweet potato",
       "sources": [
-        "Avocado",
-        "Olive oil",
-        "Nuts",
-        "Seeds",
-        "Nut butters"
+        "Sweet Potato"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Processed Foods",
-      "reason": "Often high in unhealthy fats, sodium, and added sugars, which can negatively impact liver health and overall weight gain goals."
+      "food": "Large portions",
+      "reason": "Given the user's extremely low weight, even slightly larger portions could be detrimental."
     },
     {
-      "food": "Excessive Sugar",
-      "reason": "Can contribute to liver inflammation and hinder weight gain in a healthy manner."
-    },
-    {
-      "food": "Alcohol",
-      "reason": "Extremely harmful to the liver, especially with existing liver disease. Should be completely avoided."
-    },
-    {
-      "food": "Saturated and Trans Fats",
-      "reason": "Can worsen liver health issues. Found in fried foods and some processed vegan products. Focus on unsaturated fats."
+      "food": "Highly processed foods",
+      "reason": "Difficult to digest and may contain additives that are not suitable for the user's system."
     }
   ],
   "weeklyHabitTips": [
-    "Eat small, frequent meals throughout the day to increase calorie intake without overwhelming the digestive system.",
-    "Incorporate healthy fats into every meal to boost calorie density.",
-    "Track your calorie intake to ensure you are consistently consuming enough calories for weight gain.",
-    "Prioritize rest and recovery to allow your body to rebuild muscle tissue.",
-    "Consider consulting a registered dietitian or nutritionist for personalized guidance."
+    "Consult a pediatrician or registered dietitian immediately for a comprehensive feeding plan.",
+    "Introduce new foods slowly and one at a time, observing for any reactions.",
+    "Monitor weight gain and overall health closely, documenting any changes.",
+    "Maintain a sterile preparation environment to prevent infections.",
+    "Ensure all foods are properly pureed or mashed to prevent choking hazards."
   ]
 }

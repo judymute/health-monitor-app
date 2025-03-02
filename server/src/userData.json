@@ -7,13 +7,13 @@
       "unit": "kg"
     },
     "height": {
-      "value": 1,
+      "value": 10.9,
       "unit": "cm"
     },
-    "bloodType": "A+"
+    "bloodType": "B+"
   },
   "dietaryPreferences": {
-    "dietType": "Vegan",
+    "dietType": "Vegetarian",
     "dietTypeOther": "",
     "allergiesIntolerances": {
       "noAllergies": true,
@@ -32,7 +32,7 @@
       }
     },
     "favoriteCuisines": {
-      "italian": true,
+      "italian": false,
       "mexican": false,
       "indian": false,
       "chinese": false,
@@ -46,7 +46,7 @@
         "details": ""
       }
     },
-    "spiceTolerance": 1,
+    "spiceTolerance": 4,
     "dislikedFoods": ""
   },
   "medicalConditions": {
@@ -67,15 +67,16 @@
     "irritableBowelSyndrome": false,
     "gout": false,
     "phenylketonuria": false,
-    "liverDisease": true,
+    "liverDisease": false,
     "other": {
       "selected": false,
-      "details": ""
+      "details": "",
+      "type": ""
     }
   },
   "dietaryGoals": {
     "weightLoss": false,
-    "weightGain": true,
+    "weightGain": false,
     "maintenance": false,
     "increasedEnergy": false,
     "betterDigestion": false,
