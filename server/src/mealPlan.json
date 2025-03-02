@@ -1,126 +1,124 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Breakfast Burrito (Egg-Free)",
+      "name": "Tofu Scramble with Chinese Vegetables and Brown Rice",
       "ingredients": [
-        "Whole wheat tortilla",
-        "Black beans",
-        "Shredded cheese (Monterey Jack or similar)",
-        "Salsa",
-        "Avocado",
-        "Cooked diced potatoes",
-        "Plant-based sausage"
+        "Firm Tofu (crumbled)",
+        "Broccoli Florets",
+        "Carrot (diced)",
+        "Soy Sauce (low sodium, gluten-free)",
+        "Sesame Oil",
+        "Ginger (grated)",
+        "Garlic (minced)",
+        "Turmeric",
+        "Brown Rice (cooked)",
+        "Green Onions (chopped)"
       ],
-      "preparation": "Warm tortilla. Fill with black beans, cheese, salsa, avocado, potatoes, and plant-based sausage. Roll up and enjoy.",
-      "nutritionalBenefits": "Provides protein, fiber, healthy fats, and carbohydrates for sustained energy. Rich in vitamins and minerals.",
-      "healthNotes": "Choose low-sodium black beans and salsa to manage blood pressure. Opt for whole wheat tortillas for added fiber."
+      "preparation": "Sauté ginger and garlic in sesame oil. Add broccoli and carrot, cook until tender-crisp. Add tofu, soy sauce, and turmeric. Scramble until heated through. Serve over brown rice and garnish with green onions.",
+      "nutritionalBenefits": "High in protein, fiber, and complex carbohydrates. Good source of vitamins and minerals like iron, calcium, and vitamin A.",
+      "healthNotes": "Tofu is a good source of protein and helps with weight gain. Brown rice provides sustained energy. Low sodium soy sauce is important for cardiovascular health. Turmeric has anti-inflammatory properties."
     },
     "lunch": {
-      "name": "Chicken Fajita Salad",
+      "name": "Vegan Mapo Tofu with Edamame and Quinoa",
       "ingredients": [
-        "Grilled chicken breast (skinless)",
-        "Bell peppers (various colors)",
-        "Onion",
-        "Romaine lettuce",
-        "Avocado",
-        "Cherry tomatoes",
-        "Lime juice",
-        "Olive oil",
-        "Cilantro"
+        "Soft Tofu (cubed)",
+        "Vegetable Broth (low sodium)",
+        "Fermented Black Beans (rinsed and mashed)",
+        "Chili Bean Paste (doubanjiang, check for gluten-free)",
+        "Soy Sauce (low sodium, gluten-free)",
+        "Cornstarch",
+        "Sugar",
+        "Edamame (shelled)",
+        "Quinoa (cooked)",
+        "Sesame Oil",
+        "Green Onions (chopped)"
       ],
-      "preparation": "Grill chicken breast with fajita seasoning. Sauté bell peppers and onion. Combine romaine lettuce, avocado, cherry tomatoes, and grilled chicken and vegetables in a bowl. Dress with lime juice, olive oil, and chopped cilantro.",
-      "nutritionalBenefits": "Lean protein, vitamins, minerals, and healthy fats. Provides antioxidants from colorful vegetables.",
-      "healthNotes": "Use lean chicken breast and limit olive oil to control fat intake. High in protein to help with weight gain."
+      "preparation": "Sauté fermented black beans and chili bean paste in sesame oil. Add vegetable broth, soy sauce, cornstarch slurry, and sugar. Simmer. Gently add tofu and simmer until heated through. Serve with edamame and quinoa. Garnish with green onions.",
+      "nutritionalBenefits": "Excellent source of plant-based protein and fiber. Quinoa provides complete protein and essential amino acids. Edamame is rich in vitamins and minerals.",
+      "healthNotes": "Fermented black beans and chili bean paste provide umami flavor. Quinoa offers sustained energy and supports cardiovascular health. Careful sodium control is crucial."
     },
     "dinner": {
-      "name": "Vegetarian Chili with Cornbread",
+      "name": "Vegan Chow Mein with Extra Tofu and Vegetables",
       "ingredients": [
-        "Kidney beans",
-        "Pinto beans",
-        "Diced tomatoes",
-        "Corn",
-        "Onion",
-        "Garlic",
-        "Chili powder",
-        "Cumin",
-        "Vegetable broth",
-        "Cornmeal",
-        "Flour",
-        "Baking powder",
-        "Milk (dairy or non-dairy)",
-        "Vegetable oil"
+        "Gluten-Free Noodles (rice noodles)",
+        "Firm Tofu (cubed and pan-fried)",
+        "Broccoli Florets",
+        "Bell Peppers (sliced)",
+        "Carrots (julienned)",
+        "Mushrooms (sliced)",
+        "Soy Sauce (low sodium, gluten-free)",
+        "Sesame Oil",
+        "Ginger (grated)",
+        "Garlic (minced)",
+        "Vegetable Broth (low sodium)",
+        "Cornstarch",
+        "Green Onions (chopped)"
       ],
-      "preparation": "Sauté onion and garlic. Add beans, diced tomatoes, corn, chili powder, cumin, and vegetable broth. Simmer for 20-30 minutes. Prepare cornbread according to recipe (using milk and vegetable oil). Serve chili with a slice of cornbread.",
-      "nutritionalBenefits": "Excellent source of fiber, protein, and complex carbohydrates. Cornbread provides additional calories and carbohydrates for weight gain.",
-      "healthNotes": "Choose low-sodium beans and tomatoes. Limit salt added to chili. Cornbread provides needed energy for weight gain but should be consumed in moderation, with a focus on homemade options to control ingredients."
+      "preparation": "Cook noodles according to package directions. Sauté ginger and garlic in sesame oil. Add vegetables and cook until tender-crisp. Add pan-fried tofu, noodles, soy sauce, vegetable broth, and cornstarch slurry. Stir-fry until heated through. Garnish with green onions.",
+      "nutritionalBenefits": "Provides complex carbohydrates, protein, and fiber. A good source of vitamins and minerals from the vegetables.",
+      "healthNotes": "Use rice noodles for a gluten-free option. Pan-fried tofu adds extra protein for weight gain. Ensure low sodium content to manage cardiovascular health."
     },
     "snacks": [
       {
-        "name": "Greek Yogurt with Berries and Nuts",
+        "name": "Peanut Butter and Banana Sandwich on Gluten-Free Bread",
         "ingredients": [
-          "Greek yogurt (full-fat or low-fat)",
-          "Mixed berries (strawberries, blueberries, raspberries)",
-          "Almonds or walnuts"
+          "Gluten-Free Bread",
+          "Peanut Butter (natural)",
+          "Banana (sliced)"
         ],
-        "preparation": "Combine Greek yogurt, mixed berries, and nuts in a bowl.",
-        "nutritionalBenefits": "High in protein, calcium, and antioxidants. Nuts provide healthy fats and calories for weight gain.",
-        "healthNotes": "Choose full-fat Greek yogurt for additional calories if needed. Watch portion sizes of nuts to manage overall fat intake. Full fat options should be balanced with reduced fat or low fat in other meals to help keep cholesterol in check."
+        "preparation": "Spread peanut butter on gluten-free bread slices. Add sliced banana. Top with another slice of bread.",
+        "nutritionalBenefits": "Provides healthy fats, protein, and carbohydrates for sustained energy. Good source of potassium and fiber.",
+        "healthNotes": "Provides a boost of calories and protein to support weight gain. Choose natural peanut butter without added sugars or salt."
       }
     ]
   },
   "nutritionalFocus": [
     {
       "nutrient": "Protein",
-      "reason": "Essential for muscle building and repair, crucial for healthy weight gain.",
+      "reason": "Essential for muscle building and weight gain.",
       "sources": [
-        "Chicken",
-        "Black beans",
-        "Greek yogurt",
-        "Nuts",
-        "Plant-based sausage"
+        "Tofu",
+        "Edamame",
+        "Quinoa",
+        "Peanut Butter"
       ]
     },
     {
       "nutrient": "Complex Carbohydrates",
-      "reason": "Provide sustained energy for daily activities and support weight gain.",
+      "reason": "Provide sustained energy and support weight gain.",
       "sources": [
-        "Whole wheat tortillas",
-        "Cornbread",
-        "Beans",
-        "Potatoes",
-        "Corn"
+        "Brown Rice",
+        "Quinoa",
+        "Gluten-Free Noodles",
+        "Gluten-Free Bread"
       ]
     },
     {
       "nutrient": "Healthy Fats",
-      "reason": "Contribute to overall health, hormone production, and calorie intake for weight gain.",
+      "reason": "Important for hormone production and overall health; calorie-dense for weight gain.",
       "sources": [
-        "Avocado",
-        "Olive oil",
-        "Nuts",
-        "Full fat Greek Yogurt (in moderation)"
+        "Peanut Butter",
+        "Sesame Oil"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Duck",
-      "reason": "Personal preference."
+      "food": "Seafood/Shellfish",
+      "reason": "Allergy - can cause a severe allergic reaction."
     },
     {
-      "food": "Eggs",
-      "reason": "Allergy."
+      "food": "Milk",
+      "reason": "Dietary preference (Vegan)"
     },
     {
-      "food": "High Fructose Corn Syrup",
-      "reason": "Avoid added sugars that can negatively affect the liver."
+      "food": "Gluten",
+      "reason": "Allergy/Intolerance - can cause digestive issues and other symptoms."
     }
   ],
   "weeklyHabitTips": [
-    "Eat 5-6 small meals per day instead of 3 large ones to help with calorie intake.",
-    "Incorporate resistance training 2-3 times per week to build muscle mass.",
-    "Track your calorie intake to ensure you are consuming enough calories for weight gain.",
-    "Drink plenty of water throughout the day to support overall health and digestion.",
-    "Consult with a doctor or registered dietitian for personalized advice on managing your liver condition and achieving your weight gain goals."
+    "Eat frequent, smaller meals and snacks throughout the day to increase calorie intake.",
+    "Focus on incorporating healthy fats into your diet for increased calorie density.",
+    "Track your calorie intake to ensure you are consuming enough calories for weight gain."
   ]
 }
