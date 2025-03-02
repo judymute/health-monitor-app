@@ -10,15 +10,16 @@
       "value": 121,
       "unit": "cm"
     },
-    "bloodType": "B+"
+    "bloodType": "A-"
   },
   "dietaryPreferences": {
-    "dietType": "Vegan",
+    "dietType": "Flexitarian",
     "dietTypeOther": "",
     "allergiesIntolerances": {
       "noAllergies": true,
+      "noAllergies": true,
       "dairy": false,
-      "eggs": true,
+      "eggs": false,
       "nuts": {
         "selected": false,
         "details": ""
@@ -46,8 +47,8 @@
         "details": ""
       }
     },
-    "spiceTolerance": 1,
-    "dislikedFoods": "Duck"
+    "spiceTolerance": 2,
+    "dislikedFoods": ""
   },
   "medicalConditions": {
     "noMedicalConditions": true,
