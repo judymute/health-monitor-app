@@ -1,0 +1,119 @@
+{
+  "dailyPlan": {
+    "breakfast": {
+      "name": "Mexican Tofu Scramble with Whole Wheat Tortilla",
+      "ingredients": [
+        "Tofu (firm), crumbled",
+        "Black beans",
+        "Corn",
+        "Diced tomatoes",
+        "Onion, chopped",
+        "Bell pepper, chopped",
+        "Chili powder",
+        "Cumin",
+        "Turmeric (for color and anti-inflammatory properties)",
+        "Avocado (optional)",
+        "Whole wheat tortillas"
+      ],
+      "preparation": "Sauté onion and bell pepper until softened. Add crumbled tofu, black beans, corn, and tomatoes. Season with chili powder, cumin, and turmeric. Cook until heated through. Serve in a warm whole wheat tortilla with optional avocado.",
+      "nutritionalBenefits": "High in protein, fiber, and antioxidants. Tofu provides plant-based protein and essential amino acids. Black beans and corn contribute fiber for digestive health. Tomatoes and bell peppers are rich in vitamins and antioxidants.",
+      "healthNotes": "Tofu is a good source of protein for a pescatarian diet. The spices add flavor without excess sodium. Whole wheat tortillas provide complex carbohydrates. This is low in cholesterol, beneficial for cardiovascular health. Avoid adding too much salt."
+    },
+    "lunch": {
+      "name": "Shrimp Ceviche with Baked Tortilla Chips",
+      "ingredients": [
+        "Cooked shrimp (small pieces)",
+        "Lime juice",
+        "Diced tomatoes",
+        "Red onion, finely chopped",
+        "Cilantro, chopped",
+        "Jalapeño, minced (optional)",
+        "Avocado, diced",
+        "Baked tortilla chips"
+      ],
+      "preparation": "Combine cooked shrimp, lime juice, tomatoes, red onion, cilantro, and jalapeño (if using) in a bowl. Marinate in the refrigerator for at least 30 minutes to allow the flavors to meld. Serve with diced avocado and baked tortilla chips.",
+      "nutritionalBenefits": "High in protein and vitamin C. Shrimp is a lean source of protein and omega-3 fatty acids. Lime juice provides vitamin C. Tomatoes are rich in lycopene, an antioxidant.",
+      "healthNotes": "Lime juice 'cooks' the shrimp, but using cooked shrimp ensures safety. This dish is low in fat and sodium. The baked tortilla chips provide a healthier alternative to fried chips. Shrimp provides essential omega-3 fatty acids which support heart health."
+    },
+    "dinner": {
+      "name": "Grilled Salmon with Black Bean Salsa and Quinoa",
+      "ingredients": [
+        "Salmon fillet",
+        "Black beans",
+        "Corn",
+        "Red bell pepper, diced",
+        "Red onion, diced",
+        "Cilantro, chopped",
+        "Lime juice",
+        "Olive oil",
+        "Quinoa",
+        "Spices: cumin, paprika"
+      ],
+      "preparation": "Grill or bake the salmon fillet with a drizzle of olive oil and spices (cumin, paprika). Prepare the black bean salsa by combining black beans, corn, red bell pepper, red onion, cilantro, and lime juice. Cook quinoa according to package directions. Serve the salmon with black bean salsa and quinoa.",
+      "nutritionalBenefits": "Excellent source of omega-3 fatty acids and protein. Salmon is rich in omega-3 fatty acids, which are essential for heart health and brain function. Quinoa is a complete protein and provides fiber. Black bean salsa contributes vitamins and minerals.",
+      "healthNotes": "Salmon is beneficial for cardiovascular health due to its omega-3 fatty acids. Quinoa is a good source of protein and fiber. The black bean salsa adds flavor and nutrients without excess sodium or unhealthy fats. Limit the amount of sodium used in spices."
+    },
+    "snacks": [
+      {
+        "name": "Plain Greek Yogurt with Blueberries and Walnuts",
+        "ingredients": [
+          "Plain Greek Yogurt (low-fat)",
+          "Blueberries",
+          "Walnuts"
+        ],
+        "preparation": "Combine Greek yogurt, blueberries, and walnuts in a bowl.",
+        "nutritionalBenefits": "High in protein, calcium, and antioxidants. Greek yogurt provides protein and calcium for bone health. Blueberries are rich in antioxidants. Walnuts provide healthy fats.",
+        "healthNotes": "Greek yogurt is a good source of protein and probiotics, which are beneficial for gut health. Choose plain, low-fat yogurt to avoid added sugars. Small portion of healthy fats from Walnuts helps to keep you full longer."
+      }
+    ]
+  },
+  "nutritionalFocus": [
+    {
+      "nutrient": "Omega-3 Fatty Acids",
+      "reason": "Essential for heart health, brain function, and reducing inflammation, particularly important given Xinyi's cardiovascular condition.",
+      "sources": [
+        "Salmon",
+        "Shrimp",
+        "Walnuts"
+      ]
+    },
+    {
+      "nutrient": "Fiber",
+      "reason": "Helps with weight management, regulates blood sugar levels, and promotes digestive health.",
+      "sources": [
+        "Black beans",
+        "Corn",
+        "Quinoa",
+        "Whole wheat tortillas",
+        "Blueberries"
+      ]
+    },
+    {
+      "nutrient": "Protein",
+      "reason": "Essential for maintaining muscle mass, supporting metabolism, and promoting satiety which is helpful for weight loss.",
+      "sources": [
+        "Tofu",
+        "Shrimp",
+        "Salmon",
+        "Black beans",
+        "Greek yogurt",
+        "Quinoa"
+      ]
+    }
+  ],
+  "avoidList": [
+    {
+      "food": "Strawberry",
+      "reason": "Allergy"
+    },
+    {
+      "food": "Eggs",
+      "reason": "Allergy"
+    }
+  ],
+  "weeklyHabitTips": [
+    "Aim for at least 30 minutes of moderate-intensity exercise most days of the week. Consider walking, swimming, or cycling.",
+    "Practice mindful eating by paying attention to your hunger and fullness cues.",
+    "Stay hydrated by drinking plenty of water throughout the day. Avoid sugary drinks."
+  ]
+}

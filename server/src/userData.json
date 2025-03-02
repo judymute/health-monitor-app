@@ -1,19 +1,19 @@
 {
   "basicInformation": {
-    "fullName": "Zihao",
-    "age": 24,
+    "fullName": "Xinyi Xu",
+    "age": 18,
     "weight": {
-      "value": 44,
+      "value": 50,
       "unit": "kg"
     },
     "height": {
-      "value": 42.6,
+      "value": 170,
       "unit": "cm"
     },
-    "bloodType": "A-"
+    "bloodType": "A+"
   },
   "dietaryPreferences": {
-    "dietType": "Vegan",
+    "dietType": "Pescatarian",
     "dietTypeOther": "",
     "allergiesIntolerances": {
       "dairy": false,
@@ -32,11 +32,11 @@
     },
     "favoriteCuisines": {
       "italian": false,
-      "mexican": false,
+      "mexican": true,
       "indian": false,
       "chinese": false,
       "japanese": false,
-      "thai": true,
+      "thai": false,
       "mediterranean": false,
       "american": false,
       "middleEastern": false,
@@ -45,21 +45,21 @@
         "details": ""
       }
     },
-    "spiceTolerance": 2,
-    "dislikedFoods": "Banana"
+    "spiceTolerance": 1,
+    "dislikedFoods": "Strawberry"
   },
   "medicalConditions": {
     "diabetes": {
       "selected": false,
       "type": ""
     },
-    "celiacDisease": true,
+    "celiacDisease": false,
     "inflammatoryBowelDisease": {
       "selected": false,
       "type": ""
     },
     "hypertension": false,
-    "cardiovascularDisease": false,
+    "cardiovascularDisease": true,
     "chronicKidneyDisease": false,
     "acidReflux": false,
     "irritableBowelSyndrome": false,
@@ -72,8 +72,8 @@
     }
   },
   "dietaryGoals": {
-    "weightLoss": false,
-    "weightGain": true,
+    "weightLoss": true,
+    "weightGain": false,
     "maintenance": false,
     "increasedEnergy": false,
     "betterDigestion": false,
