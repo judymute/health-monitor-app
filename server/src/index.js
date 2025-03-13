@@ -5,8 +5,13 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import axios from 'axios';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import connectDB from './config/db.js';
+import userRoutes from './routes/users.js';
+import authRoutes from './routes/auth.js';
+import User from './models/User.js';
 
-// Load environment variables first, before any other initialization
+// Load environment variables
 dotenv.config();
 
 // Check if API key exists
@@ -15,9 +20,11 @@ if (!process.env.GEMINI_API_KEY) {
   // You can continue running but log the error
 }
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
-// Initialize with API key after loading environment variables
+// Initialize Google AI with API key
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+
+// Connect to database
+connectDB();
 
 // Get directory path
 const __filename = fileURLToPath(import.meta.url);
@@ -29,66 +36,101 @@ const port = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(express.json());
-
-// User data file path
-const userDataPath = path.join(__dirname, 'userData.json');
-
-// Debug log to check the file path
-console.log('User data path:', userDataPath);
+app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
 
 // Routes
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Get user profile data
-app.get('/api/getUserProfile', (req, res) => {
+// Get user profile data - now from database
+app.get('/api/getUserProfile', async (req, res) => {
   try {
-    // Check if file exists, if not return the default structure
-    if (!fs.existsSync(userDataPath)) {
-      console.log('User data file not found at:', userDataPath);
-      return res.json({
-        basicInformation: { fullName: "", age: null, weight: { value: null, unit: "" }, height: { value: null, unit: "" }, bloodType: "" },
-        // ... rest of your default structure
+    // In a real app, you would get the user ID from auth middleware
+    // For now, we'll just use the default username
+    const user = await User.findOne({ username: 'default_username' });
+    
+    if (!user) {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'User not found. Please complete registration process.' 
       });
     }
     
-    const userData = JSON.parse(fs.readFileSync(userDataPath, 'utf8'));
+    // Return user data without sensitive fields
+    const userData = {
+      basicInformation: user.basicInformation,
+      dietaryPreferences: user.dietaryPreferences,
+      medicalConditions: user.medicalConditions,
+      dietaryGoals: user.dietaryGoals,
+      lifestyleInformation: user.lifestyleInformation,
+      mealPreferences: user.mealPreferences
+    };
+    
     res.json(userData);
   } catch (error) {
-    console.error('Error reading user data:', error);
+    console.error('Error fetching user data:', error);
     res.status(500).json({ success: false, message: 'Failed to get user data' });
   }
 });
 
+
 // Update user profile data
-app.post('/api/updateUserProfile', (req, res) => {
+app.post('/api/updateUserProfile', async (req, res) => {
   try {
     const userData = req.body;
+    console.log('Received user data:', JSON.stringify(userData, null, 2));
     
-    // Optional: Validate the structure of the incoming data
-    // (Add validation logic here if needed)
+    // In a real app, you would get the user ID from auth middleware
+    console.log('Looking for user with username: default_username');
+    const user = await User.findOne({ username: 'default_username' });
     
-    // Write the updated data to file
-    fs.writeFileSync(userDataPath, JSON.stringify(userData, null, 2));
+    if (!user) {
+      console.log('User not found');
+      return res.status(404).json({ 
+        success: false, 
+        message: 'User not found' 
+      });
+    }
+    
+    console.log('Found user:', user._id);
+    
+    // Update user data
+    user.basicInformation = userData.basicInformation || user.basicInformation;
+    user.dietaryPreferences = userData.dietaryPreferences || user.dietaryPreferences;
+    user.medicalConditions = userData.medicalConditions || user.medicalConditions;
+    user.dietaryGoals = userData.dietaryGoals || user.dietaryGoals;
+    user.lifestyleInformation = userData.lifestyleInformation || user.lifestyleInformation;
+    user.mealPreferences = userData.mealPreferences || user.mealPreferences;
+    
+    // Save the updated user
+    console.log('Saving updated user data...');
+    await user.save();
+    console.log('User data saved successfully');
     
     res.json({ success: true, message: 'User data updated successfully' });
   } catch (error) {
     console.error('Error updating user data:', error);
-    res.status(500).json({ success: false, message: 'Failed to update user data' });
+    res.status(500).json({ success: false, message: 'Failed to update user data', error: error.message });
   }
 });
 
-app.get('/api/test', (req, res) => {
+// Simple test endpoint
+app.get('/api/test', async (req, res) => {
   try {
-    const userData = JSON.parse(fs.readFileSync(userDataPath, 'utf8'));
-    res.json({ success: true, data: userData });
+    const user = await User.findOne({ username: 'default_username' });
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+    
+    res.json({ success: true, data: user });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
 });
 
-// Add this endpoint to your server's index.js
+// Generate meal plan endpoint
 app.post('/api/generateMealPlan', async (req, res) => {
   try {
     // Check if Gemini API key is available
@@ -99,17 +141,23 @@ app.post('/api/generateMealPlan', async (req, res) => {
       });
     }
 
-    // Read user data from file
-    if (!fs.existsSync(userDataPath)) {
-      return res.status(400).json({ 
+    // Get user data from database
+    const user = await User.findOne({ username: 'default_username' });
+    
+    if (!user) {
+      return res.status(404).json({ 
         success: false, 
-        message: 'User data not found. Please complete your profile first.' 
+        message: 'User not found. Please complete registration process.' 
       });
     }
     
-    console.log('Reading user data from:', userDataPath);
-    const userData = JSON.parse(fs.readFileSync(userDataPath, 'utf8'));
-    console.log('User data loaded successfully');
+    // Extract user data for meal plan generation
+    const userData = {
+      basicInformation: user.basicInformation,
+      dietaryPreferences: user.dietaryPreferences,
+      medicalConditions: user.medicalConditions,
+      dietaryGoals: user.dietaryGoals
+    };
     
     // Generate meal plan using Gemini AI
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
@@ -149,7 +197,7 @@ app.post('/api/generateMealPlan', async (req, res) => {
       });
     }
     
-    // Save the meal plan to a file (optional)
+    // Save the meal plan to a file (keeping for backward compatibility)
     const mealPlanPath = path.join(__dirname, 'mealPlan.json');
     fs.writeFileSync(mealPlanPath, JSON.stringify(mealPlanData, null, 2));
     console.log('Meal plan saved to:', mealPlanPath);
@@ -159,13 +207,66 @@ app.post('/api/generateMealPlan', async (req, res) => {
       success: true, 
       mealPlan: mealPlanData 
     });
-    
   } catch (error) {
     console.error('Error generating meal plan:', error);
     res.status(500).json({ 
       success: false, 
       message: 'Failed to generate meal plan',
       error: error.message
+    });
+  }
+});
+
+// Shopping list endpoint
+app.get('/api/getShoppingList', (req, res) => {
+  try {
+    // For now, we'll keep using the mealPlan.json file for backward compatibility
+    // In a future enhancement, you could store meal plans in the database
+    const mealPlanPath = path.join(__dirname, 'mealPlan.json');
+    
+    if (!fs.existsSync(mealPlanPath)) {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'Meal plan not found. Please generate a meal plan first.' 
+      });
+    }
+    
+    // Read meal plan data
+    const mealPlanData = JSON.parse(fs.readFileSync(mealPlanPath, 'utf8'));
+    
+    // Extract ingredients from all meals
+    const shoppingList = extractIngredients(mealPlanData.dailyPlan);
+    
+    res.json({
+      success: true,
+      shoppingList
+    });
+  } catch (error) {
+    console.error('Error generating shopping list:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to generate shopping list',
+      error: error.message
+    });
+  }
+});
+
+// Check models endpoint
+app.get('/api/checkModels', async (req, res) => {
+  try {
+    const response = await axios.get(
+      `https://generativelanguage.googleapis.com/v1beta/models?key=${process.env.GEMINI_API_KEY}`
+    );
+    
+    res.json({
+      success: true,
+      models: response.data
+    });
+  } catch (error) {
+    console.error('Error checking models:', error.response?.data || error.message);
+    res.status(500).json({
+      success: false,
+      error: error.response?.data || error.message
     });
   }
 });
@@ -198,6 +299,8 @@ function createMealPlanPrompt(userData) {
       } else if (typeof value === 'object' && value.selected === true) {
         if (value.type && value.type.trim() !== '') {
           selectedConditions.push(`${condition} (${value.type})`);
+        } else if (value.details && value.details.trim() !== '') {
+          selectedConditions.push(`${condition} (${value.details})`);
         } else {
           selectedConditions.push(condition);
         }
@@ -215,6 +318,8 @@ function createMealPlanPrompt(userData) {
       if (cuisine === 'other' && typeof value === 'object' && value.selected && value.details) {
         selectedCuisines.push(value.details);
       } else if (value === true) {
+        selectedCuisines.push(cuisine);
+      } else if (typeof value === 'object' && value.selected === true) {
         selectedCuisines.push(cuisine);
       }
     }
@@ -252,6 +357,12 @@ function createMealPlanPrompt(userData) {
         selectedGoals.push(value.details);
       } else if (value === true) {
         selectedGoals.push(goal);
+      } else if (typeof value === 'object' && value.selected === true) {
+        if (value.details && value.details.trim() !== '') {
+          selectedGoals.push(`${goal} (${value.details})`);
+        } else {
+          selectedGoals.push(goal);
+        }
       }
     }
     
@@ -292,14 +403,26 @@ function createMealPlanPrompt(userData) {
           "healthNotes": "Health notes related to this meal"
         },
         "lunch": {
-          // Same structure as breakfast
+          "name": "Name of the dish",
+          "ingredients": ["ingredient1", "ingredient2", ...],
+          "preparation": "Brief preparation instructions",
+          "nutritionalBenefits": "Nutritional benefits of this meal",
+          "healthNotes": "Health notes related to this meal"
         },
         "dinner": {
-          // Same structure as breakfast
+          "name": "Name of the dish",
+          "ingredients": ["ingredient1", "ingredient2", ...],
+          "preparation": "Brief preparation instructions",
+          "nutritionalBenefits": "Nutritional benefits of this meal",
+          "healthNotes": "Health notes related to this meal"
         },
         "snacks": [
           {
-            // Same structure as breakfast
+          "name": "Name of the dish",
+          "ingredients": ["ingredient1", "ingredient2", ...],
+          "preparation": "Brief preparation instructions",
+          "nutritionalBenefits": "Nutritional benefits of this meal",
+          "healthNotes": "Health notes related to this meal"
           }
         ]
       },
@@ -406,111 +529,57 @@ function generateFallbackMealPlan(userData) {
   };
 }
 
-
-// Add this endpoint to your server to check available models
-app.get('/api/checkModels', async (req, res) => {
-    try {
-      const response = await axios.get(
-        `https://generativelanguage.googleapis.com/v1beta/models?key=${process.env.GEMINI_API_KEY}`
-      );
-      
-      res.json({
-        success: true,
-        models: response.data
+// Helper function to extract ingredients from meal plan
+function extractIngredients(dailyPlan) {
+  const ingredients = [];
+  
+  // Process breakfast
+  if (dailyPlan.breakfast && dailyPlan.breakfast.ingredients) {
+    dailyPlan.breakfast.ingredients.forEach(ingredient => {
+      ingredients.push({
+        name: ingredient,
+        meal: 'Breakfast',
+        checked: false
       });
-    } catch (error) {
-      console.error('Error checking models:', error.response?.data || error.message);
-      res.status(500).json({
-        success: false,
-        error: error.response?.data || error.message
+    });
+  }
+  
+  // Process lunch
+  if (dailyPlan.lunch && dailyPlan.lunch.ingredients) {
+    dailyPlan.lunch.ingredients.forEach(ingredient => {
+      ingredients.push({
+        name: ingredient,
+        meal: 'Lunch',
+        checked: false
       });
-    }
-  });
-
-
-  app.get('/api/getShoppingList', (req, res) => {
-    try {
-      // Check if meal plan exists
-      const mealPlanPath = path.join(__dirname, 'mealPlan.json');
-      
-      if (!fs.existsSync(mealPlanPath)) {
-        return res.status(404).json({ 
-          success: false, 
-          message: 'Meal plan not found. Please generate a meal plan first.' 
+    });
+  }
+  
+  // Process dinner
+  if (dailyPlan.dinner && dailyPlan.dinner.ingredients) {
+    dailyPlan.dinner.ingredients.forEach(ingredient => {
+      ingredients.push({
+        name: ingredient,
+        meal: 'Dinner',
+        checked: false
+      });
+    });
+  }
+  
+  // Process snacks
+  if (dailyPlan.snacks && dailyPlan.snacks.length > 0) {
+    dailyPlan.snacks.forEach((snack, index) => {
+      if (snack.ingredients) {
+        snack.ingredients.forEach(ingredient => {
+          ingredients.push({
+            name: ingredient,
+            meal: `Snack ${index + 1}`,
+            checked: false
+          });
         });
       }
-      
-      // Read meal plan data
-      const mealPlanData = JSON.parse(fs.readFileSync(mealPlanPath, 'utf8'));
-      
-      // Extract ingredients from all meals
-      const shoppingList = extractIngredients(mealPlanData.dailyPlan);
-      
-      res.json({
-        success: true,
-        shoppingList
-      });
-    } catch (error) {
-      console.error('Error generating shopping list:', error);
-      res.status(500).json({ 
-        success: false, 
-        message: 'Failed to generate shopping list',
-        error: error.message
-      });
-    }
-  });
-  
-  // Helper function to extract ingredients from meal plan
-  function extractIngredients(dailyPlan) {
-    const ingredients = [];
-    
-    // Process breakfast
-    if (dailyPlan.breakfast && dailyPlan.breakfast.ingredients) {
-      dailyPlan.breakfast.ingredients.forEach(ingredient => {
-        ingredients.push({
-          name: ingredient,
-          meal: 'Breakfast',
-          checked: false
-        });
-      });
-    }
-    
-    // Process lunch
-    if (dailyPlan.lunch && dailyPlan.lunch.ingredients) {
-      dailyPlan.lunch.ingredients.forEach(ingredient => {
-        ingredients.push({
-          name: ingredient,
-          meal: 'Lunch',
-          checked: false
-        });
-      });
-    }
-    
-    // Process dinner
-    if (dailyPlan.dinner && dailyPlan.dinner.ingredients) {
-      dailyPlan.dinner.ingredients.forEach(ingredient => {
-        ingredients.push({
-          name: ingredient,
-          meal: 'Dinner',
-          checked: false
-        });
-      });
-    }
-    
-    // Process snacks
-    if (dailyPlan.snacks && dailyPlan.snacks.length > 0) {
-      dailyPlan.snacks.forEach((snack, index) => {
-        if (snack.ingredients) {
-          snack.ingredients.forEach(ingredient => {
-            ingredients.push({
-              name: ingredient,
-              meal: `Snack ${index + 1}`,
-              checked: false
-            });
-          });
-        }
-      });
-    }
-    
-    return ingredients;
+    });
   }
+  
+  return ingredients;
+}

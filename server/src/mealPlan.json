@@ -1,121 +1,107 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Mexican Tofu Scramble with Black Beans and Avocado",
+      "name": "Whole Wheat Toast with Avocado and Smoked Salmon",
       "ingredients": [
-        "Firm Tofu",
-        "Black Beans",
-        "Avocado",
-        "Onion",
-        "Bell Pepper",
-        "Tomato",
-        "Chili Powder",
-        "Cumin",
-        "Turmeric",
-        "Olive Oil",
-        "Cilantro"
+        "2 slices whole wheat toast",
+        "1/4 avocado, mashed",
+        "2 oz smoked salmon",
+        "A sprinkle of red pepper flakes"
       ],
-      "preparation": "Crumble tofu and sautee with chopped onion and bell pepper. Add black beans, diced tomato, chili powder, cumin, and turmeric. Cook until heated through. Serve with sliced avocado and chopped cilantro.",
-      "nutritionalBenefits": "High in protein, fiber, and healthy fats. Provides essential amino acids and supports muscle growth.",
-      "healthNotes": "Tofu is a complete protein source and a great alternative to meat. Avocado provides healthy monounsaturated fats."
+      "preparation": "Toast the bread. Mash avocado and spread on toast. Top with smoked salmon and red pepper flakes.",
+      "nutritionalBenefits": "Provides healthy fats, protein, and fiber, good for satiety and energy.",
+      "healthNotes": "A good start to the day with healthy fats and protein."
     },
     "lunch": {
-      "name": "Vegetarian Burrito Bowl with Quinoa",
+      "name": "Italian Quinoa Salad with Grilled Chicken",
       "ingredients": [
-        "Quinoa",
-        "Black Beans",
-        "Corn",
-        "Salsa",
-        "Avocado",
-        "Red Onion",
-        "Bell Pepper",
-        "Lime Juice",
-        "Cilantro",
-        "Vegetable Broth"
+        "1 cup cooked quinoa",
+        "4 oz grilled chicken breast, sliced",
+        "1/2 cup cherry tomatoes, halved",
+        "1/4 cup cucumber, diced",
+        "1/4 cup red onion, thinly sliced",
+        "2 tbsp olive oil",
+        "1 tbsp lemon juice",
+        "1 tsp Italian seasoning",
+        "Salt and pepper to taste"
       ],
-      "preparation": "Cook quinoa in vegetable broth. Combine cooked quinoa with black beans, corn, salsa, diced avocado, red onion, and bell pepper. Drizzle with lime juice and garnish with cilantro.",
-      "nutritionalBenefits": "Provides complex carbohydrates, protein, fiber, and vitamins. Supports energy levels and digestive health.",
-      "healthNotes": "Quinoa is a complete protein source and a good source of iron. Black beans are high in fiber and help regulate blood sugar levels."
+      "preparation": "Combine all ingredients in a bowl and toss to combine. Season with salt and pepper.",
+      "nutritionalBenefits": "Provides protein, complex carbohydrates, and healthy fats for sustained energy and muscle recovery.",
+      "healthNotes": "A balanced and flavorful lunch option."
     },
     "dinner": {
-      "name": "Sweet Potato and Black Bean Enchiladas with Mole Sauce",
+      "name": "Spaghetti Squash with Turkey Meat Sauce (Dairy-Free)",
       "ingredients": [
-        "Sweet Potatoes",
-        "Black Beans",
-        "Corn Tortillas",
-        "Mole Sauce (Vegetarian)",
-        "Onion",
-        "Garlic",
-        "Cilantro",
-        "Vegetable Broth",
-        "Cheese (Optional, check dietary preference)",
-        "Olive Oil"
+        "1 spaghetti squash, halved and seeded",
+        "8 oz ground turkey",
+        "1/2 cup onion, chopped",
+        "2 cloves garlic, minced",
+        "1 (28 oz) can crushed tomatoes",
+        "1 tsp Italian seasoning",
+        "Salt and pepper to taste",
+        "Fresh basil, chopped (for garnish)",
+        "2 tablespoons olive oil"
       ],
-      "preparation": "Roast sweet potatoes until tender. Sautee onion and garlic, then add black beans and diced sweet potatoes. Fill corn tortillas with the mixture and roll them up. Place in a baking dish, cover with mole sauce, and bake until heated through. Garnish with cilantro and cheese (if desired).",
-      "nutritionalBenefits": "Rich in vitamins, minerals, and fiber. Provides antioxidants and supports immune function.",
-      "healthNotes": "Sweet potatoes are a good source of Vitamin A and potassium. Black beans are a good source of protein and fiber."
+      "preparation": "Roast spaghetti squash cut side down at 400F for 40-50 minutes until tender. While squash roasts, brown ground turkey in a pan with onion and garlic. Drain excess fat. Add crushed tomatoes and Italian seasoning. Simmer for 15 minutes. Once squash is cooked, shred the flesh with a fork. Top with meat sauce and garnish with basil.",
+      "nutritionalBenefits": "Provides fiber, protein, and vitamins. A lighter alternative to traditional pasta.",
+      "healthNotes": "Uses spaghetti squash instead of pasta for a lower-carb option. Dairy-free to accommodate preferences."
     },
     "snacks": [
       {
-        "name": "Mexican Fruit Salad with Chili Lime Dressing",
+        "name": "Apple slices with almond butter",
         "ingredients": [
-          "Mango",
-          "Pineapple",
-          "Watermelon",
-          "Papaya",
-          "Lime Juice",
-          "Chili Powder"
+          "1 medium apple, sliced",
+          "2 tablespoons almond butter"
         ],
-        "preparation": "Dice mango, pineapple, watermelon, and papaya. Combine with lime juice and chili powder.",
-        "nutritionalBenefits": "Provides vitamins, minerals, and hydration. Supports energy levels and overall health.",
-        "healthNotes": "Fruits are a good source of vitamins, minerals, and antioxidants."
+        "preparation": "Slice the apple and spread almond butter on each slice.",
+        "nutritionalBenefits": "Provides fiber, healthy fats, and protein for sustained energy.",
+        "healthNotes": "A quick and easy snack to curb hunger."
       }
     ]
   },
   "nutritionalFocus": [
     {
       "nutrient": "Protein",
-      "reason": "Essential for muscle growth and repair, particularly important for weight gain.",
+      "reason": "Essential for muscle repair and growth, especially important for weight management and supporting an active lifestyle.",
       "sources": [
-        "Tofu",
-        "Black Beans",
+        "Chicken",
+        "Turkey",
+        "Smoked Salmon",
         "Quinoa",
-        "Nuts",
-        "Seeds"
+        "Almond Butter"
       ]
     },
     {
-      "nutrient": "Complex Carbohydrates",
-      "reason": "Provide sustained energy and support weight gain through calorie surplus.",
+      "nutrient": "Fiber",
+      "reason": "Promotes satiety, aids digestion, and helps regulate blood sugar levels, which is beneficial for weight loss and maintenance.",
       "sources": [
+        "Whole Wheat Toast",
         "Quinoa",
-        "Sweet Potatoes",
-        "Black Beans",
-        "Corn Tortillas",
-        "Oats"
+        "Spaghetti Squash",
+        "Apple",
+        "Avocado"
       ]
     },
     {
       "nutrient": "Healthy Fats",
-      "reason": "Important for hormone production, energy storage, and overall health. Contribute to calorie surplus for weight gain.",
+      "reason": "Important for hormone production, brain function, and overall health. Helps with satiety and absorption of fat-soluble vitamins.",
       "sources": [
         "Avocado",
-        "Nuts",
-        "Seeds",
-        "Olive Oil"
+        "Almond Butter",
+        "Olive Oil",
+        "Smoked Salmon"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Empty Calories (Processed Foods, Sugary Drinks)",
-      "reason": "Provide minimal nutritional value and can hinder healthy weight gain."
+      "food": "Milk related food",
+      "reason": "User preference."
     }
   ],
   "weeklyHabitTips": [
-    "Eat frequent meals and snacks throughout the day.",
-    "Prioritize protein and complex carbohydrates in each meal.",
-    "Track your calorie intake to ensure you are in a surplus.",
-    "Incorporate strength training exercises to build muscle mass."
+    "Drink at least 8 glasses of water per day to stay hydrated and support metabolism.",
+    "Incorporate 30 minutes of physical activity into your daily routine, such as walking, jogging, or cycling.",
+    "Plan your meals in advance to avoid unhealthy impulse decisions."
   ]
 }
