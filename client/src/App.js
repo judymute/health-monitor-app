@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import UserDashboard from './UserDashboard';
-import QuestionnaireContainer from './QuestionnaireContainer';
-import LandingPage from './LandingPage';
-import Chatbot from './Chatbot';
+import UserDashboard from './pages/UserDashboard/UserDashboard';
+import QuestionnaireContainer from './components/forms/QuestionnaireContainer/QuestionnaireContainer';
+import LandingPage from './pages/LandingPage/LandingPage';
+import Chatbot from './components/common/Chatbot/Chatbot';
 
 function App() {
   // State to store user data and track if questionnaire is completed
