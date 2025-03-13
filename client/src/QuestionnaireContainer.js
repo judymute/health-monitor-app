@@ -9,66 +9,101 @@ const QuestionnaireContainer = ({ onComplete, userData = null }) => {
   const navigate = useNavigate();
   
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false); // Add loading state for form submission
+  const [error, setError] = useState(null); // Add error state
   
+  // Initialize with userData if provided or use default structure
   const [collectedData, setCollectedData] = useState(userData || {
     basicInformation: {},
     dietaryPreferences: {},
-    medicalConditions: {},
-    dietaryGoals: {},
+    medicalConditions: {
+      diabetes: { selected: false, type: '' },
+      inflammatoryBowelDisease: { selected: false, type: '' },
+      other: { selected: false, details: '' }
+    },
+    dietaryGoals: {
+      other: { selected: false, details: '' }
+    },
     lifestyleInformation: {},
     mealPreferences: {}
   });
 
- // In QuestionnaireContainer.jsx, modify the handleStepComplete function:
-
-const handleStepComplete = (sectionName, data) => {
-  let updatedData = { ...collectedData };
-  
-  if (sectionName === 'combined') {
-    // For the medical conditions step, we need to split the data
-    updatedData = {
-      ...updatedData,
-      medicalConditions: data.medicalConditions,
-      dietaryGoals: data.dietaryGoals
-    };
-  } else {
-    updatedData = {
-      ...updatedData,
-      [sectionName]: data
-    };
-  }
-  
-  setCollectedData(updatedData);
-  
-  if (currentStep === totalSteps) {
-    // Add code to send data to server
-    console.log('Sending data to server:', updatedData);
+  const handleStepComplete = (sectionName, data) => {
+    let updatedData = { ...collectedData };
     
-    fetch('http://localhost:3001/api/updateUserProfile', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(updatedData)
-    })
-    .then(response => response.json())
-    .then(result => {
-      console.log('Server response:', result);
-      if (result.success) {
+    if (sectionName === 'combined') {
+      // For the medical conditions step, we need to split the data
+      updatedData = {
+        ...updatedData,
+        medicalConditions: data.medicalConditions,
+        dietaryGoals: data.dietaryGoals
+      };
+    } else {
+      updatedData = {
+        ...updatedData,
+        [sectionName]: data
+      };
+    }
+    
+    setCollectedData(updatedData);
+    
+    if (currentStep === totalSteps) {
+      // Add code to send data to server
+      console.log('Sending data to server:', updatedData);
+      
+      setIsSubmitting(true); // Set loading state
+      setError(null); // Clear any previous errors
+      
+      fetch('http://localhost:3001/api/updateUserProfile', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedData)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Server responded with an error');
+        }
+        return response.json();
+      })
+      .then(result => {
+        console.log('Server response:', result);
+        setIsSubmitting(false);
+        
+        if (result.success) {
+          // After successful save, generate meal plan
+          return fetch('http://localhost:3001/api/generateMealPlan', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+        } else {
+          throw new Error(result.message || 'Unknown error occurred');
+        }
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to generate meal plan');
+        }
+        return response.json();
+      })
+      .then(mealPlanResult => {
+        console.log('Meal plan generated:', mealPlanResult);
+        // Complete the process
         onComplete(updatedData);
         navigate('/dashboard');
-      } else {
-        alert('Failed to save your data. Please try again.');
-      }
-    })
-    .catch(error => {
-      console.error('Error saving data:', error);
-      alert('Error connecting to the server. Please try again later.');
-    });
-  } else {
-    setCurrentStep(currentStep + 1);
-  }
-};
+      })
+      .catch(error => {
+        console.error('Error saving data:', error);
+        setIsSubmitting(false);
+        setError('Error connecting to the server. Please try again later.');
+      });
+    } else {
+      setCurrentStep(currentStep + 1);
+    }
+  };
 
   const handlePrevStep = () => {
     setCurrentStep(Math.max(1, currentStep - 1));
@@ -183,7 +218,19 @@ const handleStepComplete = (sectionName, data) => {
         
         {/* Current step content */}
         <div className="content-section">
-          {renderCurrentStep()}
+          {isSubmitting ? (
+            <div className="loading-overlay">
+              <div className="loading-spinner"></div>
+              <p>Saving your data and generating meal plan...</p>
+            </div>
+          ) : error ? (
+            <div className="error-message">
+              {error}
+              <button onClick={() => setError(null)}>Try Again</button>
+            </div>
+          ) : (
+            renderCurrentStep()
+          )}
         </div>
       </div>
     </div>
