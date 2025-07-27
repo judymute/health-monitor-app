@@ -8,8 +8,8 @@ import mongoose from 'mongoose';
 let connectDB, User;
 try {
   // Try importing with paths relative to src directory
-  connectDB = await import('./config/db.js').then(m => m.default);
-  User = await import('./models/User.js').then(m => m.default);
+  connectDB = await import('../config/db.js').then(m => m.default);
+  User = await import('../models/User.js').then(m => m.default);
 } catch (err) {
   try {
     // Try importing with paths assuming script is run from server root

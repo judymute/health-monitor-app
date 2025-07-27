@@ -1,107 +1,102 @@
 {
   "dailyPlan": {
     "breakfast": {
-      "name": "Whole Wheat Toast with Avocado and Smoked Salmon",
+      "name": "Italian Baked Eggs with Spinach and Tomato",
       "ingredients": [
-        "2 slices whole wheat toast",
-        "1/4 avocado, mashed",
-        "2 oz smoked salmon",
-        "A sprinkle of red pepper flakes"
+        "2 eggs",
+        "1 cup spinach",
+        "1/2 cup diced tomatoes",
+        "1/4 cup ricotta cheese",
+        "1 tbsp olive oil",
+        "Salt and pepper to taste",
+        "Pinch of Italian seasoning"
       ],
-      "preparation": "Toast the bread. Mash avocado and spread on toast. Top with smoked salmon and red pepper flakes.",
-      "nutritionalBenefits": "Provides healthy fats, protein, and fiber, good for satiety and energy.",
-      "healthNotes": "A good start to the day with healthy fats and protein."
+      "preparation": "Preheat oven to 375°F (190°C). Sauté spinach and tomatoes in olive oil. Add ricotta, salt, pepper, and Italian seasoning. Transfer to oven-safe ramekins. Crack an egg into each ramekin. Bake for 12-15 minutes, or until eggs are cooked to your liking.",
+      "nutritionalBenefits": "Provides protein, iron, vitamins, and calcium, keeping you full and energized.",
+      "healthNotes": "A balanced breakfast that is relatively low in calories and high in nutrients."
     },
     "lunch": {
-      "name": "Italian Quinoa Salad with Grilled Chicken",
+      "name": "Whole Wheat Pasta Salad with Grilled Chicken and Pesto",
       "ingredients": [
-        "1 cup cooked quinoa",
-        "4 oz grilled chicken breast, sliced",
-        "1/2 cup cherry tomatoes, halved",
-        "1/4 cup cucumber, diced",
-        "1/4 cup red onion, thinly sliced",
-        "2 tbsp olive oil",
-        "1 tbsp lemon juice",
-        "1 tsp Italian seasoning",
+        "1 cup cooked whole wheat pasta",
+        "4 oz grilled chicken breast (sliced)",
+        "1/4 cup pesto (basil pesto, avoid lemon juice)",
+        "1/2 cup cherry tomatoes (halved)",
+        "1/4 cup mozzarella balls",
+        "1 tbsp olive oil",
         "Salt and pepper to taste"
       ],
-      "preparation": "Combine all ingredients in a bowl and toss to combine. Season with salt and pepper.",
-      "nutritionalBenefits": "Provides protein, complex carbohydrates, and healthy fats for sustained energy and muscle recovery.",
-      "healthNotes": "A balanced and flavorful lunch option."
+      "preparation": "Combine cooked pasta, grilled chicken, cherry tomatoes, and mozzarella balls in a bowl. Toss with pesto and olive oil. Season with salt and pepper.",
+      "nutritionalBenefits": "Provides a good source of protein, complex carbohydrates, and healthy fats for sustained energy.",
+      "healthNotes": "A balanced and satisfying lunch that can be prepared in advance."
     },
     "dinner": {
-      "name": "Spaghetti Squash with Turkey Meat Sauce (Dairy-Free)",
+      "name": "Baked Salmon with Roasted Vegetables (Italian Herbs)",
       "ingredients": [
-        "1 spaghetti squash, halved and seeded",
-        "8 oz ground turkey",
-        "1/2 cup onion, chopped",
-        "2 cloves garlic, minced",
-        "1 (28 oz) can crushed tomatoes",
-        "1 tsp Italian seasoning",
+        "4 oz salmon fillet",
+        "1 cup mixed vegetables (broccoli, bell peppers, zucchini)",
+        "1 tbsp olive oil",
+        "Italian herbs (rosemary, thyme, oregano)",
         "Salt and pepper to taste",
-        "Fresh basil, chopped (for garnish)",
-        "2 tablespoons olive oil"
+        "1/2 cup marinara sauce (sugar-free)"
       ],
-      "preparation": "Roast spaghetti squash cut side down at 400F for 40-50 minutes until tender. While squash roasts, brown ground turkey in a pan with onion and garlic. Drain excess fat. Add crushed tomatoes and Italian seasoning. Simmer for 15 minutes. Once squash is cooked, shred the flesh with a fork. Top with meat sauce and garnish with basil.",
-      "nutritionalBenefits": "Provides fiber, protein, and vitamins. A lighter alternative to traditional pasta.",
-      "healthNotes": "Uses spaghetti squash instead of pasta for a lower-carb option. Dairy-free to accommodate preferences."
+      "preparation": "Preheat oven to 400°F (200°C). Toss vegetables with olive oil, Italian herbs, salt, and pepper. Place salmon fillet and vegetables on a baking sheet. Bake for 15-20 minutes, or until salmon is cooked through. Serve with sugar-free marinara sauce.",
+      "nutritionalBenefits": "Provides omega-3 fatty acids, protein, and fiber-rich vegetables.",
+      "healthNotes": "A healthy and delicious dinner that is rich in nutrients and low in calories."
     },
     "snacks": [
       {
-        "name": "Apple slices with almond butter",
+        "name": "Small Apple with a Handful of Almonds",
         "ingredients": [
-          "1 medium apple, sliced",
-          "2 tablespoons almond butter"
+          "1 small apple",
+          "1/4 cup almonds"
         ],
-        "preparation": "Slice the apple and spread almond butter on each slice.",
-        "nutritionalBenefits": "Provides fiber, healthy fats, and protein for sustained energy.",
-        "healthNotes": "A quick and easy snack to curb hunger."
+        "preparation": "Wash the apple and serve with a handful of almonds.",
+        "nutritionalBenefits": "Provides fiber, vitamins, and healthy fats to keep you satisfied between meals.",
+        "healthNotes": "A simple and healthy snack option."
       }
     ]
   },
   "nutritionalFocus": [
     {
       "nutrient": "Protein",
-      "reason": "Essential for muscle repair and growth, especially important for weight management and supporting an active lifestyle.",
+      "reason": "Essential for muscle maintenance, satiety, and overall health, especially important during weight management.",
       "sources": [
         "Chicken",
-        "Turkey",
-        "Smoked Salmon",
-        "Quinoa",
-        "Almond Butter"
+        "Salmon",
+        "Eggs",
+        "Almonds"
       ]
     },
     {
       "nutrient": "Fiber",
-      "reason": "Promotes satiety, aids digestion, and helps regulate blood sugar levels, which is beneficial for weight loss and maintenance.",
+      "reason": "Promotes satiety, aids digestion, and helps regulate blood sugar levels, contributing to weight loss and maintenance.",
       "sources": [
-        "Whole Wheat Toast",
-        "Quinoa",
-        "Spaghetti Squash",
-        "Apple",
-        "Avocado"
+        "Whole wheat pasta",
+        "Vegetables",
+        "Apples",
+        "Almonds"
       ]
     },
     {
       "nutrient": "Healthy Fats",
-      "reason": "Important for hormone production, brain function, and overall health. Helps with satiety and absorption of fat-soluble vitamins.",
+      "reason": "Important for hormone production, brain function, and absorption of fat-soluble vitamins. Choose unsaturated fats from sources like olive oil and nuts.",
       "sources": [
-        "Avocado",
-        "Almond Butter",
-        "Olive Oil",
-        "Smoked Salmon"
+        "Olive oil",
+        "Almonds",
+        "Salmon"
       ]
     }
   ],
   "avoidList": [
     {
-      "food": "Milk related food",
-      "reason": "User preference."
+      "food": "Lemons and Sour Flavors",
+      "reason": "Personal preference and taste aversion."
     }
   ],
   "weeklyHabitTips": [
-    "Drink at least 8 glasses of water per day to stay hydrated and support metabolism.",
-    "Incorporate 30 minutes of physical activity into your daily routine, such as walking, jogging, or cycling.",
-    "Plan your meals in advance to avoid unhealthy impulse decisions."
+    "Drink at least 8 glasses of water daily to stay hydrated and support your metabolism.",
+    "Incorporate regular physical activity, such as walking, jogging, or swimming, for at least 30 minutes most days of the week.",
+    "Prioritize getting 7-9 hours of sleep each night to support hormonal balance and overall well-being."
   ]
 }
