@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import avatarImage from './cutecowprofile.png';
+import avatarImage from '/Users/jlam/Documents/GitHub/health-monitor-app/client/src/assets/images/cutecowprofile.png';
 import ShoppingList from '../../components/common/ShoppingList/ShoppingList'; 
 import StylizedTabs from '../../components/layout/StylizedTabs';
 
